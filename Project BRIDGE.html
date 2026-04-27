@@ -1,0 +1,1007 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Project BRIDGE — Trust, Safety & Online Harms · Cluster E</title>
+<template id="__bundler_thumbnail" data-bg-color="#1b1c24">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#1b1c24"/>
+    <g stroke="#B8552E" stroke-width="3" fill="none" stroke-linecap="round">
+      <path d="M260 240 L260 200 L300 200"/>
+      <path d="M900 600 L940 600 L940 560"/>
+    </g>
+    <text x="600" y="520" font-family="Georgia, serif" font-size="380" font-style="italic" fill="#f5ede0" text-anchor="middle">E</text>
+    <rect x="240" y="280" width="14" height="240" rx="6" fill="#B8552E"/>
+    <text x="600" y="650" font-family="monospace" font-size="22" letter-spacing="6" fill="#9aa0b3" text-anchor="middle">PROJECT BRIDGE · CLUSTER E</text>
+  </svg>
+</template>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+  const TWEAKS = /*EDITMODE-BEGIN*/{
+    "accent": "#B8552E",
+    "bg": "stone",
+    "hero": "quiet"
+  }/*EDITMODE-END*/;
+</script>
+<style>
+  :root{
+    --paper: oklch(0.985 0.008 80);
+    --paper-2: oklch(0.965 0.012 80);
+    --paper-3: oklch(0.94 0.014 80);
+    --ink: oklch(0.18 0.015 260);
+    --ink-2: oklch(0.32 0.012 260);
+    --ink-3: oklch(0.52 0.008 260);
+    --line: oklch(0.86 0.012 80);
+    --accent: oklch(0.58 0.14 45);
+    --accent-ink: oklch(0.38 0.12 45);
+    --accent-soft: oklch(0.92 0.05 55);
+    --deep: oklch(0.22 0.04 255);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  .serif{font-family:'Instrument Serif',serif;font-weight:400;letter-spacing:-0.01em}
+  .mono{font-family:'JetBrains Mono',monospace;font-size:0.78rem;letter-spacing:0.02em}
+  .smallcaps{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:500;color:var(--ink-3)}
+  .rule{height:1px;background:var(--line);width:100%}
+  .container{max-width:1360px;margin:0 auto;padding:0 48px}
+  a{color:inherit}
+  /* ───────────────── NAV ───────────────── */
+  nav.top{
+    position:sticky;top:0;z-index:20;
+    background:color-mix(in oklch, var(--paper) 88%, transparent);
+    backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.top .row{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .mark{
+    width:48px;height:48px;
+    display:grid;place-items:center;position:relative;
+    border-radius:14px;overflow:hidden;
+    box-shadow:0 1px 2px rgba(0,0,0,0.08), 0 6px 16px -4px rgba(20,15,8,0.18);
+  }
+  .mark svg{display:block}
+  .brand-text{line-height:1}
+  .brand-text .t1{font-family:'Instrument Serif',serif;font-size:22px}
+  .brand-text .t2{font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-3);margin-top:4px}
+  nav.top ul{display:flex;gap:36px;list-style:none;margin:0;padding:0;font-size:14px;color:var(--ink-2)}
+  nav.top ul a{text-decoration:none}
+  nav.top ul a:hover{color:var(--accent-ink)}
+  .cta{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:10px 18px;border:1px solid var(--ink);border-radius:999px;
+    font-size:13px;font-weight:500;text-decoration:none;
+    background:var(--ink);color:var(--paper);transition:all .2s;
+  }
+  .cta:hover{background:var(--accent-ink);border-color:var(--accent-ink)}
+  .cta.ghost{background:transparent;color:var(--ink)}
+  .cta.ghost:hover{background:var(--ink);color:var(--paper)}
+  .arrow{display:inline-block;transform:translateY(-1px)}
+
+  /* ───────────────── HERO ───────────────── */
+  .hero{padding:80px 0 40px;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:36px}
+  .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in oklch,var(--accent) 18%,transparent)}
+  .eyebrow .meta{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.12em;color:var(--ink-2);text-transform:uppercase}
+  h1.hero-title{
+    font-family:'Instrument Serif',serif;font-weight:400;
+    font-size:clamp(56px,8.2vw,128px);line-height:0.93;letter-spacing:-0.025em;
+    margin:0;color:var(--ink);
+  }
+  h1.hero-title .it{font-style:italic;color:var(--accent-ink)}
+  h1.hero-title .u{position:relative;white-space:nowrap}
+  h1.hero-title .u::after{
+    content:"";position:absolute;left:0;right:0;bottom:0.06em;height:0.08em;
+    background:var(--accent);opacity:.35;z-index:-1;
+  }
+  .hero-sub{
+    font-family:'Instrument Serif',serif;font-size:24px;line-height:1.4;
+    color:var(--ink-2);max-width:520px;margin-top:28px;
+  }
+  .hero-body{font-size:15px;line-height:1.65;color:var(--ink-2);max-width:460px}
+  .hero-body p{margin:0 0 14px}
+  .hero-meta{
+    display:grid;grid-template-columns:1fr 1fr;gap:28px 40px;margin-top:36px;
+    padding-top:24px;border-top:1px solid var(--line);
+  }
+  .hero-meta .k{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+  .hero-meta .v{font-size:15px;color:var(--ink);line-height:1.35}
+  .hero-actions{display:flex;gap:14px;margin-top:40px;align-items:center}
+  .hero-actions .note{font-size:12.5px;color:var(--ink-3);margin-left:8px}
+
+  /* hero visual */
+  .hero-art{
+    position:relative;aspect-ratio: 4/5;border-radius:2px;overflow:hidden;
+    background:
+      radial-gradient(120% 80% at 80% 10%, color-mix(in oklch,var(--accent-soft) 80%,transparent), transparent 60%),
+      linear-gradient(180deg, oklch(0.94 0.02 70), oklch(0.88 0.03 60));
+    border:1px solid var(--line);
+  }
+  .hero-art .label{
+    position:absolute;top:20px;left:20px;right:20px;display:flex;justify-content:space-between;
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-2);letter-spacing:0.1em;
+  }
+  .hero-art .footer-label{
+    position:absolute;bottom:20px;left:20px;right:20px;display:flex;justify-content:space-between;
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--ink-2);letter-spacing:0.1em;
+    padding-top:12px;border-top:1px solid color-mix(in oklch,var(--ink) 20%,transparent);
+  }
+  .globe-wrap{position:absolute;inset:12% 10% 18% 10%;display:grid;place-items:center}
+  .globe{width:100%;height:100%;max-width:520px;max-height:520px}
+
+  /* marquee of themes */
+  .marquee{
+    margin-top:72px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    overflow:hidden;white-space:nowrap;
+  }
+  .marquee-track{display:inline-flex;gap:48px;animation:scroll 60s linear infinite;padding-right:48px}
+  .marquee span{font-family:'Instrument Serif',serif;font-size:28px;color:var(--ink-2);font-style:italic;}
+  .marquee .dotsep{color:var(--accent);font-style:normal;font-size:20px;transform:translateY(-4px);display:inline-block}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ───────────────── SECTION SCAFFOLD ───────────────── */
+  section{padding:120px 0;position:relative}
+  .section-head{display:grid;grid-template-columns:120px 1fr 1fr;gap:48px;margin-bottom:72px;align-items:start}
+  .section-head:has(> h2.section-title:first-child){grid-template-columns:1.2fr 1fr}
+  .section-num{font-family:'Instrument Serif',serif;font-size:84px;line-height:0.9;color:var(--accent-ink);font-style:italic;letter-spacing:-0.02em}
+  .section-title{font-family:'Instrument Serif',serif;font-size:clamp(40px,4.8vw,68px);line-height:1;letter-spacing:-0.02em;margin:0;color:var(--ink)}
+  .section-lede{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.45;color:var(--ink-2);max-width:480px;align-self:end;padding-bottom:8px}
+
+  /* ───────────────── URGENCY ───────────────── */
+  .urgency{background:var(--deep);color:var(--paper-2);padding:80px 0}
+  .urgency .container{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center}
+  .urgency h2{font-family:'Instrument Serif',serif;font-size:clamp(36px,4vw,56px);line-height:1.05;margin:0;letter-spacing:-0.015em}
+  .urgency h2 em{color:oklch(0.78 0.14 55);font-style:italic}
+  .urgency p{font-size:16px;line-height:1.7;color:oklch(0.8 0.015 260);margin:20px 0 0;max-width:500px}
+  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:oklch(0.3 0.02 260);border:1px solid oklch(0.3 0.02 260)}
+  .stat{background:var(--deep);padding:32px 28px}
+  .stat .n{font-family:'Instrument Serif',serif;font-size:56px;line-height:1;color:var(--paper);letter-spacing:-0.02em}
+  .stat .n sup{font-size:22px;color:oklch(0.78 0.14 55);margin-left:4px;top:-0.8em;position:relative}
+  .stat .l{font-size:12.5px;color:oklch(0.7 0.015 260);margin-top:10px;line-height:1.45;letter-spacing:0.02em}
+
+  /* ───────────────── CONSORTIUM ───────────────── */
+  .consortium-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border-top:1px solid var(--line)}
+  .inst{
+    padding:28px 20px 28px 0;border-bottom:1px solid var(--line);
+    display:flex;flex-direction:column;gap:12px;position:relative;
+  }
+  .inst + .inst{border-left:1px solid var(--line);padding-left:20px}
+  .inst .flag{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.12em;color:var(--ink-3)}
+  .inst .name{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.15;color:var(--ink);letter-spacing:-0.01em}
+  .inst .role{font-size:12px;color:var(--accent-ink);text-transform:uppercase;letter-spacing:0.12em;font-weight:500}
+  .inst .focus{font-size:13px;color:var(--ink-2);line-height:1.45;margin-top:auto}
+  .inst.lead{background:linear-gradient(180deg,color-mix(in oklch,var(--accent-soft) 50%,transparent),transparent)}
+  .inst.lead::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent)}
+
+  /* ───────────────── RESEARCH STREAMS ───────────────── */
+  .streams{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border-top:1px solid var(--ink)}
+  .stream{
+    grid-column:span 2;padding:32px 28px 40px 0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+    display:flex;flex-direction:column;gap:16px;min-height:340px;position:relative;
+  }
+  .stream:nth-child(3n){border-right:none}
+  .stream .num{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.2em;color:var(--accent-ink)}
+  .stream h3{font-family:'Instrument Serif',serif;font-size:28px;line-height:1.1;margin:0;letter-spacing:-0.01em}
+  .stream p{font-size:14px;line-height:1.55;color:var(--ink-2);margin:0}
+  .stream .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+  .stream .tag{font-family:'JetBrains Mono',monospace;font-size:10px;padding:4px 8px;border:1px solid var(--line);border-radius:2px;color:var(--ink-2);text-transform:uppercase;letter-spacing:0.08em}
+  .stream::after{content:attr(data-n);position:absolute;right:18px;top:24px;font-family:'Instrument Serif',serif;font-size:48px;color:var(--paper-3);font-style:italic}
+
+  /* ───────────────── PEOPLE ───────────────── */
+  .people{display:grid;grid-template-columns:repeat(4,1fr);gap:40px 28px}
+  .person{display:flex;flex-direction:column;gap:14px}
+  .portrait{
+    aspect-ratio:4/5;border-radius:2px;position:relative;overflow:hidden;
+    background:linear-gradient(135deg,var(--paper-2),var(--paper-3));
+    border:1px solid var(--line);
+  }
+  .portrait::before{
+    content:"";position:absolute;inset:0;
+    background:repeating-linear-gradient(45deg, transparent 0 11px, color-mix(in oklch, var(--ink) 4%, transparent) 11px 12px);
+    opacity:.8;
+  }
+  .portrait.has-photo::before{display:none}
+  .portrait.has-photo img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    filter:grayscale(0.1) contrast(1.02);
+  }
+  .portrait.has-photo .tag,
+  .portrait.has-photo .inst{color:var(--paper);text-shadow:0 1px 2px rgba(0,0,0,0.5);z-index:2}
+  .portrait.has-photo::after{
+    content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(180deg, rgba(0,0,0,0.25) 0%, transparent 25%, transparent 65%, rgba(0,0,0,0.55) 100%);
+  }
+  .portrait .initials{
+    position:absolute;inset:0;display:grid;place-items:center;
+    font-family:'Instrument Serif',serif;font-size:clamp(48px,6vw,82px);color:var(--ink);letter-spacing:-0.03em;
+  }
+  .portrait .tag{position:absolute;top:12px;left:12px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-2);letter-spacing:0.1em}
+  .portrait .inst{position:absolute;bottom:12px;left:12px;right:12px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-2);display:flex;justify-content:space-between}
+  .person .nm{font-family:'Instrument Serif',serif;font-size:22px;line-height:1.15;letter-spacing:-0.01em}
+  .person .rl{font-size:12.5px;color:var(--accent-ink);text-transform:uppercase;letter-spacing:0.12em;font-weight:500}
+  .person .bio{font-size:13px;color:var(--ink-2);line-height:1.5}
+  .person.lead .portrait{background:linear-gradient(135deg,color-mix(in oklch,var(--accent-soft) 80%,var(--paper-2)),var(--paper-3))}
+
+  /* ───────────────── PLATFORMS ───────────────── */
+  .platforms{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .platform{background:var(--paper);padding:40px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start;min-height:240px;transition:background .3s}
+  .platform:hover{background:var(--paper-2)}
+  .platform .left{display:flex;flex-direction:column;gap:14px;height:100%}
+  .platform h3{font-family:'Instrument Serif',serif;font-size:36px;line-height:1;margin:0;letter-spacing:-0.015em}
+  .platform .desc{font-size:14px;line-height:1.55;color:var(--ink-2);max-width:360px}
+  .platform .url{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--accent-ink);margin-top:auto;padding-top:14px;border-top:1px dashed var(--line)}
+  .platform-badge{
+    width:60px;height:60px;border-radius:50%;border:1px solid var(--ink);
+    display:grid;place-items:center;font-family:'Instrument Serif',serif;font-size:26px;font-style:italic;color:var(--ink);
+    background:var(--paper);
+  }
+
+  /* ───────────────── OUTCOMES / METRICS ───────────────── */
+  .outcomes{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .outcome{background:var(--paper);padding:32px 24px}
+  .outcome .n{font-family:'Instrument Serif',serif;font-size:64px;line-height:1;color:var(--ink);letter-spacing:-0.02em}
+  .outcome .n sup{font-size:22px;color:var(--accent);margin-left:2px;top:-0.9em;position:relative}
+  .outcome .l{font-size:12.5px;color:var(--ink-2);margin-top:12px;line-height:1.45;max-width:200px}
+
+  /* ───────────────── TIMELINE ───────────────── */
+  .timeline{margin-top:0;padding:60px 0 0;border-top:1px solid var(--line)}
+  .timeline-row{display:grid;grid-template-columns:repeat(6,1fr);gap:32px;position:relative}
+  .timeline-row::before{content:"";position:absolute;top:28px;left:0;right:0;height:1px;background:var(--line)}
+  .tl-item{display:flex;flex-direction:column;gap:14px;position:relative;padding-top:0}
+  .tl-item .node{width:11px;height:11px;border-radius:50%;border:2px solid var(--ink);background:var(--paper);position:relative;top:22px;z-index:1}
+  .tl-item .node.on{background:var(--accent);border-color:var(--accent)}
+  .tl-item .m{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;color:var(--ink-3);margin-top:8px}
+  .tl-item .t{font-family:'Instrument Serif',serif;font-size:20px;line-height:1.2;color:var(--ink);letter-spacing:-0.01em}
+  .tl-item .d{font-size:12.5px;color:var(--ink-2);line-height:1.5}
+
+  /* ───────────────── POLICY IMPACT ───────────────── */
+  .policy-row{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+  .policy-list{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+  .policy-item{display:grid;grid-template-columns:auto 1fr auto;gap:24px;padding:22px 0;border-bottom:1px solid var(--line);align-items:center}
+  .policy-item .ic{width:42px;height:42px;border-radius:50%;background:var(--paper-2);display:grid;place-items:center;font-family:'Instrument Serif',serif;font-style:italic;color:var(--accent-ink)}
+  .policy-item .mid .t{font-family:'Instrument Serif',serif;font-size:20px;line-height:1.2}
+  .policy-item .mid .s{font-size:12.5px;color:var(--ink-3);margin-top:3px}
+  .policy-item .ar{color:var(--ink-3);font-family:'Instrument Serif',serif;font-size:22px;font-style:italic}
+
+  /* ───────────────── QUOTE ───────────────── */
+  .pullquote{padding:120px 0;background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative}
+  .pullquote blockquote{
+    font-family:'Instrument Serif',serif;font-size:clamp(32px,4vw,56px);line-height:1.12;letter-spacing:-0.015em;
+    max-width:1100px;margin:0 auto;padding:0 48px;color:var(--ink);
+  }
+  .pullquote .mark{
+    font-size:140px;color:var(--accent);opacity:.3;line-height:0.5;font-style:italic;display:block;margin-bottom:20px;
+  }
+  .pullquote em{color:var(--accent-ink);font-style:italic}
+  .pullquote cite{display:block;margin-top:40px;font-style:normal;font-family:'Inter';font-size:13px;color:var(--ink-2);letter-spacing:0.04em}
+
+  /* ───────────────── CTA FOOTER ───────────────── */
+  footer.end{background:var(--ink);color:var(--paper);padding:120px 0 60px;position:relative;overflow:hidden}
+  footer.end::before{
+    content:"";position:absolute;right:-200px;top:-200px;width:700px;height:700px;border-radius:50%;
+    background:radial-gradient(circle,color-mix(in oklch,var(--accent) 40%,transparent),transparent 65%);
+    opacity:.5;
+  }
+  footer.end h2{font-family:'Instrument Serif',serif;font-size:clamp(56px,7vw,112px);line-height:0.95;letter-spacing:-0.025em;margin:0;max-width:1000px;position:relative}
+  footer.end h2 em{font-style:italic;color:oklch(0.78 0.14 55)}
+  .end-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;margin-top:80px;position:relative}
+  .end-left p{font-size:16px;line-height:1.65;color:oklch(0.78 0.015 260);max-width:460px;margin:0 0 28px}
+  .cta.light{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+  .cta.light:hover{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+  .cta.dark-ghost{background:transparent;color:var(--paper);border-color:oklch(0.4 0.02 260)}
+  .cta.dark-ghost:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+  .contact-block{display:flex;flex-direction:column;gap:28px}
+  .contact-item .k{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.15em;text-transform:uppercase;color:oklch(0.6 0.015 260);margin-bottom:6px}
+  .contact-item .v{font-size:15px;line-height:1.4;color:var(--paper)}
+  .end-foot{display:flex;justify-content:space-between;align-items:center;margin-top:100px;padding-top:32px;border-top:1px solid oklch(0.3 0.02 260);font-size:12px;color:oklch(0.6 0.015 260);font-family:'JetBrains Mono',monospace;letter-spacing:0.1em}
+
+  /* ───────────────── TWEAK PANEL ───────────────── */
+  #tweaks{
+    position:fixed;bottom:24px;right:24px;z-index:50;
+    background:var(--paper);border:1px solid var(--ink);border-radius:8px;
+    padding:18px 18px 16px;width:260px;display:none;
+    box-shadow:0 20px 60px -20px rgba(0,0,0,0.3);
+    font-size:13px;
+  }
+  #tweaks.on{display:block}
+  #tweaks .h{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+  #tweaks .h .t{font-family:'Instrument Serif',serif;font-size:20px}
+  #tweaks .h .sc{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-3);letter-spacing:0.1em}
+  #tweaks label{display:block;margin-bottom:12px}
+  #tweaks label .lb{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;display:block}
+  #tweaks .swatches{display:flex;gap:8px}
+  #tweaks .sw{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:transform .15s}
+  #tweaks .sw.on{border-color:var(--ink);transform:scale(1.1)}
+  #tweaks .seg{display:flex;border:1px solid var(--line);border-radius:4px;overflow:hidden}
+  #tweaks .seg button{flex:1;border:none;background:transparent;padding:7px;font-size:11px;cursor:pointer;font-family:inherit;color:var(--ink-2);letter-spacing:0.05em}
+  #tweaks .seg button.on{background:var(--ink);color:var(--paper)}
+
+  /* bg variants via tweaks */
+  body.bg-cool{--paper:oklch(0.985 0.006 240);--paper-2:oklch(0.96 0.008 240);--paper-3:oklch(0.935 0.01 240)}
+  body.bg-stone{--paper:oklch(0.97 0.004 90);--paper-2:oklch(0.945 0.006 90);--paper-3:oklch(0.915 0.008 90)}
+
+  @media (max-width:900px){
+    .container{padding:0 24px}
+    .hero-grid,.urgency .container,.policy-row,.end-grid{grid-template-columns:1fr;gap:48px}
+    .section-head{grid-template-columns:1fr;gap:20px}
+    .section-num{font-size:56px}
+    .consortium-grid,.streams,.people,.timeline-row,.outcomes,.platforms{grid-template-columns:1fr 1fr}
+    .stream{grid-column:span 1}
+    nav.top ul{display:none}
+  }
+</style>
+</head>
+<body data-screen-label="BRIDGE Landing">
+
+<!-- ══════════ NAV ══════════ -->
+<nav class="top">
+  <div class="container row">
+    <div class="brand">
+      <div class="mark" aria-label="Project BRIDGE · Cluster E">
+        <svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg-ink" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="oklch(0.24 0.03 260)"/>
+              <stop offset="1" stop-color="oklch(0.13 0.02 260)"/>
+            </linearGradient>
+          </defs>
+
+          <!-- dark badge -->
+          <rect x="0.5" y="0.5" width="63" height="63" rx="14" fill="url(#lg-ink)" stroke="oklch(0.34 0.02 260)" stroke-width="0.6"/>
+
+          <!-- left accent stripe = the "bridge" anchor, confident & simple -->
+          <rect x="6" y="14" width="3" height="36" rx="1.5" fill="oklch(0.68 0.16 50)"/>
+
+          <!-- the italic E, big and dominant, ivory -->
+          <text x="37" y="48"
+                font-family="Instrument Serif, Georgia, serif"
+                font-size="54"
+                font-style="italic"
+                font-weight="400"
+                fill="oklch(0.97 0.008 80)"
+                text-anchor="middle">E</text>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <div class="t1">Project BRIDGE</div>
+        <div class="t2">Cluster E · Bayero University Consortium</div>
+      </div>
+    </div>
+    <ul>
+      <li><a href="#consortium">Consortium</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#platforms">Platforms</a></li>
+      <li><a href="#impact">Impact</a></li>
+    </ul>
+    <div style="display:flex;gap:10px;align-items:center">
+      <span class="mono" style="color:var(--ink-3)">EOI · P508383</span>
+      <a class="cta" href="#contact">Read the EOI <span class="arrow">↗</span></a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<header class="hero">
+  <div class="container">
+    <div class="eyebrow">
+      <span class="dot"></span>
+      <span class="meta">Expression of Interest · Ref NG‑FMCIDE‑544880‑CS‑QCBS · April 2026</span>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <h1 class="hero-title">
+          <span class="u">Fibre</span> alone<br>
+          doesn't create <span class="it">trust.</span>
+        </h1>
+        <p class="hero-sub">
+          As Nigeria lays 90,000 km of new backbone, millions will meet digital services — and digital risks — for the first time. Project BRIDGE builds the safety, policy, and trust infrastructure to meet them.
+        </p>
+
+        <div class="hero-actions">
+          <a class="cta" href="#research">Explore the research <span class="arrow">↓</span></a>
+          <a class="cta ghost" href="#team">Meet the consortium</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="hero-body">
+          <p>A consortium of six institutions — led by <strong>Bayero University, Kano</strong>, with UK partners at <strong>York St John</strong> and <strong>Leicester</strong> — responding to the FMCIDE call on <em>Cluster E: Trust, Safety, Consumer Protection and Online Harms.</em></p>
+          <p>Our team is the only one on the continent that has built large-scale hate-speech, sentiment, and safety datasets for African languages — and shipped four working platforms into real Nigerian hands.</p>
+        </div>
+
+        <div class="hero-meta">
+          <div><div class="k">Lead Institution</div><div class="v">Bayero University, Kano</div></div>
+          <div><div class="k">Consortium</div><div class="v">6 institutions · 4 NG · 2 UK</div></div>
+          <div><div class="k">Cluster</div><div class="v">E · Trust, Safety & Online Harms</div></div>
+          <div><div class="k">Duration</div><div class="v">36 months · from Q3 2026</div></div>
+          <div><div class="k">Grants secured by team</div><div class="v">USD 1.5M+ (Wellcome, OpenAI, Google, Lacuna)</div></div>
+          <div><div class="k">Researcher commitment</div><div class="v">15 postdocs + 15 PhD candidates</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- marquee -->
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>Hate speech detection</span><span class="dotsep">●</span>
+        <span>African-language NLP</span><span class="dotsep">●</span>
+        <span>Self-sovereign identity</span><span class="dotsep">●</span>
+        <span>FinTech fraud prevention</span><span class="dotsep">●</span>
+        <span>Privacy by design</span><span class="dotsep">●</span>
+        <span>Adaptive regulation</span><span class="dotsep">●</span>
+        <span>Youth digital literacy</span><span class="dotsep">●</span>
+        <span>Hate speech detection</span><span class="dotsep">●</span>
+        <span>African-language NLP</span><span class="dotsep">●</span>
+        <span>Self-sovereign identity</span><span class="dotsep">●</span>
+        <span>FinTech fraud prevention</span><span class="dotsep">●</span>
+        <span>Privacy by design</span><span class="dotsep">●</span>
+        <span>Adaptive regulation</span><span class="dotsep">●</span>
+        <span>Youth digital literacy</span><span class="dotsep">●</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════ CLUSTER E MARK ══════════ -->
+<section class="cluster-e-mark" style="padding:0;background:var(--ink);color:var(--paper);position:relative;overflow:hidden;border-top:1px solid var(--ink)">
+  <div style="position:absolute;inset:0;opacity:0.06;background-image:linear-gradient(oklch(0.7 0.01 260) 1px,transparent 1px),linear-gradient(90deg,oklch(0.7 0.01 260) 1px,transparent 1px);background-size:48px 48px;pointer-events:none"></div>
+  <div style="position:absolute;right:-180px;top:-180px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,color-mix(in oklch,var(--accent) 50%,transparent),transparent 62%);opacity:.38;pointer-events:none"></div>
+
+  <div class="container" style="position:relative;padding-top:52px;padding-bottom:52px">
+    <!-- ticker -->
+    <div style="display:flex;align-items:center;justify-content:space-between;padding-bottom:18px;margin-bottom:32px;border-bottom:1px solid oklch(0.32 0.02 260);font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.16em;color:oklch(0.68 0.015 260);text-transform:uppercase;flex-wrap:wrap;gap:12px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px color-mix(in oklch,var(--accent) 25%,transparent)"></span>
+        <span>University-Led Research Clusters · National Digital Economy</span>
+      </div>
+      <div style="color:oklch(0.55 0.015 260)">REF · NG‑FMCIDE‑544880‑CS‑QCBS</div>
+    </div>
+
+    <div class="cluster-e-grid" style="display:grid;grid-template-columns:auto 1fr auto;gap:56px;align-items:center">
+      <!-- monogram E (SMALLER) -->
+      <div style="position:relative;width:180px;height:200px;flex-shrink:0">
+        <svg viewBox="0 0 180 200" preserveAspectRatio="xMidYMid meet" style="width:100%;height:100%;display:block" aria-hidden="true">
+          <rect x="1" y="1" width="178" height="198" fill="none" stroke="oklch(0.35 0.02 260)" stroke-width="1"/>
+          <g stroke="oklch(0.78 0.14 55)" stroke-width="1.5" fill="none">
+            <path d="M6 16 L6 6 L16 6"/>
+            <path d="M164 6 L174 6 L174 16"/>
+            <path d="M6 184 L6 194 L16 194"/>
+            <path d="M164 194 L174 194 L174 184"/>
+          </g>
+          <text x="90" y="168" font-family="Instrument Serif, serif" font-size="240" font-style="italic" fill="oklch(0.78 0.14 55)" text-anchor="middle" letter-spacing="-10">E</text>
+          <text x="90" y="168" font-family="Instrument Serif, serif" font-size="240" font-style="italic" fill="none" stroke="oklch(0.3 0.02 260)" stroke-width="0.8" text-anchor="middle" letter-spacing="-10">E</text>
+        </svg>
+        <div style="position:absolute;top:8px;left:12px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.2em;color:oklch(0.7 0.015 260)">CLUSTER</div>
+        <div style="position:absolute;top:8px;right:12px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.2em;color:oklch(0.7 0.015 260)">05/06</div>
+      </div>
+
+      <!-- middle: headline + blurb -->
+      <div>
+        <div class="smallcaps" style="color:oklch(0.78 0.14 55);margin-bottom:12px">Our cluster</div>
+        <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(32px,3.4vw,52px);line-height:1.02;letter-spacing:-0.02em;color:var(--paper);margin:0">
+          Cluster <span style="color:oklch(0.78 0.14 55);font-style:italic">E</span> — <span style="color:oklch(0.82 0.015 260)">the human side of the fibre.</span>
+        </h2>
+        <p style="margin:16px 0 0;font-size:14px;line-height:1.6;color:oklch(0.72 0.015 260);max-width:620px">
+          Where policy, trust and safety decide whether expanded connectivity becomes <em style="color:var(--paper);font-style:italic">opportunity</em> — or exposure.
+        </p>
+      </div>
+
+      <!-- four pillars as compact vertical list -->
+      <div style="display:flex;flex-direction:column;gap:6px;min-width:180px;border-left:1px solid oklch(0.3 0.02 260);padding-left:24px">
+        <div style="display:flex;align-items:baseline;gap:10px"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:oklch(0.78 0.14 55);letter-spacing:0.12em;width:20px">01</span><span style="font-family:'Instrument Serif',serif;font-size:18px;color:var(--paper)">Trust</span></div>
+        <div style="display:flex;align-items:baseline;gap:10px"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:oklch(0.78 0.14 55);letter-spacing:0.12em;width:20px">02</span><span style="font-family:'Instrument Serif',serif;font-size:18px;color:var(--paper)">Safety</span></div>
+        <div style="display:flex;align-items:baseline;gap:10px"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:oklch(0.78 0.14 55);letter-spacing:0.12em;width:20px">03</span><span style="font-family:'Instrument Serif',serif;font-size:18px;color:var(--paper)">Consumer Protection</span></div>
+        <div style="display:flex;align-items:baseline;gap:10px"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:oklch(0.78 0.14 55);letter-spacing:0.12em;width:20px">04</span><span style="font-family:'Instrument Serif',serif;font-size:18px;color:var(--paper)">Online Harms</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width:980px){
+    .cluster-e-grid{grid-template-columns:1fr !important;gap:32px !important}
+    .cluster-e-grid > div:last-child{border-left:none !important;padding-left:0 !important;border-top:1px solid oklch(0.3 0.02 260);padding-top:20px !important}
+  }
+</style>
+
+<!-- ══════════ MINISTERIAL ENDORSEMENT ══════════ -->
+<section class="minister" id="minister" style="padding:100px 0;background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container" style="display:grid;grid-template-columns:minmax(320px,440px) 1fr;gap:80px;align-items:center">
+    <div class="minister-portrait" style="position:relative">
+      <div style="position:absolute;top:-14px;left:-14px;right:14px;bottom:14px;border:1px solid var(--accent);border-radius:2px;z-index:0"></div>
+      <img src="assets/minister.png" alt="Dr. Bosun Tijani" style="position:relative;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:2px;display:block;z-index:1;filter:grayscale(0.15) contrast(1.02)" />
+      <div style="position:absolute;left:0;right:0;bottom:-1px;padding:14px 18px;background:var(--ink);color:var(--paper);display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;z-index:2">
+        <span>DR. BOSUN TIJANI</span>
+        <span style="color:oklch(0.78 0.14 55)">FMCIDE · HON. MINISTER</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="smallcaps" style="margin-bottom:24px;display:flex;align-items:center;gap:14px">
+        <span style="width:8px;height:8px;border-radius:50%;background:var(--accent)"></span>
+        <span>Programme sponsor · Federal Republic of Nigeria</span>
+      </div>
+      <div style="font-family:'Instrument Serif',serif;font-size:clamp(28px,3vw,42px);line-height:1.18;letter-spacing:-0.015em;color:var(--ink)">
+        <span style="font-size:1.4em;color:var(--accent);font-style:italic;line-height:0;display:inline-block;transform:translateY(0.18em);margin-right:6px">"</span>Nigeria is not waiting for the world to connect us. <em style="color:var(--accent-ink);font-style:italic">We are building our own infrastructure</em> — and the world is choosing to invest alongside us.<span style="font-size:1.4em;color:var(--accent);font-style:italic;line-height:0;display:inline-block;transform:translateY(0.18em);margin-left:4px">"</span>
+      </div>
+      <div style="margin-top:28px;display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+        <div>
+          <div style="font-family:'Instrument Serif',serif;font-size:22px;line-height:1.2">Dr. 'Bosun Tijani</div>
+          <div style="font-size:12.5px;color:var(--ink-2);margin-top:4px">Honourable Minister, Communications, Innovation &amp; Digital Economy</div>
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-3);letter-spacing:0.12em;padding-left:18px;border-left:1px solid var(--line)">
+          @bosuntijani<br>FMCIDE · FGN
+        </div>
+      </div>
+
+      <div style="margin-top:44px;padding-top:28px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:28px">
+        <div>
+          <div style="font-family:'Instrument Serif',serif;font-size:36px;color:var(--ink);letter-spacing:-0.02em;line-height:1">$200M</div>
+          <div style="font-size:11.5px;color:var(--ink-2);margin-top:8px;line-height:1.4;letter-spacing:0.02em">African Development Bank · approved for Project BRIDGE</div>
+        </div>
+        <div>
+          <div style="font-family:'Instrument Serif',serif;font-size:36px;color:var(--ink);letter-spacing:-0.02em;line-height:1">$500M</div>
+          <div style="font-size:11.5px;color:var(--ink-2);margin-top:8px;line-height:1.4;letter-spacing:0.02em">World Bank Group · programme financing</div>
+        </div>
+        <div>
+          <div style="font-family:'Instrument Serif',serif;font-size:36px;color:var(--ink);letter-spacing:-0.02em;line-height:1">$100M</div>
+          <div style="font-size:11.5px;color:var(--ink-2);margin-top:8px;line-height:1.4;letter-spacing:0.02em">EBRD · backing Nigeria's digital agenda</div>
+        </div>
+      </div>
+      <p style="margin:24px 0 0;font-size:13.5px;color:var(--ink-3);line-height:1.55;max-width:640px">Largest fibre-backbone investment in any developing nation. This consortium responds to the Ministry's call and stands ready to deliver the trust, safety and governance layer that makes the infrastructure matter.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONSORTIUM ══════════ -->
+<section id="consortium">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Six institutions.<br>One Kano-rooted<br>research corridor.</h2>
+      <p class="section-lede" style="align-self:start;padding-bottom:0;padding-top:8px">Four Nigerian universities anchored in Kano and Jigawa, joined by two UK cybersecurity centres. The composition meets the Programme's four-to-six requirement and includes the encouraged international partners.</p>
+    </div>
+
+    <div class="consortium-grid">
+      <div class="inst lead">
+        <div class="flag">🇳🇬 NG · 01</div>
+        <div class="role">Lead</div>
+        <div class="name">Bayero University, Kano</div>
+        <div class="focus">Online harms, African-language NLP, AI safety, hate speech detection</div>
+      </div>
+      <div class="inst">
+        <div class="flag">🇳🇬 NG · 02</div>
+        <div class="role">AI Lead</div>
+        <div class="name">Kano Univ. of Science &amp; Technology, Wudil</div>
+        <div class="focus">AI, machine learning, data-driven systems</div>
+      </div>
+      <div class="inst">
+        <div class="flag">🇳🇬 NG · 03</div>
+        <div class="role">Partner</div>
+        <div class="name">Federal Univ. of Technology, Babura</div>
+        <div class="focus">Recommender systems, data analytics, cybersecurity, ICT</div>
+      </div>
+      <div class="inst">
+        <div class="flag">🇳🇬 NG · 04</div>
+        <div class="role">Partner</div>
+        <div class="name">Northwest University, Kano</div>
+        <div class="focus">Deep learning, feature selection, computer vision, cybersecurity</div>
+      </div>
+      <div class="inst">
+        <div class="flag">🇬🇧 UK · 05</div>
+        <div class="role">International</div>
+        <div class="name">York St John University</div>
+        <div class="focus">Cybersecurity, trust systems, data privacy, IoT security</div>
+      </div>
+      <div class="inst">
+        <div class="flag">🇬🇧 UK · 06</div>
+        <div class="role">International</div>
+        <div class="name">University of Leicester</div>
+        <div class="focus">Cyber security, privacy, SSI, forensic investigation</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ RESEARCH STREAMS ══════════ -->
+<section id="research" style="background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Six research streams,<br><span style="font-style:italic;color:var(--accent-ink)">interlocked.</span></h2>
+      <p class="section-lede" style="align-self:start;padding-bottom:0;padding-top:8px">Each stream maps to the Cluster E Terms of Reference. Each produces evidence, tools, and policy guidance — not papers that sit on shelves.</p>
+    </div>
+
+    <div class="streams">
+      <div class="stream" data-n="I">
+        <div class="num">STREAM 01</div>
+        <h3>Online Harms, Hate Speech &amp; Content Moderation</h3>
+        <p>Multilingual hate-speech systems for Nigerian languages; community-informed governance models; study of political polarisation in Nigerian digital space.</p>
+        <div class="tags"><span class="tag">AfriHate</span><span class="tag">NaijaSenti</span><span class="tag">Polarization</span></div>
+      </div>
+      <div class="stream" data-n="II">
+        <div class="num">STREAM 02</div>
+        <h3>Consumer Protection in Digital Markets</h3>
+        <p>Map online fraud and deceptive practices; NLP detection for phishing in Nigerian languages; assess whether existing regulatory frameworks actually work.</p>
+        <div class="tags"><span class="tag">Phishing</span><span class="tag">Regulation</span><span class="tag">Digital fraud</span></div>
+      </div>
+      <div class="stream" data-n="III">
+        <div class="num">STREAM 03</div>
+        <h3>Secure &amp; Privacy-Preserving Authentication for FinTech</h3>
+        <p>Multi-modal continuous authentication matched to Nigerian usage patterns; policy guidance balancing fraud prevention, protection, and privacy.</p>
+        <div class="tags"><span class="tag">Biometrics</span><span class="tag">Zero-trust</span><span class="tag">FinTech</span></div>
+      </div>
+      <div class="stream" data-n="IV">
+        <div class="num">STREAM 04</div>
+        <h3>Trust, Privacy &amp; Data Protection Frameworks</h3>
+        <p>Evaluate NDPA 2023 / NDPR implementation; privacy-preserving frameworks for identity, health and fintech; comparative enforcement across jurisdictions.</p>
+        <div class="tags"><span class="tag">NDPA</span><span class="tag">GDPR</span><span class="tag">SSI</span></div>
+      </div>
+      <div class="stream" data-n="V">
+        <div class="num">STREAM 05</div>
+        <h3>Youth Online Safety &amp; Digital Literacy</h3>
+        <p>Assess cyberbullying and exploitation affecting Nigerian youth; evaluate digital-literacy programmes; age-appropriate safety tools in Nigerian languages.</p>
+        <div class="tags"><span class="tag">Youth</span><span class="tag">AfriSafe</span><span class="tag">Literacy</span></div>
+      </div>
+      <div class="stream" data-n="VI">
+        <div class="num">STREAM 06</div>
+        <h3>Regulatory Innovation &amp; Adaptive Governance</h3>
+        <p>Compare digital-safety frameworks across EU, AU, ECOWAS, UK &amp; India; assess Nigerian agency capacity; recommend reforms that actually ship.</p>
+        <div class="tags"><span class="tag">Policy</span><span class="tag">ECOWAS</span><span class="tag">Reform</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ TEAM ══════════ -->
+<section id="team">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Key personnel<br><span style="font-style:italic;color:var(--accent-ink)">indicative.</span></h2>
+      <p class="section-lede" style="align-self:start;padding-bottom:0;padding-top:8px">A team that sits at the intersection of NLP, cybersecurity, FinTech and national policy — with a former Vice Chancellor, a former State Commissioner, and Google DeepMind and Imperial College affiliations.</p>
+    </div>
+
+    <div class="people">
+      <div class="person lead">
+        <div class="portrait has-photo">
+          <img src="assets/team/shamsuddeen.png" alt="Dr. Shamsuddeen Hassan Muhammad" />
+          <div class="tag">CONSORTIUM LEAD · 01</div>
+        </div>
+        <div class="rl">Consortium Lead</div>
+        <div class="nm">Dr. Shamsuddeen<br>Hassan Muhammad</div>
+        <div class="bio">Google DeepMind Academic Fellow, Imperial College London. h-index 22, 4,716 citations. PI of AfriHate and BRIGHTER. USD 1.5M+ in competitive grants.</div>
+      </div>
+
+      <div class="person">
+        <div class="portrait has-photo">
+          <img src="assets/team/yahuza.png" alt="Prof. Muhammad Yahuza Bello" />
+          <div class="tag">PROFESSORIAL LEAD · 02</div>
+        </div>
+        <div class="rl">Professorial Lead</div>
+        <div class="nm">Prof. Muhammad<br>Yahuza Bello</div>
+        <div class="bio">10th Vice Chancellor of Bayero University (2015–2020). Founded Computer Science studies at BUK in 1990. 40+ years academic leadership.</div>
+      </div>
+
+      <div class="person">
+        <div class="portrait has-photo">
+          <img src="assets/team/bashir.png" alt="Prof. Bashir Shehu Galadanci" />
+          <div class="tag">POLICY LEAD · 03</div>
+        </div>
+        <div class="rl">Policy &amp; Governance</div>
+        <div class="nm">Prof. Bashir<br>Shehu Galadanci</div>
+        <div class="bio">Former State Commissioner for Science &amp; Technology, Kano. National Coordinator, UBEC Digital Resource Center. He doesn't just study policy — he's made it.</div>
+      </div>
+
+      <div class="person">
+        <div class="portrait has-photo">
+          <img src="assets/team/salisu.png" alt="Prof. Salisu Mamman Abdulrahman" />
+          <div class="tag">AI LEAD · 04</div>
+        </div>
+        <div class="rl">AI Lead</div>
+        <div class="nm">Prof. Salisu<br>Mamman Abdulrahman</div>
+        <div class="bio">Dean of the Faculty of Computing &amp; Mathematical Sciences, KUST Wudil. Machine learning, algorithm selection, low-resource Hausa NLP.</div>
+      </div>
+
+      <div class="person">
+        <div class="portrait has-photo">
+          <img src="assets/team/aminu.jpg" alt="Prof. Aminu Bello Usman" />
+          <div class="tag">CYBER LEAD · 05</div>
+        </div>
+        <div class="rl">Cybersecurity</div>
+        <div class="nm">Prof. Aminu<br>Bello Usman</div>
+        <div class="bio">Director, Cybersecurity Research Group, York St John. PI of Cyber360 (£120k). Founder of VigilSentinel &amp; Wazobia Invoice. Patent-pending zero-trust PoS.</div>
+      </div>
+
+      <div class="person">
+        <div class="portrait has-photo">
+          <img src="assets/team/ibrahim.png" alt="Dr. Ibrahim Said Ahmad" />
+          <div class="tag">NLP · ETHICS · 06</div>
+        </div>
+        <div class="rl">NLP &amp; Ethical AI</div>
+        <div class="nm">Dr. Ibrahim<br>Said Ahmad</div>
+        <div class="bio">40+ publications. Organiser of SemEval 2025 Task 11. USD 300k+ in grants. Cultural-alignment research on LLMs for Hausa speakers.</div>
+      </div>
+
+      <div class="person">
+        <div class="portrait has-photo">
+          <img src="assets/team/shehu.png" alt="Dr. Abubakar-Sadiq Shehu" />
+          <div class="tag">IDENTITY · 07</div>
+        </div>
+        <div class="rl">Cyber Security · SSI</div>
+        <div class="nm">Dr. Abubakar-<br>Sadiq Shehu</div>
+        <div class="bio">Teaching Fellow, Leicester. Pioneer Hausa/Yoruba Language Engineer at Google. Former Apple fraud-prevention lead. Founded SPIDVerify (500+ orgs).</div>
+      </div>
+
+      <div class="person">
+        <div class="portrait has-photo">
+          <img src="assets/team/khalid.png" alt="Prof. Khalid Haruna" />
+          <div class="tag">CYBER RISK · 08</div>
+        </div>
+        <div class="rl">Recommender Systems · Data</div>
+        <div class="nm">Prof. Khalid<br>Haruna</div>
+        <div class="bio">Federal University of Technology, Babura. Recommender systems, data analytics, cybersecurity and ICT research lead for the Jigawa node of the consortium.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:56px;padding-top:28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:20px">
+      <div class="mono" style="color:var(--ink-3)">+ 3 additional senior research specialists · programme administrator · 15 postdoc positions · 15 PhD positions</div>
+      <a href="#" style="font-family:'Instrument Serif',serif;font-size:22px;color:var(--accent-ink);text-decoration:none;font-style:italic">See full roster →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PLATFORMS ══════════ -->
+<section id="platforms" style="background:var(--deep);color:var(--paper-2)">
+  <div class="container">
+    <div class="section-head" style="color:var(--paper)">
+      <h2 class="section-title" style="color:var(--paper)">Four operational<br>platforms. Already<br><span style="font-style:italic;color:oklch(0.78 0.14 55)">shipped.</span></h2>
+      <p class="section-lede" style="color:oklch(0.78 0.015 260);align-self:start;padding-bottom:0;padding-top:8px">Most consortiums would spend Year 1 building infrastructure. Ours is already in production — giving BRIDGE a running start.</p>
+    </div>
+
+    <div class="platforms" style="background:oklch(0.3 0.02 260);border-color:oklch(0.3 0.02 260)">
+      <div class="platform" style="background:var(--deep);color:var(--paper-2)">
+        <div class="left">
+          <div class="smallcaps" style="color:oklch(0.78 0.14 55)">Platform · AI Safety</div>
+          <h3 style="color:var(--paper)">AfriSafe</h3>
+          <div class="desc" style="color:oklch(0.78 0.015 260);border-color:oklch(0.3 0.02 260)">Safety in the era of generative AI — deepfakes, AI-generated misinformation, automated hate speech — built for African linguistic diversity.</div>
+          <div class="url" style="color:oklch(0.78 0.14 55);border-color:oklch(0.3 0.02 260)">↗ afrisafe.vercel.app</div>
+        </div>
+        <div class="platform-badge" style="border-color:oklch(0.5 0.02 260);color:var(--paper)">A</div>
+      </div>
+
+      <div class="platform" style="background:var(--deep);color:var(--paper-2)">
+        <div class="left">
+          <div class="smallcaps" style="color:oklch(0.78 0.14 55)">Platform · Cybersecurity</div>
+          <h3 style="color:var(--paper)">VigilSentinel</h3>
+          <div class="desc" style="color:oklch(0.78 0.015 260)">Integrated cyber operations — vulnerability assessment, endpoint monitoring, threat detection, log collection. 15+ assessment types. Self- or cloud-hosted.</div>
+          <div class="url" style="color:oklch(0.78 0.14 55);border-color:oklch(0.3 0.02 260)">↗ vigilsentinel.com</div>
+        </div>
+        <div class="platform-badge" style="border-color:oklch(0.5 0.02 260);color:var(--paper)">V</div>
+      </div>
+
+      <div class="platform" style="background:var(--deep);color:var(--paper-2)">
+        <div class="left">
+          <div class="smallcaps" style="color:oklch(0.78 0.14 55)">Platform · FinTech</div>
+          <h3 style="color:var(--paper)">Wazobia Invoice</h3>
+          <div class="desc" style="color:oklch(0.78 0.015 260)">Secure, offline-first FinTech for underserved Nigerian SMEs. Patent-pending zero-trust PoS network with dual-key encryption and 12-word recovery.</div>
+          <div class="url" style="color:oklch(0.78 0.14 55);border-color:oklch(0.3 0.02 260)">↗ wazobia-invoice.ng</div>
+        </div>
+        <div class="platform-badge" style="border-color:oklch(0.5 0.02 260);color:var(--paper)">W</div>
+      </div>
+
+      <div class="platform" style="background:var(--deep);color:var(--paper-2)">
+        <div class="left">
+          <div class="smallcaps" style="color:oklch(0.78 0.14 55)">Platform · Identity</div>
+          <h3 style="color:var(--paper)">SPIDVerify</h3>
+          <div class="desc" style="color:oklch(0.78 0.015 260)">SaaS identity verification, KYC compliance, business onboarding and AML screening — already serving <strong style="color:var(--paper)">500+ organisations globally</strong>.</div>
+          <div class="url" style="color:oklch(0.78 0.14 55);border-color:oklch(0.3 0.02 260)">↗ spidverify.com</div>
+        </div>
+        <div class="platform-badge" style="border-color:oklch(0.5 0.02 260);color:var(--paper)">S</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ IMPACT · MDAs · TIMELINE ══════════ -->
+<section id="impact">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">From research<br>to <span style="font-style:italic;color:var(--accent-ink)">decision-makers.</span></h2>
+      <p class="section-lede" style="align-self:start;padding-bottom:0;padding-top:8px">Research that doesn't reach decision-makers is an expensive hobby. Our outreach is structured around specific MDAs with concrete policy instruments.</p>
+    </div>
+
+    <div class="policy-row">
+      <div>
+        <div class="smallcaps" style="margin-bottom:18px">Target agencies</div>
+        <div class="policy-list">
+          <div class="policy-item"><div class="ic">F</div><div class="mid"><div class="t">FMCIDE</div><div class="s">Federal Ministry of Communications, Innovation &amp; Digital Economy</div></div><div class="ar">↗</div></div>
+          <div class="policy-item"><div class="ic">N</div><div class="mid"><div class="t">NDPC</div><div class="s">Nigeria Data Protection Commission — NDPA 2023 enforcement</div></div><div class="ar">↗</div></div>
+          <div class="policy-item"><div class="ic">T</div><div class="mid"><div class="t">NITDA</div><div class="s">National IT Development Agency — digital safety standards</div></div><div class="ar">↗</div></div>
+          <div class="policy-item"><div class="ic">C</div><div class="mid"><div class="t">NCC</div><div class="s">Nigerian Communications Commission — platform governance</div></div><div class="ar">↗</div></div>
+          <div class="policy-item"><div class="ic">O</div><div class="mid"><div class="t">NOA &amp; FME</div><div class="s">Orientation Agency + Federal Ministry of Education — youth safety</div></div><div class="ar">↗</div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="smallcaps" style="margin-bottom:18px">Policy instruments</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px">
+          <div style="padding:28px 0;border-top:2px solid var(--ink)">
+            <div class="mono" style="color:var(--accent-ink)">A</div>
+            <div style="font-family:'Instrument Serif',serif;font-size:24px;margin-top:10px;line-height:1.15">Policy briefs &amp; executive summaries</div>
+            <p style="font-size:13px;color:var(--ink-2);margin-top:10px;line-height:1.5">Each shaped for specific stakeholders and timed to land at decision points.</p>
+          </div>
+          <div style="padding:28px 0;border-top:2px solid var(--ink)">
+            <div class="mono" style="color:var(--accent-ink)">B</div>
+            <div style="font-family:'Instrument Serif',serif;font-size:24px;margin-top:10px;line-height:1.15">Stakeholder dialogue</div>
+            <p style="font-size:13px;color:var(--ink-2);margin-top:10px;line-height:1.5">Structured conversations with government, platforms, FinTech, civil society and development partners.</p>
+          </div>
+          <div style="padding:28px 0;border-top:2px solid var(--ink)">
+            <div class="mono" style="color:var(--accent-ink)">C</div>
+            <div style="font-family:'Instrument Serif',serif;font-size:24px;margin-top:10px;line-height:1.15">Capacity building</div>
+            <p style="font-size:13px;color:var(--ink-2);margin-top:10px;line-height:1.5">Workshops and training for government officials on digital-safety practice and evidence use.</p>
+          </div>
+          <div style="padding:28px 0;border-top:2px solid var(--ink)">
+            <div class="mono" style="color:var(--accent-ink)">D</div>
+            <div style="font-family:'Instrument Serif',serif;font-size:24px;margin-top:10px;line-height:1.15">Open datasets</div>
+            <p style="font-size:13px;color:var(--ink-2);margin-top:10px;line-height:1.5">Extending AfriHate, NaijaSenti &amp; AfriSafe — public goods that outlast the grant.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- timeline -->
+    <div class="timeline">
+      <div class="smallcaps" style="margin-bottom:28px">36-month programme arc</div>
+      <div class="timeline-row">
+        <div class="tl-item"><div class="node on"></div><div class="m">M 00–06</div><div class="t">Mobilise</div><div class="d">Cohort recruitment, baseline studies, AfriSafe expansion to Nigerian focus.</div></div>
+        <div class="tl-item"><div class="node on"></div><div class="m">M 06–12</div><div class="t">Map</div><div class="d">Fraud landscape, NDPA gap analysis, hate-speech dataset extension.</div></div>
+        <div class="tl-item"><div class="node"></div><div class="m">M 12–18</div><div class="t">Build</div><div class="d">NLP detection stack for Nigerian languages; authentication prototypes.</div></div>
+        <div class="tl-item"><div class="node"></div><div class="m">M 18–24</div><div class="t">Test</div><div class="d">Pilots with NDPC/NITDA; VigilSentinel deployed as safety testbed.</div></div>
+        <div class="tl-item"><div class="node"></div><div class="m">M 24–30</div><div class="t">Translate</div><div class="d">Policy briefs to MDAs; stakeholder dialogues; regulatory comparisons.</div></div>
+        <div class="tl-item"><div class="node"></div><div class="m">M 30–36</div><div class="t">Embed</div><div class="d">Institutional transfer; open datasets released; next-cohort handoff.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CLOSING CTA ══════════ -->
+<footer class="end" id="contact">
+  <div class="container">
+    <div class="smallcaps" style="color:oklch(0.7 0.14 55);margin-bottom:32px">§ 07 · Submission</div>
+    <h2>Infrastructure and<br>knowledge must grow<br><em>in step.</em></h2>
+
+    <div class="end-grid">
+      <div class="end-left">
+        <p>This consortium submits its Expression of Interest for Cluster E: Trust, Safety, Consumer Protection and Online Harms — with signed declarations from all six institutions and a commitment to recruit 30 researchers over the 36-month assignment.</p>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <a class="cta light" href="#">Download full EOI (PDF) <span class="arrow">↓</span></a>
+          <a class="cta dark-ghost" href="#">Request a briefing <span class="arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="contact-block">
+        <div class="contact-item">
+          <div class="k">Consortium Lead</div>
+          <div class="v">Dr. Shamsuddeen Hassan Muhammad<br><span style="color:oklch(0.78 0.14 55);font-family:'JetBrains Mono',monospace;font-size:12px">BUK · Imperial College London</span></div>
+        </div>
+        <div class="contact-item">
+          <div class="k">Lead Institution</div>
+          <div class="v">Bayero University, Kano<br><span style="color:oklch(0.7 0.015 260);font-family:'JetBrains Mono',monospace;font-size:12px">Faculty of Computer Science &amp; IT</span></div>
+        </div>
+        <div class="contact-item">
+          <div class="k">Reference</div>
+          <div class="v" style="font-family:'JetBrains Mono',monospace;font-size:13px">NG‑FMCIDE‑544880‑CS‑QCBS<br>Project № P508383</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="end-foot">
+      <div>© 2026 · PROJECT BRIDGE CONSORTIUM</div>
+      <div>SUBMITTED TO FMCIDE · APRIL 2026 · CONFIDENTIAL</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════ TWEAKS PANEL ══════════ -->
+<div id="tweaks">
+  <div class="h">
+    <div class="t">Tweaks</div>
+    <div class="sc">BRIDGE · v1</div>
+  </div>
+  <label>
+    <span class="lb">Accent</span>
+    <div class="swatches" id="sw-accent">
+      <div class="sw" data-color="#B8552E" style="background:oklch(0.58 0.14 45)" title="Terracotta"></div>
+      <div class="sw" data-color="#2E6B5A" style="background:oklch(0.5 0.1 165)" title="Forest"></div>
+      <div class="sw" data-color="#1F4A8E" style="background:oklch(0.45 0.13 260)" title="Deep blue"></div>
+      <div class="sw" data-color="#8E2E4A" style="background:oklch(0.42 0.14 0)" title="Claret"></div>
+      <div class="sw" data-color="#4A3F2E" style="background:oklch(0.35 0.04 70)" title="Espresso"></div>
+    </div>
+  </label>
+  <label>
+    <span class="lb">Paper tone</span>
+    <div class="seg" id="sg-bg">
+      <button data-bg="warm" class="on">Warm</button>
+      <button data-bg="cool">Cool</button>
+      <button data-bg="stone">Stone</button>
+    </div>
+  </label>
+  <label>
+    <span class="lb">Hero treatment</span>
+    <div class="seg" id="sg-hero">
+      <button data-hero="editorial" class="on">Editorial</button>
+      <button data-hero="quiet">Quiet</button>
+    </div>
+  </label>
+</div>
+
+<script>
+  // Tweaks wiring
+  (function(){
+    const panel = document.getElementById('tweaks');
+    // register listener FIRST
+    window.addEventListener('message', (e)=>{
+      const d = e.data || {};
+      if(d.type === '__activate_edit_mode'){ panel.classList.add('on'); }
+      if(d.type === '__deactivate_edit_mode'){ panel.classList.remove('on'); }
+    });
+    // announce availability
+    try{ window.parent.postMessage({type:'__edit_mode_available'}, '*'); }catch(e){}
+
+    // accent swatches
+    function setAccent(hex){
+      document.documentElement.style.setProperty('--accent',
+        ({
+          '#B8552E':'oklch(0.58 0.14 45)',
+          '#2E6B5A':'oklch(0.5 0.1 165)',
+          '#1F4A8E':'oklch(0.45 0.13 260)',
+          '#8E2E4A':'oklch(0.42 0.14 0)',
+          '#4A3F2E':'oklch(0.35 0.04 70)'
+        })[hex] || 'oklch(0.58 0.14 45)');
+      document.documentElement.style.setProperty('--accent-ink',
+        ({
+          '#B8552E':'oklch(0.38 0.12 45)',
+          '#2E6B5A':'oklch(0.34 0.08 165)',
+          '#1F4A8E':'oklch(0.3 0.11 260)',
+          '#8E2E4A':'oklch(0.28 0.12 0)',
+          '#4A3F2E':'oklch(0.25 0.035 70)'
+        })[hex] || 'oklch(0.38 0.12 45)');
+      document.querySelectorAll('#sw-accent .sw').forEach(el=>el.classList.toggle('on', el.dataset.color===hex));
+    }
+    document.querySelectorAll('#sw-accent .sw').forEach(el=>{
+      el.addEventListener('click', ()=>{
+        setAccent(el.dataset.color);
+        try{ window.parent.postMessage({type:'__edit_mode_set_keys',edits:{accent:el.dataset.color}},'*'); }catch(e){}
+      });
+    });
+    function setBg(v){
+      document.body.classList.remove('bg-warm','bg-cool','bg-stone');
+      document.body.classList.add('bg-'+v);
+      document.querySelectorAll('#sg-bg button').forEach(b=>b.classList.toggle('on', b.dataset.bg===v));
+    }
+    document.querySelectorAll('#sg-bg button').forEach(b=>b.addEventListener('click',()=>{
+      setBg(b.dataset.bg);
+      try{ window.parent.postMessage({type:'__edit_mode_set_keys',edits:{bg:b.dataset.bg}},'*'); }catch(e){}
+    }));
+    document.querySelectorAll('#sg-hero button').forEach(b=>b.addEventListener('click',()=>{
+      document.querySelectorAll('#sg-hero button').forEach(x=>x.classList.toggle('on', x===b));
+      const quiet = b.dataset.hero==='quiet';
+      document.querySelector('h1.hero-title').style.fontSize = quiet ? 'clamp(44px,6vw,88px)' : '';
+      try{ window.parent.postMessage({type:'__edit_mode_set_keys',edits:{hero:b.dataset.hero}},'*'); }catch(e){}
+    }));
+
+    // apply persisted tweaks
+    if(TWEAKS.accent) setAccent(TWEAKS.accent);
+    if(TWEAKS.bg) setBg(TWEAKS.bg);
+  })();
+</script>
+</body>
+</html>
