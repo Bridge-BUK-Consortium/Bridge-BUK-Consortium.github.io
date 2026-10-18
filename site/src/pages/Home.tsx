@@ -3,7 +3,6 @@ import { PROGRAMME, PILLARS, STREAMS, PRINCIPLES } from '../data/programme'
 import { INSTITUTIONS } from '../data/people'
 import { POSITIONS } from '../data/positions'
 import Placeholder from '../components/Placeholder'
-import ClusterMark from '../components/ClusterMark'
 import {
   Eyebrow,
   Section,
@@ -58,9 +57,30 @@ export default function Home() {
               </div>
             </div>
 
-            {/* The mark, then the cover's data block: the facts a reader arriving cold needs first */}
-            <div className="flex min-w-0 flex-col justify-between gap-8">
-              <ClusterMark className="hidden h-40 w-40 self-end lg:block xl:h-52 xl:w-52" />
+            {/* The mark as a key: the stem is the cluster, the three arms are
+                its pillars, each in the tone its cards use further down. */}
+            <div className="flex min-w-0 flex-col gap-8">
+              <nav aria-label="The three pillars" className="grid grid-cols-[1.5rem_5.5rem_minmax(0,1fr)] gap-y-3 sm:grid-cols-[1.75rem_8rem_minmax(0,1fr)]">
+                <span aria-hidden="true" className="row-span-3" style={{ backgroundColor: 'var(--ui-ramp-1)' }} />
+                {PILLARS.map((p, i) => {
+                  const tone = `var(--ui-ramp-${i + 1})`
+                  const width = ['100%', '64%', '80%'][i]
+                  return (
+                    <Link key={p.id} to="/research" className="group contents">
+                      <span aria-hidden="true" className="block h-6 sm:h-7" style={{ backgroundColor: tone, width }} />
+                      <span className="flex min-w-0 flex-wrap items-baseline gap-x-2 pl-4 text-sm leading-6 sm:leading-7">
+                        <span className="ui-eyebrow shrink-0" style={{ color: tone }}>
+                          Pillar {p.id}
+                        </span>
+                        <span className="font-semibold underline-offset-4 group-hover:underline">
+                          {p.name}
+                        </span>
+                      </span>
+                    </Link>
+                  )
+                })}
+              </nav>
+
               <dl className="grid grid-cols-2 gap-x-5 gap-y-5 border-t border-border pt-5 text-sm">
               {[
                 ['Lead institution', PROGRAMME.lead],
