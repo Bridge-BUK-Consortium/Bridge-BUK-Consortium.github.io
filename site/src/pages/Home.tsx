@@ -3,6 +3,7 @@ import { PROGRAMME, PILLARS, STREAMS, PRINCIPLES } from '../data/programme'
 import { INSTITUTIONS } from '../data/people'
 import { POSITIONS } from '../data/positions'
 import Placeholder from '../components/Placeholder'
+import ClusterMark from '../components/ClusterMark'
 import {
   Eyebrow,
   Section,
@@ -57,8 +58,10 @@ export default function Home() {
               </div>
             </div>
 
-            {/* The cover's data block: the facts a reader arriving cold needs first */}
-            <dl className="grid grid-cols-2 gap-x-5 gap-y-5 self-end border-t border-border pt-5 text-sm">
+            {/* The mark, then the cover's data block: the facts a reader arriving cold needs first */}
+            <div className="flex min-w-0 flex-col justify-between gap-8">
+              <ClusterMark className="hidden h-40 w-40 self-end lg:block xl:h-52 xl:w-52" />
+              <dl className="grid grid-cols-2 gap-x-5 gap-y-5 border-t border-border pt-5 text-sm">
               {[
                 ['Lead institution', PROGRAMME.lead],
                 ['Consortium', 'Six universities: four in Nigeria, two in the UK'],
@@ -72,7 +75,8 @@ export default function Home() {
                   <dd className="mt-1 leading-6">{v}</dd>
                 </div>
               ))}
-            </dl>
+              </dl>
+            </div>
           </div>
         </div>
       </section>

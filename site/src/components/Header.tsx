@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import ClusterMark from './ClusterMark'
 
 const NAV = [
   { to: '/research', label: 'Research' },
@@ -19,11 +20,7 @@ export default function Header({ onSearch }: { onSearch: () => void }) {
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-5 sm:py-4">
         <Link to="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
-          <img
-            src={`${import.meta.env.BASE_URL}logos/buk.png`}
-            alt="Bayero University, Kano"
-            className="h-10 w-auto shrink-0 sm:h-12"
-          />
+          <ClusterMark className="h-9 w-9 shrink-0 sm:h-11 sm:w-11" />
           <span className="min-w-0">
             <span className="block truncate text-sm font-bold sm:text-base">Cluster E</span>
             <span className="ui-eyebrow ui-eyebrow-muted hidden truncate text-[10px] min-[380px]:block">

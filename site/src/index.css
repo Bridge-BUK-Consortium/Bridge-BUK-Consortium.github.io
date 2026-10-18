@@ -329,6 +329,9 @@
   }
 
   .ui-invert {
+    --ui-ramp-1: #ffffff;
+    --ui-ramp-2: #9fd6bd;
+    --ui-ramp-3: #5fa88c;
     --color-primary-foreground: #0b3b29;
     --color-brand: #9fd6bd;
     --color-brand-foreground: #0b3b29;
