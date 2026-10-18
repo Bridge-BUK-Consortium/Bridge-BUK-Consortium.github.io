@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import { PEOPLE, type Person } from '../data/people'
 import PersonModal from '../components/PersonModal'
 import { Section, PageHero, Card } from '../components/ui'
+import { FilterPanel, FilterGroup } from '../components/Filters'
 
 const GROUPS = ['All', 'Key Expert', 'Professorial Lead', 'Non-Key Expert', 'UK Professorial Lead'] as const
 
@@ -19,25 +20,26 @@ function PersonCard({ p, onOpen }: { p: Person; onOpen: () => void }) {
     <button
       type="button"
       onClick={onOpen}
-      className="ui-card ui-card-hover group flex min-w-0 flex-col p-4 text-left sm:p-5"
+      className="ui-card ui-card-hover group flex w-full min-w-0 flex-col overflow-hidden p-4 text-left sm:p-5"
       aria-label={`${p.name} — full profile`}
     >
-      <div className="flex min-w-0 items-center gap-3">
-        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-border bg-background/60 font-mono text-sm text-primary">
+      <div className="flex w-full min-w-0 items-start gap-3">
+        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-border bg-background/60 font-mono text-xs text-primary sm:h-12 sm:w-12 sm:text-sm">
           {initials(p.name)}
         </span>
-        <div className="min-w-0">
-          <h2 className="truncate text-base font-semibold">{p.name}</h2>
-          <p className="truncate text-xs text-muted-foreground">{p.institution}</p>
-        </div>
+        <span className="min-w-0 flex-1">
+          <span className="ui-card-title ui-clamp-2 block">{p.name}</span>
+          <span className="ui-meta mt-0.5 block truncate">{p.institution}</span>
+        </span>
       </div>
 
       <p className="ui-eyebrow mt-4 text-[10px]">{p.title}</p>
-      <p className="mt-2 flex-1 text-sm leading-6 text-muted-foreground">{p.summary}</p>
+      <p className="ui-body-sm mt-2 flex-1">{p.summary}</p>
 
-      <span className="mt-4 flex items-center justify-between border-t border-border pt-3">
-        <span className="font-mono text-[10px] text-muted-foreground">{p.code}</span>
-        <span className="flex items-center gap-1.5 text-xs font-semibold text-primary opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+      <span className="mt-4 flex w-full items-center justify-between border-t border-border pt-3">
+        <span className="ui-meta">{p.code}</span>
+        {/* Visible by default on touch, where there is no hover to reveal it. */}
+        <span className="flex items-center gap-1.5 text-xs font-semibold text-primary transition-opacity lg:opacity-0 lg:group-hover:opacity-100 lg:group-focus-visible:opacity-100">
           Full profile
           <svg
             viewBox="0 0 24 24"
@@ -91,26 +93,18 @@ export default function People() {
       />
 
       <Section bordered={false}>
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-wrap gap-2">
-            {GROUPS.map((g) => (
-              <button
-                key={g}
-                type="button"
-                aria-pressed={group === g}
-                onClick={() => setGroup(g)}
-                className={`min-h-10 rounded-full border px-3.5 text-[13px] transition-colors sm:min-h-11 sm:px-4 sm:text-sm ${
-                  group === g
-                    ? 'border-primary/50 bg-primary/10 text-foreground'
-                    : 'border-border text-muted-foreground hover:bg-secondary hover:text-foreground'
-                }`}
-              >
-                {g === 'All' ? 'All' : g + 's'}
-              </button>
-            ))}
-          </div>
-
-          <label className="relative sm:w-64">
+        <FilterPanel>
+          <FilterGroup
+            label="Group"
+            value={group}
+            onChange={(v) => setGroup(v as (typeof GROUPS)[number])}
+            options={GROUPS.map((g) => ({
+              value: g as string,
+              label: g === 'All' ? 'Everyone' : g + 's',
+              short: g === 'All' ? 'All' : g.replace('Professorial Lead', 'Prof. Lead') + 's',
+            }))}
+          />
+          <label className="relative block">
             <span className="sr-only">Search people by name</span>
             <svg
               viewBox="0 0 24 24"
@@ -128,12 +122,12 @@ export default function People() {
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder="Search by name"
-              className="ui-radius min-h-11 w-full border border-border bg-card pl-9 pr-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/50"
+              className="ui-radius min-h-11 w-full border border-border bg-background/40 pl-9 pr-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/50 sm:max-w-xs"
             />
           </label>
-        </div>
+        </FilterPanel>
 
-        <p className="mt-4 font-mono text-xs text-muted-foreground">
+        <p className="ui-meta mt-4">
           {shown.length} {shown.length === 1 ? 'member' : 'members'}
         </p>
 
@@ -143,14 +137,12 @@ export default function People() {
           ))}
         </div>
 
-        {shown.length === 0 && (
-          <p className="mt-6 text-sm text-muted-foreground">No one matches that search.</p>
-        )}
+        {shown.length === 0 && <p className="ui-body mt-6">No one matches that search.</p>}
       </Section>
 
       <Section>
         <p className="ui-eyebrow">The cohort</p>
-        <h2 className="ui-title mt-3">Thirty researchers, recruited at inception</h2>
+        <h2 className="ui-title mt-3">The cohort</h2>
         <div className="mt-7 grid gap-4 sm:gap-5 md:grid-cols-3">
           {[
             ['15 + 15', 'Postdocs and PhD candidates, each on a numbered topic and a named policy output.'],
@@ -158,8 +150,8 @@ export default function People() {
             ['Support', 'Annotators and enumerators from HausaNLP and the Arewa Data Science Academy, trained under the child protection and SEA/SH protocols.'],
           ].map(([h, b]) => (
             <Card key={h} hover>
-              <h3 className="text-lg font-bold text-primary">{h}</h3>
-              <p className="mt-2 text-sm leading-6 text-muted-foreground">{b}</p>
+              <h3 className="ui-figure">{h}</h3>
+              <p className="ui-body-sm mt-2">{b}</p>
             </Card>
           ))}
         </div>

@@ -8,12 +8,12 @@ export default function Footer() {
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
             <p className="text-lg font-bold">Cluster E</p>
-            <p className="mt-2 text-sm leading-6 text-muted-foreground">
+            <p className="ui-body-sm mt-2">
               {PROGRAMME.clusterTitle}. A joint venture of four Nigerian universities led by{' '}
               {PROGRAMME.lead}, with the University of Leicester and York St John University, for the{' '}
               {PROGRAMME.programme} under {PROGRAMME.project}.
             </p>
-            <p className="mt-4 font-mono text-xs text-muted-foreground">{PROGRAMME.email}</p>
+            <p className="ui-meta mt-4">{PROGRAMME.email}</p>
           </div>
 
           <nav className="grid grid-cols-2 gap-x-6 gap-y-3 text-sm sm:gap-x-10 sm:gap-y-2" aria-label="Footer">
@@ -26,14 +26,18 @@ export default function Footer() {
           </nav>
         </div>
 
-        <p className="mt-10 border-t border-border pt-6 text-center text-xs leading-6 text-muted-foreground">
-          © {new Date().getFullYear()} Cluster E · Bayero University, Kano · Aliko Dangote University of
-          Science and Technology, Wudil · Federal University of Technology, Babura · Northwest University,
-          Kano · University of Leicester · York St John University
-        </p>
-        <p className="mt-2 text-center font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-          Client: {PROGRAMME.client} · RFP {PROGRAMME.rfp}
-        </p>
+        <div className="mt-10 border-t border-border pt-6 text-center text-xs leading-6 text-muted-foreground">
+          <p>© {new Date().getFullYear()} Cluster E</p>
+          <p className="mt-1 hidden sm:block">
+            Bayero University, Kano · Aliko Dangote University of Science and Technology, Wudil ·
+            Federal University of Technology, Babura · Northwest University, Kano · University of
+            Leicester · York St John University
+          </p>
+          <p className="mt-2 text-[11px]">
+            <span className="hidden sm:inline">Client: </span>
+            {PROGRAMME.client}
+          </p>
+        </div>
       </div>
     </footer>
   )

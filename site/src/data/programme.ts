@@ -9,7 +9,7 @@ export const PROGRAMME = {
   projectNo: 'P508383',
   duration: '36 months · December 2026 to November 2029',
   cohort: '15 postdoctoral researchers · 15 PhD candidates',
-  fibre: 'at least 90,000 km',
+  fibre: '90,000 km',
   email: 'clustere@buk.edu.ng',
 } as const
 

@@ -8,7 +8,7 @@ export default function Research() {
     <>
       <PageHero
         eyebrow="Research"
-        title="Six research streams, each answering a decision someone has to make"
+        title="Six research streams"
         lead="Millions of Nigerians are coming online for the first time, and the evidence regulators would need to protect them does not yet exist. These six streams produce it."
       />
 
@@ -31,8 +31,8 @@ export default function Research() {
                         {topics.length} advertised topics
                       </span>
                     </div>
-                    <h3 className="mt-3 text-xl font-bold leading-snug">{s.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-muted-foreground">{s.summary}</p>
+                    <h3 className="ui-card-title mt-3 text-xl">{s.title}</h3>
+                    <p className="ui-body-sm mt-3">{s.summary}</p>
 
                     <h4 className="mt-6 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
                       Policy questions
@@ -90,14 +90,14 @@ export default function Research() {
       <Section>
         <SectionHead
           eyebrow="Cross-cutting"
-          title="Data and analytics, and programme management"
+          title="Cross-cutting functions"
           lead="Two functions serve every stream."
         />
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2">
           <Card hover>
             <Eyebrow tone="primary">K-4 Assoc. Prof. Khalid Haruna</Eyebrow>
-            <h3 className="mt-3 text-xl font-bold">Data and Analytics</h3>
-            <p className="mt-3 text-sm leading-6 text-muted-foreground">
+            <h3 className="ui-card-title mt-3 text-xl">Data and Analytics</h3>
+            <p className="ui-body-sm mt-3">
               A shared survey core module, the data management plan, dataset curation and analytics
               support for every stream. Checks every dataset before release and reports the achieved
               design effect in each survey report. Leads the annual Research School.
@@ -105,8 +105,8 @@ export default function Research() {
           </Card>
           <Card hover>
             <Eyebrow tone="primary">K-5 Maryam Ibrahim Mukhtar</Eyebrow>
-            <h3 className="mt-3 text-xl font-bold">Programme management</h3>
-            <p className="mt-3 text-sm leading-6 text-muted-foreground">
+            <h3 className="ui-card-title mt-3 text-xl">Programme management</h3>
+            <p className="ui-body-sm mt-3">
               Reporting, finance, cohort administration across six institutions, and cross-cluster
               liaison. Keeps the cohort register of recruitment, supervision meetings, publications and
               doctoral milestones, reported each quarter.
@@ -116,11 +116,11 @@ export default function Research() {
       </Section>
 
       <Section>
-        <SectionHead eyebrow="Design parameters" title="Common to all six streams" />
+        <SectionHead eyebrow="Design parameters" title="Design parameters" />
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-3">
           <Card>
-            <h3 className="text-base font-bold">Languages</h3>
-            <p className="mt-3 text-sm leading-6 text-muted-foreground">
+            <h3 className="ui-card-title">Languages</h3>
+            <p className="ui-body-sm mt-3">
               Five core languages — Hausa, Yoruba, Igbo, Nigerian Pidgin and English — for
               questionnaires, consent forms, the phishing corpus, the deepfake benchmark and the youth
               safety materials. The RS1 detection models cover nine Nigerian languages. The Month 30
@@ -128,16 +128,16 @@ export default function Research() {
             </p>
           </Card>
           <Card>
-            <h3 className="text-base font-bold">Statistics</h3>
-            <p className="mt-3 text-sm leading-6 text-muted-foreground">
+            <h3 className="ui-card-title">Statistics</h3>
+            <p className="ui-body-sm mt-3">
               Every precision statement uses a 95 percent confidence level, an expected proportion of
               0.5 and an explicit design effect. The youth survey reaches ±4.1 points, the consumer
               survey ±2.6, and the national trust survey ±2.2.
             </p>
           </Card>
           <Card>
-            <h3 className="text-base font-bold">Timing</h3>
-            <p className="mt-3 text-sm leading-6 text-muted-foreground">
+            <h3 className="ui-card-title">Timing</h3>
+            <p className="ui-body-sm mt-3">
               Month 1 is December 2026. RS1 starts election work in Month 1, before the presidential
               and National Assembly elections of 16 January 2027 and the governorship elections of 6
               February 2027. Collection starts only after ethics approval.
@@ -151,8 +151,8 @@ export default function Research() {
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
           {PRINCIPLES.map((p) => (
             <Card key={p.name} hover>
-              <h3 className="text-base font-bold">{p.name}</h3>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">{p.detail}</p>
+              <h3 className="ui-card-title">{p.name}</h3>
+              <p className="ui-body-sm mt-3">{p.detail}</p>
             </Card>
           ))}
         </div>

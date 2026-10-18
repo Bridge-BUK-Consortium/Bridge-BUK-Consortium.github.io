@@ -33,7 +33,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`mx-auto max-w-7xl scroll-mt-24 px-4 py-10 sm:px-5 sm:py-14 md:py-20 ${
+      className={`mx-auto max-w-7xl scroll-mt-24 px-4 py-12 sm:px-5 sm:py-14 md:py-20 ${
         bordered ? 'border-t border-border' : ''
       } ${className}`}
     >
@@ -57,8 +57,8 @@ export function SectionHead({
     <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
       <div>
         {eyebrow && <Eyebrow tone="primary">{eyebrow}</Eyebrow>}
-        <h2 className="ui-title mt-3 max-w-3xl font-bold">{title}</h2>
-        {lead && <p className="mt-4 max-w-3xl text-[15px] leading-7 text-muted-foreground">{lead}</p>}
+        <h2 className="ui-title mt-2.5 max-w-3xl font-bold text-balance">{title}</h2>
+        {lead && <p className="ui-body mt-4">{lead}</p>}
       </div>
       {action}
     </div>
@@ -169,17 +169,13 @@ export function PageHero({
     <section className="ui-invert relative overflow-hidden border-b border-border">
       <div className="absolute inset-0 grid-motif opacity-40" aria-hidden="true" />
       <div
-        className="absolute -top-40 left-1/3 h-80 w-80 rounded-full bg-primary/15 blur-3xl"
+        className="ui-bloom absolute -top-40 left-1/3 h-80 w-80 rounded-full bg-primary/15 blur-3xl"
         aria-hidden="true"
       />
-      <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-5 md:py-24">
+      <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-5 sm:py-14 md:py-24">
         <Eyebrow tone="primary">{eyebrow}</Eyebrow>
-        <h1 className="ui-display mt-4 max-w-4xl font-bold">{title}</h1>
-        {lead && (
-          <p className="ui-prose mt-4 max-w-3xl text-[15px] text-muted-foreground sm:mt-5 sm:text-base md:text-lg">
-            {lead}
-          </p>
-        )}
+        <h1 className="ui-display mt-3 max-w-4xl font-bold text-balance sm:mt-4">{title}</h1>
+        {lead && <p className="ui-lead mt-4 sm:mt-5">{lead}</p>}
         {children}
       </div>
     </section>

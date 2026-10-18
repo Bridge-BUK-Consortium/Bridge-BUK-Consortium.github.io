@@ -47,7 +47,7 @@ export default function PositionDetail() {
       <section className="relative overflow-hidden border-b border-border">
         <div className="absolute inset-0 grid-motif opacity-40" aria-hidden="true" />
         <div
-          className="absolute -top-40 left-1/3 h-80 w-80 rounded-full bg-primary/15 blur-3xl"
+          className="ui-bloom absolute -top-40 left-1/3 h-80 w-80 rounded-full bg-primary/15 blur-3xl"
           aria-hidden="true"
         />
         <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-5 md:py-16">
@@ -90,8 +90,8 @@ export default function PositionDetail() {
           <div className="min-w-0 space-y-8">
             <div>
               <Eyebrow tone="primary">The research</Eyebrow>
-              <h2 className="mt-3 text-xl font-bold">What this position works on</h2>
-              <p className="mt-4 text-[15px] leading-7 text-muted-foreground">{p.focus}</p>
+              <h2 className="ui-card-title mt-3 text-xl">What this position works on</h2>
+              <p className="ui-body mt-4">{p.focus}</p>
               {p.note && (
                 <p className="mt-4 border-l-2 border-primary/60 pl-4 text-[15px] leading-7 sm:pl-5">
                   {p.note}
@@ -101,7 +101,7 @@ export default function PositionDetail() {
                 <div key={s.id} className="mt-6 rounded-lg border border-border bg-card px-4 py-4">
                   <Eyebrow tone="primary">{s.id}</Eyebrow>
                   <h3 className="mt-2 text-base font-bold">{s.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{s.summary}</p>
+                  <p className="ui-body-sm mt-2">{s.summary}</p>
                   <h4 className="mt-4 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
                     Scheduled outputs this position feeds
                   </h4>
@@ -119,7 +119,7 @@ export default function PositionDetail() {
 
             <div>
               <Eyebrow tone="primary">Eligibility</Eyebrow>
-              <h2 className="mt-3 text-xl font-bold">Who we are looking for</h2>
+              <h2 className="ui-card-title mt-3 text-xl">Who we are looking for</h2>
               <ul className="mt-4 space-y-3">
                 {t.eligibility.map((e) => (
                   <li key={e} className="flex gap-3 text-[15px] leading-7">
@@ -132,7 +132,7 @@ export default function PositionDetail() {
 
             <div>
               <Eyebrow tone="primary">Process</Eyebrow>
-              <h2 className="mt-3 text-xl font-bold">How to apply and how we select</h2>
+              <h2 className="ui-card-title mt-3 text-xl">How to apply and how we select</h2>
               <ol className="mt-4 space-y-4">
                 {SELECTION.map((s, i) => (
                   <li key={s} className="flex gap-4">
@@ -197,7 +197,7 @@ export default function PositionDetail() {
 
       {siblings.length > 0 && (
         <Section>
-          <h2 className="text-xl font-bold">
+          <h2 className="ui-card-title text-xl">
             Other {p.type === 'PhD' ? 'studentships' : 'fellowships'} in Pillar {p.pillar}
           </h2>
           <ul className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-3">

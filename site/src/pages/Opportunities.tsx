@@ -7,87 +7,66 @@ import {
   RECRUITMENT_POOL,
   COHORT_ALLOCATION,
   TRAINING,
-  ukHost,
   type Position,
 } from '../data/positions'
 import { PILLARS, STREAMS } from '../data/programme'
-import { Eyebrow, Section, SectionHead, Card, PageHero, Tag, BrandLink, Arrow } from '../components/ui'
+import { Eyebrow, Section, SectionHead, Card, PageHero, Tag, BrandLink } from '../components/ui'
+import { FilterPanel, FilterGroup } from '../components/Filters'
+import DataTable from '../components/DataTable'
 
 type Filter = 'All' | 'Postdoc' | 'PhD'
 
-function Pill({
-  active,
-  onClick,
-  children,
-}: {
-  active: boolean
-  onClick: () => void
-  children: React.ReactNode
-}) {
-  return (
-    <button
-      type="button"
-      aria-pressed={active}
-      onClick={onClick}
-      className={`min-h-10 rounded-full border px-3.5 text-[13px] transition-colors sm:min-h-11 sm:px-4 sm:text-sm ${
-        active
-          ? 'border-primary/50 bg-primary/10 text-foreground'
-          : 'border-border text-muted-foreground hover:bg-secondary hover:text-foreground'
-      }`}
-    >
-      {children}
-    </button>
-  )
-}
-
 function PositionCard({ p }: { p: Position }) {
   return (
-    <article className="flex min-w-0 flex-col rounded-xl border border-border bg-card p-5 transition-all hover:border-primary/45 hover:glow-ring">
-      <div className="flex items-start justify-between gap-3">
-        <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-primary">
-          {p.code} · {p.type === 'PhD' ? 'PhD studentship' : 'Postdoctoral fellowship'}
-        </span>
-        <span className="shrink-0 font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
-          Pillar {p.pillar}
+    <Link
+      to={`/opportunities/${p.code}`}
+      className="ui-card ui-card-hover group flex min-w-0 flex-col p-4 sm:p-5"
+    >
+      <div className="flex items-center justify-between gap-2">
+        <span className="ui-eyebrow truncate text-[10px]">{p.code}</span>
+        <span className="ui-meta shrink-0">
+          {p.type === 'PhD' ? 'PhD' : 'Postdoc'} · {p.pillar}
         </span>
       </div>
 
-      <h3 className="mt-3 text-base font-bold leading-snug">{p.title}</h3>
-      <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground">{p.focus}</p>
+      <h3 className="ui-card-title mt-2.5 text-balance">{p.title}</h3>
+      <p className="ui-body-sm ui-clamp-3 mt-2 flex-1">{p.focus}</p>
 
-      <div className="mt-4 flex flex-wrap gap-1.5">
-        {p.streams.map((s) => (
-          <Tag key={s} tone="primary">
-            {s}
+      <div className="mt-3.5 flex flex-wrap items-center gap-1.5">
+        {p.streams.map((st) => (
+          <Tag key={st} tone="primary">
+            {st}
           </Tag>
         ))}
-        {p.agencies.slice(0, 3).map((a) => (
+        {p.agencies.slice(0, 2).map((a) => (
           <Tag key={a}>{a}</Tag>
         ))}
-        {p.agencies.length > 3 && <Tag>+{p.agencies.length - 3}</Tag>}
+        {p.agencies.length > 2 && <Tag>+{p.agencies.length - 2}</Tag>}
       </div>
 
-      <div className="mt-4 border-t border-border pt-4">
-        <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
-          UK research stay
-        </p>
-        <p className="mt-1 text-xs leading-5">{ukHost(p.streams)}</p>
-      </div>
-
-      <Link
-        to={`/opportunities/${p.code}`}
-        className="mt-4 inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-border bg-background/40 px-4 text-sm font-semibold transition-colors hover:bg-secondary"
-      >
-        Read the full advertisement
-        <Arrow />
-      </Link>
-    </article>
+      <span className="ui-meta mt-3.5 flex items-center gap-1.5 border-t border-border pt-3 text-primary">
+        Full advertisement
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
+          aria-hidden="true"
+        >
+          <path d="M5 12h14" />
+          <path d="m12 5 7 7-7 7" />
+        </svg>
+      </span>
+    </Link>
   )
 }
 
 export default function Opportunities() {
   const [params, setParams] = useSearchParams()
   const [type, setType] = useState<Filter>('All')
+  const [shown_, setShown_] = useState(12)
   const pillar = params.get('pillar') ?? 'All'
   const stream = params.get('stream') ?? 'All'
 
@@ -98,7 +77,7 @@ export default function Opportunities() {
     setParams(next, { replace: true })
   }
 
-  const shown = useMemo(
+  const matches = useMemo(
     () =>
       POSITIONS.filter(
         (p) =>
@@ -108,6 +87,7 @@ export default function Opportunities() {
       ),
     [type, pillar, stream],
   )
+  const shown = matches.slice(0, shown_)
 
   const nPhd = POSITIONS.filter((p) => p.type === 'PhD').length
   const nPostdoc = POSITIONS.filter((p) => p.type === 'Postdoc').length
@@ -116,14 +96,14 @@ export default function Opportunities() {
     <>
       <PageHero
         eyebrow="Opportunities"
-        title="Fifteen postdoctoral fellowships and fifteen PhD studentships"
+        title="Thirty funded positions"
         lead="Thirty funded researchers. PhDs registered at Bayero University, Kano, postdocs employed by the four Nigerian universities, and a funded three-month stay in the UK for every one of them."
       >
         <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:max-w-3xl">
           <div className="rounded-lg border border-primary/40 bg-primary/[0.06] px-4 py-3.5">
             <Eyebrow tone="primary">Postdoctoral fellowships</Eyebrow>
-            <p className="mt-1 text-2xl font-bold">
-              15 <span className="text-sm font-normal text-muted-foreground">places</span>
+            <p className="ui-figure mt-1">
+              15 <span className="ui-body-sm font-normal">places</span>
             </p>
             <p className="mt-1 text-xs leading-5 text-muted-foreground">
               {nPostdoc} topics advertised · at least 24 months from Month 6
@@ -131,8 +111,8 @@ export default function Opportunities() {
           </div>
           <div className="rounded-lg border border-primary/40 bg-primary/[0.06] px-4 py-3.5">
             <Eyebrow tone="primary">PhD studentships</Eyebrow>
-            <p className="mt-1 text-2xl font-bold">
-              15 <span className="text-sm font-normal text-muted-foreground">places</span>
+            <p className="ui-figure mt-1">
+              15 <span className="ui-body-sm font-normal">places</span>
             </p>
             <p className="mt-1 text-xs leading-5 text-muted-foreground">
               {nPhd} topics advertised · stipend from Month 9 to Month 36
@@ -158,7 +138,7 @@ export default function Opportunities() {
       <Section bordered={false}>
         <SectionHead
           eyebrow="What is offered"
-          title="Terms of the two schemes"
+          title="What is offered"
           lead="Only funded participants count towards the thirty."
         />
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-2">
@@ -167,10 +147,10 @@ export default function Opportunities() {
             return (
               <Card key={k} hover>
                 <Eyebrow tone="primary">{t.label}</Eyebrow>
-                <p className="mt-3 text-3xl font-bold">
+                <p className="ui-figure mt-3">
                   {t.places}{' '}
-                  <span className="text-sm font-normal text-muted-foreground">
-                    places · {t.topics} topics advertised
+                  <span className="ui-body-sm font-normal">
+                    places · {t.topics} topics
                   </span>
                 </p>
                 <dl className="mt-6 space-y-4">
@@ -216,51 +196,59 @@ export default function Opportunities() {
       <Section id="positions">
         <SectionHead
           eyebrow="Advertised topics"
-          title="Every position, by pillar and stream"
+          title="Every advertised topic"
           lead="Five PhDs and five postdocs per pillar. The pool is wider than the places on purpose."
         />
 
-        <div className="mt-7 space-y-3 sm:mt-8">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="mr-1 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-              Type
-            </span>
-            {(['All', 'Postdoc', 'PhD'] as const).map((t) => (
-              <Pill key={t} active={type === t} onClick={() => setType(t)}>
-                {t === 'All' ? 'All positions' : t === 'PhD' ? 'PhD studentships' : 'Postdoctoral'}
-              </Pill>
-            ))}
-          </div>
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="mr-1 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-              Pillar
-            </span>
-            <Pill active={pillar === 'All'} onClick={() => setParam('pillar', 'All')}>
-              All pillars
-            </Pill>
-            {PILLARS.map((p) => (
-              <Pill key={p.id} active={pillar === p.id} onClick={() => setParam('pillar', p.id)}>
-                {p.id}. {p.name}
-              </Pill>
-            ))}
-          </div>
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="mr-1 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-              Stream
-            </span>
-            <Pill active={stream === 'All'} onClick={() => setParam('stream', 'All')}>
-              All streams
-            </Pill>
-            {STREAMS.map((s) => (
-              <Pill key={s.id} active={stream === s.id} onClick={() => setParam('stream', s.id)}>
-                {s.id}
-              </Pill>
-            ))}
-          </div>
+        <div className="mt-7 sm:mt-8">
+          <FilterPanel>
+            <FilterGroup
+              label="Type"
+              value={type}
+              onChange={(v) => {
+                setType(v)
+                setShown_(12)
+              }}
+              options={[
+                { value: 'All', label: 'All positions', short: 'All' },
+                { value: 'Postdoc', label: 'Postdoctoral', short: 'Postdoc' },
+                { value: 'PhD', label: 'PhD studentships', short: 'PhD' },
+              ]}
+            />
+            <FilterGroup
+              label="Pillar"
+              value={pillar}
+              onChange={(v) => {
+                setParam('pillar', v)
+                setShown_(12)
+              }}
+              options={[
+                { value: 'All', label: 'All pillars', short: 'All' },
+                ...PILLARS.map((pl) => ({
+                  value: pl.id as string,
+                  label: `${pl.id}. ${pl.name}`,
+                  short: pl.id,
+                })),
+              ]}
+            />
+            <FilterGroup
+              label="Stream"
+              value={stream}
+              onChange={(v) => {
+                setParam('stream', v)
+                setShown_(12)
+              }}
+              options={[
+                { value: 'All', label: 'All streams', short: 'All' },
+                ...STREAMS.map((st) => ({ value: st.id as string, label: st.id })),
+              ]}
+            />
+          </FilterPanel>
         </div>
 
-        <p className="mt-5 font-mono text-xs text-muted-foreground">
-          {shown.length} {shown.length === 1 ? 'position' : 'positions'}
+        <p className="ui-meta mt-5">
+          {matches.length} {matches.length === 1 ? 'position' : 'positions'}
+          {matches.length > shown.length ? ` · showing ${shown.length}` : ''}
         </p>
 
         <div className="mt-6 grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -268,16 +256,26 @@ export default function Opportunities() {
             <PositionCard key={p.code} p={p} />
           ))}
         </div>
-        {shown.length === 0 && (
-          <p className="mt-6 text-sm text-muted-foreground">
-            No positions match that combination. Clear a filter to see more.
-          </p>
+        {matches.length > shown.length && (
+          <div className="mt-7 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setShown_((n) => n + 12)}
+              className="ui-radius inline-flex min-h-11 items-center justify-center border border-border bg-background/40 px-6 text-sm font-semibold transition-colors hover:bg-secondary"
+            >
+              Show {Math.min(12, matches.length - shown.length)} more
+            </button>
+          </div>
+        )}
+
+        {matches.length === 0 && (
+          <p className="ui-body mt-6">No positions match that combination. Clear a filter to see more.</p>
         )}
       </Section>
 
       {/* How to apply */}
       <Section id="how-to-apply">
-        <SectionHead eyebrow="Process" title="How to apply, and how we select" />
+        <SectionHead eyebrow="Process" title="How to apply" />
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
           <Card>
             <ol className="space-y-5">
@@ -303,7 +301,7 @@ export default function Opportunities() {
           <div className="space-y-4 sm:space-y-5">
             <Card>
               <Eyebrow tone="primary">Where we recruit</Eyebrow>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+              <p className="ui-body-sm mt-3">
                 Communities the consortium helped build.
               </p>
               <div className="mt-4 flex flex-wrap gap-1.5">
@@ -313,14 +311,14 @@ export default function Opportunities() {
                   </Tag>
                 ))}
               </div>
-              <p className="mt-4 text-sm leading-6 text-muted-foreground">
+              <p className="ui-body-sm mt-4">
                 Research associates and annotators are also engaged, and encouraged to apply for later
                 PhD places.
               </p>
             </Card>
             <Card>
               <Eyebrow tone="primary">If a place falls vacant</Eyebrow>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+              <p className="ui-body-sm mt-3">
                 A ranked reserve list per topic fills any place within two months. After Month 24, an
                 existing fellowship is extended instead.
               </p>
@@ -333,35 +331,21 @@ export default function Opportunities() {
       <Section>
         <SectionHead
           eyebrow="Where the thirty sit"
-          title="Allocation by institution"
+          title="Where the thirty sit"
           lead="Each post is fixed by four facts in the cohort register: topic, host, duration, outputs."
         />
-        <div className="mt-7 overflow-x-auto sm:mt-10">
-          <table className="w-full min-w-[42rem] border-collapse text-sm">
-            <thead>
-              <tr className="border-b border-border text-left">
-                {['Institution', 'Role', 'Postdocs', 'PhD candidates', 'Primary streams'].map((h) => (
-                  <th
-                    key={h}
-                    className="px-3 py-3 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground"
-                  >
-                    {h}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {COHORT_ALLOCATION.map((r) => (
-                <tr key={r.institution} className="border-b border-border">
-                  <td className="px-3 py-3.5 font-semibold leading-6">{r.institution}</td>
-                  <td className="px-3 py-3.5 leading-6 text-muted-foreground">{r.role}</td>
-                  <td className="px-3 py-3.5 font-mono text-primary">{r.postdocs}</td>
-                  <td className="px-3 py-3.5 font-mono text-primary">{r.phds}</td>
-                  <td className="px-3 py-3.5 font-mono text-xs text-muted-foreground">{r.streams}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="mt-7 sm:mt-10">
+          <DataTable
+            rows={COHORT_ALLOCATION}
+            rowKey={(r) => r.institution}
+            columns={[
+              { key: 'i', head: 'Institution', primary: true, cell: (r) => r.institution, className: 'font-semibold' },
+              { key: 'r', head: 'Role', cell: (r) => <span className="text-muted-foreground">{r.role}</span> },
+              { key: 'p', head: 'Postdocs', cell: (r) => <span className="font-bold text-primary">{r.postdocs}</span> },
+              { key: 'd', head: 'PhDs', cell: (r) => <span className="font-bold text-primary">{r.phds}</span> },
+              { key: 's', head: 'Streams', cell: (r) => <span className="ui-meta">{r.streams}</span> },
+            ]}
+          />
         </div>
       </Section>
 
@@ -369,14 +353,14 @@ export default function Opportunities() {
       <Section>
         <SectionHead
           eyebrow="What the three years look like"
-          title="Academic development for the cohort"
+          title="The three years"
         />
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
           {TRAINING.map((t) => (
             <Card key={t.name} hover>
               <Eyebrow tone="primary">{t.when}</Eyebrow>
-              <h3 className="mt-3 text-base font-bold">{t.name}</h3>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">{t.detail}</p>
+              <h3 className="ui-card-title mt-3">{t.name}</h3>
+              <p className="ui-body-sm mt-3">{t.detail}</p>
             </Card>
           ))}
         </div>

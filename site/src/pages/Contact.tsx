@@ -17,8 +17,8 @@ export default function Contact() {
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-8">
           <Card>
             <Eyebrow tone="primary">General enquiries</Eyebrow>
-            <h2 className="mt-3 text-xl font-bold">Write to the cluster</h2>
-            <p className="mt-4 text-sm leading-7 text-muted-foreground">
+            <h2 className="ui-card-title mt-3 text-xl">Write to the cluster</h2>
+            <p className="ui-body mt-4">
               For a funded position, quote the topic reference (A-P1, C-D4) in the subject line.
             </p>
             <a
@@ -64,7 +64,7 @@ export default function Contact() {
           <div className="space-y-4 sm:space-y-5">
             <Card>
               <Eyebrow tone="primary">Who to ask</Eyebrow>
-              <h2 className="mt-3 text-xl font-bold">Routes into the cluster</h2>
+              <h2 className="ui-card-title mt-3 text-xl">Routes into the cluster</h2>
               <ul className="mt-5 space-y-4">
                 {leads.map((p) => (
                   <li key={p.code} className="border-l-2 border-primary/50 pl-4">
@@ -79,7 +79,7 @@ export default function Contact() {
             </Card>
             <Card>
               <Eyebrow tone="primary">Applicants</Eyebrow>
-              <p className="mt-3 text-sm leading-7 text-muted-foreground">
+              <p className="ui-body mt-3">
                 The call opens within a month of contract signature. Register interest and we will tell
                 you when.
               </p>
@@ -91,7 +91,7 @@ export default function Contact() {
       <Section>
         <SectionHead
           eyebrow="Agencies"
-          title="Policy engagement"
+          title="Agencies we serve"
           lead="Briefs reach named agencies before named decisions. Quarterly policy labs, annual training and a national conference in Abuja are open to agency staff."
         />
         <div className="mt-7 flex flex-wrap gap-2">

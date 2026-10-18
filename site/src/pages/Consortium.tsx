@@ -11,7 +11,7 @@ export default function Consortium() {
     <>
       <PageHero
         eyebrow="Consortium"
-        title="Four Nigerian universities, two United Kingdom sub-consultants"
+        title="Six universities, two countries"
         lead={`A joint venture led by ${PROGRAMME.lead}. Its members publish on hate speech in Nigerian languages, cybersecurity, digital identity, data protection and fraud — and run platforms already deployed in Nigerian markets.`}
       />
 
@@ -33,7 +33,7 @@ export default function Consortium() {
       <Section bordered={false}>
         <SectionHead
           eyebrow="Joint venture"
-          title="The four Nigerian members"
+          title="The joint venture"
           lead="BUK holds the contract and hosts the PhD registrations, the Research School and the annotation teams."
         />
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-2">
@@ -42,7 +42,7 @@ export default function Consortium() {
               <div className="flex items-start justify-between gap-4">
                 <div className="min-w-0">
                   <Eyebrow tone="primary">{i.role}</Eyebrow>
-                  <h3 className="mt-2 text-lg font-bold leading-snug">{i.name}</h3>
+                  <h3 className="ui-card-title mt-2 text-lg">{i.name}</h3>
                 </div>
                 <Logo short={i.short} name={i.name} className="shrink-0" />
               </div>
@@ -76,7 +76,7 @@ export default function Consortium() {
       <Section>
         <SectionHead
           eyebrow="Sub-consultants"
-          title="The United Kingdom hosts"
+          title="The UK hosts"
           lead="Every researcher spends three months at a UK host, early enough to shape their direction."
         />
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-2">
@@ -85,7 +85,7 @@ export default function Consortium() {
               <div className="flex items-start justify-between gap-4">
                 <div className="min-w-0">
                   <Eyebrow tone="primary">{i.role}</Eyebrow>
-                  <h3 className="mt-2 text-lg font-bold leading-snug">{i.name}</h3>
+                  <h3 className="ui-card-title mt-2 text-lg">{i.name}</h3>
                 </div>
                 <Logo short={i.short} name={i.name} className="shrink-0" />
               </div>
@@ -118,14 +118,14 @@ export default function Consortium() {
       <Section>
         <SectionHead
           eyebrow="Research environments"
-          title="Platforms already deployed in Nigerian markets"
+          title="Live platforms"
           lead="Each is a case study and a live testbed for the cluster’s prototypes."
         />
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 lg:grid-cols-4">
           {PLATFORMS.map((p) => (
             <Card key={p.name} hover>
-              <h3 className="text-base font-bold">{p.name}</h3>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">{p.detail}</p>
+              <h3 className="ui-card-title">{p.name}</h3>
+              <p className="ui-body-sm mt-3">{p.detail}</p>
             </Card>
           ))}
         </div>
@@ -165,8 +165,8 @@ export default function Consortium() {
             },
           ].map((x) => (
             <Card key={x.h} hover>
-              <h3 className="text-base font-bold">{x.h}</h3>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">{x.b}</p>
+              <h3 className="ui-card-title">{x.h}</h3>
+              <p className="ui-body-sm mt-3">{x.b}</p>
             </Card>
           ))}
         </div>

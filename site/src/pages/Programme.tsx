@@ -1,12 +1,13 @@
 import { PHASES, DELIVERABLES, STREAMS, PROGRAMME } from '../data/programme'
 import { Eyebrow, Section, SectionHead, Card, PageHero, Tag } from '../components/ui'
+import DataTable from '../components/DataTable'
 
 export default function Programme() {
   return (
     <>
       <PageHero
         eyebrow="Programme"
-        title="Thirty-six months, four phases, eight deliverables"
+        title="Thirty-six months"
         lead={`${PROGRAMME.duration}. Month 1 is December 2026; Month 12 is November 2027; Month 24 is November 2028; Month 36 is November 2029.`}
       />
 
@@ -45,38 +46,33 @@ export default function Programme() {
           title="Deliverables"
           lead="Each passes the internal Quality Panel before it reaches the Client."
         />
-        <div className="mt-7 overflow-x-auto sm:mt-10">
-          <table className="w-full min-w-[46rem] border-collapse text-sm">
-            <thead>
-              <tr className="border-b border-border text-left">
-                {['', 'Deliverable', 'Content', 'Timing'].map((h, i) => (
-                  <th
-                    key={i}
-                    className="px-3 py-3 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground"
-                  >
-                    {h}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {DELIVERABLES.map((d) => (
-                <tr key={d.id} className="border-b border-border">
-                  <td className="px-3 py-4 align-top font-mono text-xs text-primary">{d.id}</td>
-                  <td className="px-3 py-4 align-top font-semibold leading-6">{d.name}</td>
-                  <td className="px-3 py-4 align-top leading-6 text-muted-foreground">{d.content}</td>
-                  <td className="px-3 py-4 align-top font-mono text-xs leading-6">{d.timing}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="mt-7 sm:mt-10">
+          <DataTable
+            rows={DELIVERABLES}
+            rowKey={(d) => d.id}
+            columns={[
+              {
+                key: 'n',
+                head: 'Deliverable',
+                primary: true,
+                cell: (d) => (
+                  <>
+                    <span className="ui-meta mr-2 text-primary">{d.id}</span>
+                    {d.name}
+                  </>
+                ),
+              },
+              { key: 'c', head: 'Content', cell: (d) => <span className="text-muted-foreground">{d.content}</span> },
+              { key: 't', head: 'Timing', cell: (d) => <span className="ui-meta">{d.timing}</span> },
+            ]}
+          />
         </div>
       </Section>
 
       <Section>
         <SectionHead
           eyebrow="Milestones"
-          title="Scheduled outputs by stream"
+          title="Milestones by stream"
           lead="Every output has a month and an agency waiting for it."
         />
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -85,7 +81,7 @@ export default function Programme() {
               <Eyebrow tone="primary">
                 {s.id} · Pillar {s.pillar}
               </Eyebrow>
-              <h3 className="mt-3 text-base font-bold leading-snug">{s.title}</h3>
+              <h3 className="ui-card-title mt-3">{s.title}</h3>
               <ul className="mt-4 flex-1 space-y-2.5">
                 {s.outputs.map((o) => (
                   <li key={o.name} className="flex items-baseline gap-3 text-sm">
@@ -105,7 +101,7 @@ export default function Programme() {
       </Section>
 
       <Section>
-        <SectionHead eyebrow="Safeguards" title="Ethics, inclusion and data protection" />
+        <SectionHead eyebrow="Safeguards" title="Safeguards" />
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
           {[
             {
@@ -134,8 +130,8 @@ export default function Programme() {
             },
           ].map((x) => (
             <Card key={x.h} hover>
-              <h3 className="text-base font-bold">{x.h}</h3>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">{x.b}</p>
+              <h3 className="ui-card-title">{x.h}</h3>
+              <p className="ui-body-sm mt-3">{x.b}</p>
             </Card>
           ))}
         </div>

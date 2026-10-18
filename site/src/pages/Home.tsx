@@ -24,29 +24,32 @@ export default function Home() {
       <section className="relative overflow-hidden border-b border-border">
         <div className="absolute inset-0 grid-motif opacity-50" aria-hidden="true" />
         <div
-          className="absolute -top-52 left-1/2 h-[28rem] w-[36rem] -translate-x-1/2 rounded-full bg-primary/15 blur-3xl"
+          className="ui-bloom absolute -top-52 left-1/2 h-[28rem] w-[36rem] -translate-x-1/2 rounded-full bg-primary/15 blur-3xl"
           aria-hidden="true"
         />
         <div
-          className="absolute -bottom-40 right-0 h-72 w-72 rounded-full bg-accent/20 blur-3xl"
+          className="ui-bloom absolute -bottom-40 right-0 h-72 w-72 rounded-full bg-accent/20 blur-3xl"
           aria-hidden="true"
         />
         <div className="relative mx-auto max-w-7xl px-4 py-11 sm:px-5 sm:py-14 md:py-20">
-          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground sm:text-xs sm:tracking-[0.28em]">
-            Bayero University, Kano · ADUSTECH · FUT Babura · Northwest · Leicester · York St John
+          <p className="ui-eyebrow ui-eyebrow-muted">
+            <span className="sm:hidden">Six universities · Nigeria and the UK</span>
+            <span className="hidden sm:inline">
+              Bayero University, Kano · ADUSTECH · FUT Babura · Northwest · Leicester · York St John
+            </span>
           </p>
           <h1 className="mt-4 text-3xl font-bold leading-[1.12] sm:mt-5 sm:text-4xl sm:leading-[1.05] md:text-6xl lg:text-7xl">
             <span className="text-gradient">
               Trust, Safety, Consumer Protection and Online Harms
             </span>
           </h1>
-          <p className="mt-5 text-base leading-7 text-foreground/90 sm:mt-6 sm:text-lg md:text-2xl">
+          <p className="ui-lead mt-5 sm:mt-6">
             Cluster E of the National Digital Economy University Led Research Programme.
           </p>
-          <p className="mt-4 max-w-4xl text-[15px] leading-7 text-muted-foreground sm:mt-5 sm:text-base">
-            {PROGRAMME.fibre} of new fibre brings millions of Nigerians online for the first time. We
-            build the evidence regulators need to protect them — and thirty researchers to keep
-            producing it.
+          <p className="ui-body mt-4 sm:mt-5">
+            At least {PROGRAMME.fibre} of new fibre brings millions of Nigerians online for the first
+            time. We build the evidence regulators need to protect them — and thirty researchers to
+            keep producing it.
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row">
@@ -57,7 +60,7 @@ export default function Home() {
           </div>
 
           {/* Key figures */}
-          <dl className="mt-10 grid grid-cols-2 gap-3 border-t border-border pt-6 sm:mt-12 sm:gap-4 lg:grid-cols-4">
+          <dl className="mt-10 grid grid-cols-2 gap-x-5 gap-y-7 border-t border-border pt-7 sm:mt-12 sm:gap-6 lg:grid-cols-4">
             {[
               { k: '6', v: 'research streams in three pillars' },
               { k: '30', v: 'funded postdocs and PhD candidates' },
@@ -67,8 +70,8 @@ export default function Home() {
               <div key={s.v}>
                 <dt className="sr-only">{s.v}</dt>
                 <dd>
-                  <span className="block text-3xl font-bold text-primary sm:text-4xl">{s.k}</span>
-                  <span className="mt-1 block text-xs leading-5 text-muted-foreground">{s.v}</span>
+                  <span className="ui-figure block">{s.k}</span>
+                  <span className="ui-body-sm mt-1.5 block">{s.v}</span>
                 </dd>
               </div>
             ))}
@@ -118,7 +121,7 @@ export default function Home() {
             return (
               <Card key={p.id} hover>
                 <Eyebrow tone="primary">Pillar {p.id}</Eyebrow>
-                <h3 className="mt-3 text-xl font-bold">{p.name}</h3>
+                <h3 className="ui-card-title mt-3 text-xl">{p.name}</h3>
                 <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
                   {p.leadCode} {p.lead}
                 </p>
@@ -174,14 +177,14 @@ export default function Home() {
             <div className="space-y-3">
               <Row>
                 <Eyebrow tone="primary">Postdoctoral fellowships</Eyebrow>
-                <p className="mt-1 text-2xl font-bold">15</p>
+                <p className="ui-figure mt-1">15</p>
                 <p className="mt-1 text-xs leading-5 text-muted-foreground">
                   24 months minimum, from Month 6.
                 </p>
               </Row>
               <Row>
                 <Eyebrow tone="primary">PhD studentships</Eyebrow>
-                <p className="mt-1 text-2xl font-bold">15</p>
+                <p className="ui-figure mt-1">15</p>
                 <p className="mt-1 text-xs leading-5 text-muted-foreground">
                   Stipend and costs, Month 9 to Month 36.
                 </p>
@@ -204,8 +207,8 @@ export default function Home() {
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
           {PRINCIPLES.map((p) => (
             <Card key={p.name} hover>
-              <h3 className="text-base font-bold">{p.name}</h3>
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">{p.detail}</p>
+              <h3 className="ui-card-title">{p.name}</h3>
+              <p className="ui-body-sm mt-3">{p.detail}</p>
             </Card>
           ))}
         </div>
@@ -217,7 +220,7 @@ export default function Home() {
           <div className="absolute inset-0 grid-motif opacity-30" aria-hidden="true" />
           <div className="relative max-w-2xl">
             <h2 className="text-2xl font-bold md:text-3xl">Work with Cluster E</h2>
-            <p className="mt-3 leading-7 text-muted-foreground">
+            <p className="ui-body mt-3">
               Enquiries from agencies, platforms, civil society and researchers are welcome.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">

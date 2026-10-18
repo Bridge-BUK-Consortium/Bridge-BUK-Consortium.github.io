@@ -276,17 +276,120 @@
   /* Fluid display sizes, the way bold-lab.ai scales. In the lab template
      the clamps resolve smaller and the leading is looser. */
   .ui-display {
-    font-size: clamp(2rem, 5.4vw, 4.25rem);
+    font-size: clamp(1.75rem, 1.1rem + 3.2vw, 4.25rem);
     line-height: var(--ui-heading-leading);
   }
 
   .ui-title {
-    font-size: clamp(1.6rem, 4vw, 3rem);
+    font-size: clamp(1.35rem, 0.95rem + 2vw, 3rem);
     line-height: var(--ui-heading-leading);
   }
 
+  /* Monospace sets far wider than Inter, so the lab template needs a
+     smaller floor or long headings run to five lines on a phone. */
   :root[data-theme='lab'] .ui-display {
-    font-size: clamp(1.9rem, 4.6vw, 3.75rem);
+    font-size: clamp(1.75rem, 1.15rem + 3vw, 3.75rem);
+  }
+
+  :root[data-theme='lab'] .ui-title {
+    font-size: clamp(1.2rem, 0.9rem + 1.6vw, 2.5rem);
+  }
+
+  /* ---- Type roles ------------------------------------------------
+     Courier New has two weights, so the lab template cannot lean on
+     weight for hierarchy the way Inter can. These roles separate by
+     size, colour, case and measure instead, and each template tunes
+     the same roles to its own range. */
+
+  .ui-lead {
+    font-size: clamp(1.125rem, 1rem + 0.6vw, 1.5rem);
+    line-height: 1.45;
+    color: var(--color-foreground);
+    max-width: 44ch;
+  }
+
+  :root[data-theme='paper'] .ui-lead {
+    font-size: clamp(1.05rem, 0.95rem + 0.7vw, 1.5rem);
+    font-weight: 500;
+    max-width: 54ch;
+  }
+
+  /* Body copy sits a clear step below the lead: smaller, muted, and on a
+     narrower measure so the eye can tell them apart at a glance. */
+  .ui-body {
+    font-size: 0.875rem;
+    line-height: var(--ui-body-leading);
+    color: var(--color-muted-foreground);
+    max-width: 66ch;
+  }
+
+  @media (width >= 640px) {
+    .ui-body {
+      font-size: 0.9375rem;
+    }
+  }
+
+  .ui-body-sm {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: var(--color-muted-foreground);
+  }
+
+  @media (width >= 640px) {
+    .ui-body-sm {
+      font-size: 0.875rem;
+    }
+  }
+
+  /* Card and list headings: solid foreground, tight, never muted. */
+  .ui-card-title {
+    font-size: 1.0625rem;
+    font-weight: var(--ui-heading-weight);
+    line-height: 1.3;
+    color: var(--color-foreground);
+  }
+
+  :root[data-theme='paper'] .ui-card-title {
+    font-size: clamp(1.1rem, 1rem + 0.5vw, 1.45rem);
+    letter-spacing: -0.01em;
+  }
+
+  /* A figure: the one place a number should dominate its label. */
+  .ui-figure {
+    font-size: clamp(1.75rem, 1.3rem + 2vw, 3rem);
+    font-weight: var(--ui-heading-weight);
+    line-height: 1;
+    color: var(--color-primary);
+  }
+
+  /* Small print: codes, references, timings. */
+  .ui-meta {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    color: var(--color-muted-foreground);
+  }
+
+  :root[data-theme='paper'] .ui-meta {
+    letter-spacing: 0.02em;
+    font-weight: 600;
+  }
+
+  /* Names wrap to a second line rather than truncate: a clipped name
+     is worse than a taller card. */
+  .ui-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Clamp overflowing prose to a few lines on small screens. */
+  .ui-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   /* An inverted band: ink-on-paper flips to paper-on-ink. */
@@ -313,5 +416,11 @@
 
   :root[data-theme='paper'] .ui-invert .text-gradient {
     color: #ffffff;
+  }
+
+  /* The blurred colour blooms read as glow on a dark ground and as a
+     smudge on a light one, so the paper template drops them. */
+  :root[data-theme='paper'] .ui-bloom {
+    display: none;
   }
 }
