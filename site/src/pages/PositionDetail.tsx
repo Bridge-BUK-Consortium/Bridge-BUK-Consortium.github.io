@@ -32,9 +32,9 @@ export default function PositionDetail() {
     ['Position', p.type === 'PhD' ? 'PhD studentship' : 'Postdoctoral fellowship'],
     ['Reference', p.code],
     ['Pillar', `${pillar.id}. ${pillar.name}`],
-    ['Research stream', streams.map((s) => `${s.id} ${s.title}`).join(' · ')],
+    ['Research stream', streams.map((s) => `${s.id} ${s.title}`).join('; ')],
     ['Host institution', t.registration],
-    ['UK research stay', `${ukHost(p.streams)} — ${t.ukStay}`],
+    ['UK research stay', `${ukHost(p.streams)}. ${t.ukStay}`],
     ['Duration', t.duration],
     ['Supervision', t.supervision],
     ['Funding and support', t.funding],
@@ -57,11 +57,11 @@ export default function PositionDetail() {
           >
             ← All positions
           </Link>
-          <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.18em] text-primary sm:tracking-[0.24em]">
-            {p.code} · {p.type === 'PhD' ? 'PhD studentship' : 'Postdoctoral fellowship'} · Pillar{' '}
+          <p className="ui-eyebrow mt-6">
+            {p.code}, {p.type === 'PhD' ? 'PhD studentship' : 'Postdoctoral fellowship'} in Pillar{' '}
             {pillar.id}
           </p>
-          <h1 className="mt-4 max-w-4xl text-2xl font-bold leading-tight md:text-4xl">{p.title}</h1>
+          <h1 className="ui-display mt-3 max-w-4xl font-bold text-balance sm:mt-4">{p.title}</h1>
           <p className="mt-5 max-w-3xl text-[15px] leading-7 text-muted-foreground sm:text-base">
             {p.focus}
           </p>

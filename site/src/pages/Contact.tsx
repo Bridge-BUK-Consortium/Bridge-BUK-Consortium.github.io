@@ -10,7 +10,7 @@ export default function Contact() {
       <PageHero
         eyebrow="Contact"
         title="Talk to Cluster E"
-        lead="Enquiries from agencies, platforms, civil society and researchers, and questions about the funded positions."
+        lead="We welcome enquiries from government agencies, platforms, civil society organisations and researchers, and questions about the funded positions."
       />
 
       <Section bordered={false}>
@@ -19,7 +19,8 @@ export default function Contact() {
             <Eyebrow tone="primary">General enquiries</Eyebrow>
             <h2 className="ui-card-title mt-3 text-xl">Write to the cluster</h2>
             <p className="ui-body mt-4">
-              For a funded position, quote the topic reference (A-P1, C-D4) in the subject line.
+              If you are writing about a funded position, put the topic reference, such as A-P1 or
+              C-D4, in the subject line.
             </p>
             <a
               href={`mailto:${PROGRAMME.email}`}
@@ -55,7 +56,7 @@ export default function Contact() {
                   Assignment
                 </dt>
                 <dd className="mt-1 font-mono text-xs leading-6">
-                  RFP {PROGRAMME.rfp} · Project {PROGRAMME.projectNo}
+                  RFP {PROGRAMME.rfp}, Project {PROGRAMME.projectNo}
                 </dd>
               </div>
             </dl>
@@ -69,7 +70,7 @@ export default function Contact() {
                 {leads.map((p) => (
                   <li key={p.code} className="border-l-2 border-primary/50 pl-4">
                     <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-primary">
-                      {p.code} · {p.title}
+                      {p.title}
                     </p>
                     <p className="mt-1 text-sm font-semibold">{p.name}</p>
                     <p className="text-xs text-muted-foreground">{p.institution}</p>
@@ -80,8 +81,8 @@ export default function Contact() {
             <Card>
               <Eyebrow tone="primary">Applicants</Eyebrow>
               <p className="ui-body mt-3">
-                The call opens within a month of contract signature. Register interest and we will tell
-                you when.
+                We will publish the open call within one month of signing the contract. Tell us you are
+                interested and we will let you know when it opens.
               </p>
             </Card>
           </div>
@@ -92,7 +93,7 @@ export default function Contact() {
         <SectionHead
           eyebrow="Agencies"
           title="Agencies we serve"
-          lead="Briefs reach named agencies before named decisions. Quarterly policy labs, annual training and a national conference in Abuja are open to agency staff."
+          lead="We write each brief for a named agency and deliver it before the decision it is meant to serve. Officials are welcome at the quarterly policy labs, the annual training workshop and the national conference in Abuja."
         />
         <div className="mt-7 flex flex-wrap gap-2">
           {[

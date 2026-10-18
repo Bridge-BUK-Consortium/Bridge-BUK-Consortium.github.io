@@ -9,7 +9,7 @@ export default function Research() {
       <PageHero
         eyebrow="Research"
         title="Six research streams"
-        lead="Millions of Nigerians are coming online for the first time, and the evidence regulators would need to protect them does not yet exist. These six streams produce it."
+        lead="Millions of Nigerians are coming online for the first time. For Nigerian conditions, most of the research that regulators would need in order to protect them has not been done. These six streams will do it, and deliver the findings to named agencies before the decisions those findings are meant to inform."
       />
 
       {PILLARS.map((p) => {
@@ -17,7 +17,7 @@ export default function Research() {
         return (
           <Section key={p.id} id={`pillar-${p.id}`}>
             <SectionHead
-              eyebrow={`Pillar ${p.id} · led by ${p.leadCode} ${p.lead}`}
+              eyebrow={`Pillar ${p.id}, led by ${p.lead}`}
               title={p.name}
             />
             <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-2">
@@ -91,7 +91,7 @@ export default function Research() {
         <SectionHead
           eyebrow="Cross-cutting"
           title="Cross-cutting functions"
-          lead="Two functions serve every stream."
+          lead="Two functions work across all six streams."
         />
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2">
           <Card hover>
@@ -121,7 +121,7 @@ export default function Research() {
           <Card>
             <h3 className="ui-card-title">Languages</h3>
             <p className="ui-body-sm mt-3">
-              Five core languages — Hausa, Yoruba, Igbo, Nigerian Pidgin and English — for
+              Five core languages, which are Hausa, Yoruba, Igbo, Nigerian Pidgin and English, for
               questionnaires, consent forms, the phishing corpus, the deepfake benchmark and the youth
               safety materials. The RS1 detection models cover nine Nigerian languages. The Month 30
               safety toolkit is released in Hausa and Nigerian Pidgin, with an English version.

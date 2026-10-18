@@ -21,7 +21,7 @@ function PersonCard({ p, onOpen }: { p: Person; onOpen: () => void }) {
       type="button"
       onClick={onOpen}
       className="ui-card ui-card-hover group flex w-full min-w-0 flex-col overflow-hidden p-4 text-left sm:p-5"
-      aria-label={`${p.name} — full profile`}
+      aria-label={`${p.name}, full profile`}
     >
       <div className="flex w-full min-w-0 items-start gap-3">
         <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-border bg-background/60 font-mono text-xs text-primary sm:h-12 sm:w-12 sm:text-sm">
@@ -89,7 +89,7 @@ export default function People() {
       <PageHero
         eyebrow="People"
         title="The team"
-        lead="Five Key Experts, a Professorial Lead and fifteen Non-Key Experts across six universities — plus the thirty researchers the cluster recruits."
+        lead="Five Key Experts, a Professorial Lead and fifteen Non-Key Experts, drawn from six universities in Nigeria and the United Kingdom. The cluster will also recruit thirty researchers."
       />
 
       <Section bordered={false}>
@@ -145,9 +145,9 @@ export default function People() {
         <h2 className="ui-title mt-3">The cohort</h2>
         <div className="mt-7 grid gap-4 sm:gap-5 md:grid-cols-3">
           {[
-            ['15 + 15', 'Postdocs and PhD candidates, each on a numbered topic and a named policy output.'],
-            ['9 professors', 'Primary supervisors for nine PhDs, co-supervisors for thirteen, mentors for twelve postdocs.'],
-            ['Support', 'Annotators and enumerators from HausaNLP and the Arewa Data Science Academy, trained under the child protection and SEA/SH protocols.'],
+            ['15 + 15', 'Fifteen postdoctoral researchers and fifteen PhD candidates. Each one works on a numbered topic and contributes to a policy output.'],
+            ['9 professors', 'Nine professors act as primary supervisor for nine of the PhD candidates, co-supervise thirteen, and mentor twelve of the postdoctoral researchers.'],
+            ['Support staff', 'Annotators and field enumerators recruited through HausaNLP and the Arewa Data Science Academy, trained under the child protection and SEA/SH protocols.'],
           ].map(([h, b]) => (
             <Card key={h} hover>
               <h3 className="ui-figure">{h}</h3>

@@ -17,7 +17,7 @@ export const PEOPLE: Person[] = [
     name: 'Dr. Shamsuddeen Hassan Muhammad',
     institution: 'Bayero University, Kano',
     group: 'Key Expert',
-    title: 'Team Lead · Pillar A lead',
+    title: 'Team Lead, and leads Pillar A',
     summary:
       'Leads the cluster and Pillar A, and is accountable for every deliverable.',
     role: 'Accountable for all deliverables; leads Pillar A (Online Harms and Online Safety): RS1 and RS5; chairs the pillar leads’ meeting; principal interface with the Client.',
@@ -29,7 +29,7 @@ export const PEOPLE: Person[] = [
     name: 'Assoc. Prof. Aminu Bello Usman',
     institution: 'York St John University',
     group: 'Key Expert',
-    title: 'Senior Research Specialist 1 · Pillar B lead',
+    title: 'Senior Research Specialist, and leads Pillar B',
     summary:
       'Leads Pillar B and owns information security, ethics and the MDA training programme.',
     role: 'Leads Pillar B (Trust): RS3 and RS6; information security and ethics owner; leads the MDA training programme; contributes Cyber360 and deepfake awareness materials to the RS5 digital literacy evaluation.',
@@ -39,9 +39,9 @@ export const PEOPLE: Person[] = [
   {
     code: 'K-3',
     name: 'Dr. Muhammad Shehu Abubakar-Sadiq',
-    institution: 'University of Leicester · also Bayero University, Kano',
+    institution: 'University of Leicester, and Bayero University, Kano',
     group: 'Key Expert',
-    title: 'Senior Research Specialist 2 · Pillar C lead',
+    title: 'Senior Research Specialist, and leads Pillar C',
     summary:
       'Leads Pillar C and co-leads the self-sovereign identity work in RS3.',
     role: 'Leads Pillar C (Consumer and Data Protection): RS2 and RS4; co-leads RS3 with K-2 on the self-sovereign identity module; Leicester visit coordinator with Prof. Anjum.',
@@ -53,7 +53,7 @@ export const PEOPLE: Person[] = [
     name: 'Assoc. Prof. Khalid Haruna',
     institution: 'Federal University of Technology, Babura',
     group: 'Key Expert',
-    title: 'Data and Analytics Specialist · deputy Team Lead',
+    title: 'Data and Analytics Specialist, and deputy Team Lead',
     summary:
       'Leads data and analytics for all six streams, and the annual Research School.',
     role: 'Data management plan; survey design; dataset curation; results measurement; leads the annual Research School; supervises the Babura cohort.',
@@ -77,7 +77,7 @@ export const PEOPLE: Person[] = [
     name: 'Prof. Muhammad Yahuza Bello',
     institution: 'Bayero University, Kano',
     group: 'Professorial Lead',
-    title: 'Professorial Lead · chair of the Quality Panel',
+    title: 'Professorial Lead, and chairs the Quality Panel',
     summary:
       'Former Vice Chancellor of BUK. Chairs the Quality Panel and the annual cohort review.',
     role: 'Academic leadership and quality assurance; chairs the Quality Panel that reviews every deliverable; chairs the annual review of cohort progress for all thirty researchers; leads the Mid-Term Review and Final Report with the Team Lead.',
@@ -89,7 +89,7 @@ export const PEOPLE: Person[] = [
     name: 'Prof. Bashir Shehu Galadanci',
     institution: 'Bayero University, Kano',
     group: 'Non-Key Expert',
-    title: 'Policy and governance lead · RS6 co-lead',
+    title: 'Policy and governance lead, and co-leads RS6',
     summary:
       'Leads the cluster’s policy work and edits all eighteen policy briefs.',
     role: 'Drafts the Policy Engagement Plan; edits all 18 policy briefs; co-leads RS6; co-leads the annual training for MDA officials; chairs the policy programme of the annual national conference.',
@@ -121,7 +121,7 @@ export const PEOPLE: Person[] = [
     name: 'Prof. Salisu Mamman Abdulrahman',
     institution: 'Aliko Dangote University of Science and Technology, Wudil',
     group: 'Non-Key Expert',
-    title: 'ADUSTECH’s named professor · RS6 co-lead',
+    title: 'ADUSTECH’s named professor, and co-leads RS6',
     summary:
       'ADUSTECH’s named professor; co-leads RS6 and leads the Wudil cohort.',
     role: 'Machine learning for RS2 and RS3; co-leads RS6; leads the Wudil cohort of three postdocs and three PhD candidates and mentors its postdocs; reviews Wudil outputs before the Quality Panel.',
@@ -180,9 +180,9 @@ export const PEOPLE: Person[] = [
   {
     code: 'N-11',
     name: 'Prof. Muhammad Nuruddeen',
-    institution: 'Bayero University, Kano · Department of Public Law',
+    institution: 'Bayero University, Kano, Department of Public Law',
     group: 'Non-Key Expert',
-    title: 'Legal and regulatory analyst · RS4 and RS6 co-lead',
+    title: 'Legal and regulatory analyst, and co-leads RS4 and RS6',
     summary:
       'Professor of ICT Law. Drafts the model regulatory code and leads the NDPA enforcement audit.',
     role: 'Codes the NDPA Enforcement Case Tracker; leads the comparative analysis of the EU, UK, Kenya, India and South Africa; drafts the model regulatory code; writes the FCCPC and CBN regulatory gap analysis; tests the moderation governance model against the EU Digital Services Act and the UK Online Safety Act.',
@@ -194,7 +194,7 @@ export const PEOPLE: Person[] = [
     name: 'Dr. Baffa Kabiru Gwadabe',
     institution: 'Bayero University, Kano',
     group: 'Non-Key Expert',
-    title: 'Social scientist · RS5 co-lead',
+    title: 'Social scientist, and co-leads RS5',
     summary:
       'The cluster’s economist. Designs and runs all three large national surveys.',
     role: 'Designs and pilots the three large surveys with K-4; designs the discrete choice experiment and usability protocol for the RS3 agent study; runs the focus group and interview programmes in RS1, RS2, RS5 and RS6; trains the enumerators.',
@@ -204,9 +204,9 @@ export const PEOPLE: Person[] = [
   {
     code: 'N-13',
     name: 'Prof. Ishola Dada Muraina',
-    institution: 'Northwest University, Kano · Faculty of Computing',
+    institution: 'Northwest University, Kano, Faculty of Computing',
     group: 'Non-Key Expert',
-    title: 'Northwest’s named professor · RS2 co-lead',
+    title: 'Northwest’s named professor, and co-leads RS2',
     summary:
       'Northwest’s named professor; co-leads RS2 and links it to the NCC.',
     role: 'Co-leads RS2 with K-3 and Assoc. Prof. Sharifai; leads the Northwest cohort of two postdocs and two PhD candidates; reviews Northwest’s RS2, RS5 and RS6 outputs; links RS2 to the Nigerian Communications Commission.',

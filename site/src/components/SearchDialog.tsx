@@ -157,7 +157,7 @@ export default function SearchDialog({ open, onClose }: { open: boolean; onClose
             <span>
               {hits.length} result{hits.length === 1 ? '' : 's'}
             </span>
-            <span className="hidden sm:inline">↑ ↓ to move · ↵ to open</span>
+            <span className="hidden sm:inline">Arrow keys to move, Enter to open</span>
           </div>
         )}
       </div>

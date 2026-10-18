@@ -4,12 +4,12 @@ export const THEMES = [
   {
     id: 'lab',
     name: 'Lab',
-    blurb: 'Monospace, dark, graph paper. Research-terminal character.',
+    blurb: 'Monospace type on a dark background.',
   },
   {
     id: 'paper',
     name: 'Paper',
-    blurb: 'Inter, warm paper ground, heavy display type. Editorial character.',
+    blurb: 'Sans-serif type on a light background.',
   },
 ] as const
 

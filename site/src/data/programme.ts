@@ -7,8 +7,8 @@ export const PROGRAMME = {
   lead: 'Bayero University, Kano',
   rfp: 'NG-FMCIDE-544880-CS-QCBS',
   projectNo: 'P508383',
-  duration: '36 months · December 2026 to November 2029',
-  cohort: '15 postdoctoral researchers · 15 PhD candidates',
+  duration: '36 months, from December 2026 to November 2029',
+  cohort: '15 postdoctoral researchers and 15 PhD candidates',
   fibre: '90,000 km',
   email: 'clustere@buk.edu.ng',
 } as const
@@ -224,12 +224,12 @@ export const PHASES = [
 
 export const DELIVERABLES = [
   { id: 'D-1', name: 'Inception Report', timing: 'Month 1', content: 'Design, theory of change, workplan, risk and results frameworks, policy engagement, data management, ethics, recruitment.' },
-  { id: 'D-2', name: 'Quarterly Reports', timing: '12 · within 30 days of quarter end', content: 'Status, outputs, expenditure, risks.' },
+  { id: 'D-2', name: 'Quarterly Reports', timing: 'Twelve, each within 30 days of the quarter end', content: 'Status, outputs, expenditure, risks.' },
   { id: 'D-3', name: 'Mid-Term Review', timing: 'Month 18', content: 'Progress, output quality, governance, course corrections.' },
   { id: 'D-4', name: 'Interim Outputs', timing: 'Ongoing', content: 'Working papers, datasets, analytical notes, prototypes.' },
-  { id: 'D-5', name: 'Policy Briefs', timing: '18 · six by M12, M24, M36', content: 'Actionable notes written for a named agency.' },
+  { id: 'D-5', name: 'Policy Briefs', timing: 'Eighteen, six by M12, M24 and M36', content: 'Actionable notes written for a named agency.' },
   { id: 'D-6', name: 'Synthesis Inputs', timing: 'Periodic', content: 'Contributions to the cross-cluster synthesis.' },
-  { id: 'D-7', name: 'Annual Progress Reports', timing: '3 · within 30 days of year end', content: 'Outputs, budget, risks, policy engagement.' },
+  { id: 'D-7', name: 'Annual Progress Reports', timing: 'Three, each within 30 days of the year end', content: 'Outputs, budget, risks, policy engagement.' },
   { id: 'D-8', name: 'Final Report', timing: 'Within 45 days of completion', content: 'Consolidated outputs, cleaned datasets with codebooks, recommendations.' },
 ]
 

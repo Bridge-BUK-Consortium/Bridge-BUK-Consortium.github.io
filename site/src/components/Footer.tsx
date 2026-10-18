@@ -29,9 +29,9 @@ export default function Footer() {
         <div className="mt-10 border-t border-border pt-6 text-center text-xs leading-6 text-muted-foreground">
           <p>© {new Date().getFullYear()} Cluster E</p>
           <p className="mt-1 hidden sm:block">
-            Bayero University, Kano · Aliko Dangote University of Science and Technology, Wudil ·
-            Federal University of Technology, Babura · Northwest University, Kano · University of
-            Leicester · York St John University
+            Bayero University Kano, Aliko Dangote University of Science and Technology Wudil,
+            Federal University of Technology Babura, Northwest University Kano, University of
+            Leicester and York St John University
           </p>
           <p className="mt-2 text-[11px]">
             <span className="hidden sm:inline">Client: </span>

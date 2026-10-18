@@ -25,7 +25,7 @@ function PositionCard({ p }: { p: Position }) {
       <div className="flex items-center justify-between gap-2">
         <span className="ui-eyebrow truncate text-[10px]">{p.code}</span>
         <span className="ui-meta shrink-0">
-          {p.type === 'PhD' ? 'PhD' : 'Postdoc'} · {p.pillar}
+          {p.type === 'PhD' ? 'PhD' : 'Postdoc'}, Pillar {p.pillar}
         </span>
       </div>
 
@@ -97,7 +97,7 @@ export default function Opportunities() {
       <PageHero
         eyebrow="Opportunities"
         title="Thirty funded positions"
-        lead="Thirty funded researchers. PhDs registered at Bayero University, Kano, postdocs employed by the four Nigerian universities, and a funded three-month stay in the UK for every one of them."
+        lead="The cluster will fund fifteen postdoctoral researchers and fifteen PhD candidates. Every PhD candidate registers at Bayero University, Kano, and every postdoctoral researcher is employed by one of the four Nigerian universities in the joint venture. Each of the thirty spends three months at a university in the United Kingdom."
       >
         <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:max-w-3xl">
           <div className="rounded-lg border border-primary/40 bg-primary/[0.06] px-4 py-3.5">
@@ -106,7 +106,7 @@ export default function Opportunities() {
               15 <span className="ui-body-sm font-normal">positions</span>
             </p>
             <p className="mt-1 text-xs leading-5 text-muted-foreground">
-              {nPostdoc} topics advertised · at least 24 months from Month 6
+              {nPostdoc} topics advertised, each at least 24 months from Month 6
             </p>
           </div>
           <div className="rounded-lg border border-primary/40 bg-primary/[0.06] px-4 py-3.5">
@@ -115,7 +115,7 @@ export default function Opportunities() {
               15 <span className="ui-body-sm font-normal">positions</span>
             </p>
             <p className="mt-1 text-xs leading-5 text-muted-foreground">
-              {nPhd} topics advertised · stipend from Month 9 to Month 36
+              {nPhd} topics advertised, with a stipend from Month 9 to Month 36
             </p>
           </div>
         </div>
@@ -125,10 +125,11 @@ export default function Opportunities() {
       <section className="border-b border-border bg-card/30">
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-5">
           <div className="flex flex-col gap-2 border-l-2 border-primary/60 pl-4 sm:pl-5">
-            <Eyebrow tone="primary">Status · not yet open</Eyebrow>
+            <Eyebrow tone="primary">Not yet open</Eyebrow>
             <p className="max-w-3xl text-sm leading-7 text-muted-foreground">
-              Advertised in advance, subject to contract award. The call opens within a month of
-              signature. Register interest and we will tell you when.
+              These positions depend on the award of the Cluster E contract. We will publish the open
+              call within one month of signing it. If you tell us you are interested, we will let you
+              know when applications open.
             </p>
           </div>
         </div>
@@ -138,8 +139,8 @@ export default function Opportunities() {
       <Section bordered={false}>
         <SectionHead
           eyebrow="What is offered"
-          title="Two schemes, thirty positions"
-          lead="Only funded participants count towards the thirty."
+          title="The two schemes"
+          lead="Only researchers paid from the contract count towards the thirty. Anyone funded elsewhere who joins the cluster is reported separately."
         />
         <SchemeComparison />
       </Section>
@@ -149,7 +150,7 @@ export default function Opportunities() {
         <SectionHead
           eyebrow="Advertised topics"
           title="Every advertised topic"
-          lead="Five PhDs and five postdocs per pillar. The pool is wider than the number of positions on purpose."
+          lead="Each pillar takes five PhD candidates and five postdoctoral researchers. We advertise more topics than there are positions, so that the strongest applicants and the priorities of the agencies decide the final thirty."
         />
 
         <div className="mt-7 sm:mt-8">
@@ -200,7 +201,7 @@ export default function Opportunities() {
 
         <p className="ui-meta mt-5">
           {matches.length} {matches.length === 1 ? 'position' : 'positions'}
-          {matches.length > shown.length ? ` · showing ${shown.length}` : ''}
+          {matches.length > shown.length ? `, showing ${shown.length}` : ''}
         </p>
 
         <div className="mt-6 grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -254,7 +255,8 @@ export default function Opportunities() {
             <Card>
               <Eyebrow tone="primary">Where we recruit</Eyebrow>
               <p className="ui-body-sm mt-3">
-                Communities the consortium helped build.
+                We recruit through research communities that members of this consortium helped to
+                build.
               </p>
               <div className="mt-4 flex flex-wrap gap-1.5">
                 {RECRUITMENT_POOL.map((r) => (
@@ -264,15 +266,17 @@ export default function Opportunities() {
                 ))}
               </div>
               <p className="ui-body-sm mt-4">
-                Research associates and annotators are also engaged, and encouraged to apply for later
-                PhD places.
+                The cluster also engages research associates and annotators. We encourage the strongest
+                of them to apply for PhD places in later years.
               </p>
             </Card>
             <Card>
               <Eyebrow tone="primary">If a place falls vacant</Eyebrow>
               <p className="ui-body-sm mt-3">
-                A ranked reserve list per topic fills any place within two months. After Month 24, an
-                existing fellowship is extended instead.
+                Each panel keeps a ranked reserve list for every topic. If a researcher leaves, we offer
+                the position to the next candidate within two months, so that the cluster stays at
+                fifteen and fifteen. If a postdoctoral position falls vacant after Month 24, we extend
+                an existing fellowship on the same topic instead.
               </p>
             </Card>
           </div>
@@ -283,8 +287,8 @@ export default function Opportunities() {
       <Section>
         <SectionHead
           eyebrow="Where the thirty sit"
-          title="Where the thirty sit"
-          lead="Each post is fixed by four facts in the cohort register: topic, host, duration, outputs."
+          title="How the thirty are shared"
+          lead="Each position is recorded in the cohort register with four facts: its numbered topic, its host institution, how long it runs and what it must produce."
         />
         <div className="mt-7 sm:mt-10">
           <DataTable
@@ -305,7 +309,7 @@ export default function Opportunities() {
       <Section>
         <SectionHead
           eyebrow="What the three years look like"
-          title="The three years"
+          title="What the three years look like"
         />
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
           {TRAINING.map((t) => (

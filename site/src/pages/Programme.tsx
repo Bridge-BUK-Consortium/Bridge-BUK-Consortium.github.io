@@ -44,7 +44,7 @@ export default function Programme() {
         <SectionHead
           eyebrow="Outputs"
           title="Deliverables"
-          lead="Each passes the internal Quality Panel before it reaches the Client."
+          lead="Every deliverable passes through the internal Quality Panel before it reaches the Client."
         />
         <div className="mt-7 sm:mt-10">
           <DataTable
@@ -73,13 +73,13 @@ export default function Programme() {
         <SectionHead
           eyebrow="Milestones"
           title="Milestones by stream"
-          lead="Every output has a month and an agency waiting for it."
+          lead="Each output has a delivery month and an agency that will use it."
         />
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
           {STREAMS.map((s) => (
             <Card key={s.id} hover className="flex flex-col">
               <Eyebrow tone="primary">
-                {s.id} · Pillar {s.pillar}
+                {s.id}, Pillar {s.pillar}
               </Eyebrow>
               <h3 className="ui-card-title mt-3">{s.title}</h3>
               <ul className="mt-4 flex-1 space-y-2.5">

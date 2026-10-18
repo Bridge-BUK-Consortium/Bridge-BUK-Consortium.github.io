@@ -439,7 +439,7 @@ export const TERMS = {
 } as const
 
 export const SELECTION = [
-  'The open call is published within a month of contract signature — here, on the Project BRIDGE programme site, and through each institution.',
+  'We publish the open call within a month of signing the contract. It appears here, on the Project BRIDGE programme site, and through each institution.',
   'Apply to a named topic, or propose a closely aligned one.',
   'The pillar’s supervisors shortlist, interview and select, keeping a ranked reserve list per topic.',
   'BUK School of Postgraduate Studies handles PhD admission; each university makes its own postdoctoral appointments.',

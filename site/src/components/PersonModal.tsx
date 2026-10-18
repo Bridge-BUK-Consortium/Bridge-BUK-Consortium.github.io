@@ -43,7 +43,7 @@ export default function PersonModal({
         <div className="flex items-start justify-between gap-4 border-b border-border p-5 sm:p-6">
           <div className="min-w-0">
             <p className="ui-eyebrow">
-              {person.code} · {person.group}
+              {person.group}
             </p>
             <h2 id="person-modal-name" className="mt-2 text-xl font-bold sm:text-2xl">
               {person.name}
@@ -90,7 +90,7 @@ export default function PersonModal({
               <p className="mt-2 text-sm">
                 <span className="text-2xl font-bold text-primary">{person.months}</span>{' '}
                 <span className="text-muted-foreground">
-                  person-months of {36} · {Math.round((person.months / 36) * 100)} percent
+                  of 36 person-months, about {Math.round((person.months / 36) * 100)} percent
                 </span>
               </p>
             </>

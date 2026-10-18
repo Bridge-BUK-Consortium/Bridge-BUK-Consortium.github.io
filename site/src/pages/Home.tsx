@@ -33,9 +33,9 @@ export default function Home() {
         />
         <div className="relative mx-auto max-w-7xl px-4 py-11 sm:px-5 sm:py-14 md:py-20">
           <p className="ui-eyebrow ui-eyebrow-muted">
-            <span className="sm:hidden">Six universities · Nigeria and the UK</span>
+            <span className="sm:hidden">Six universities in Nigeria and the UK</span>
             <span className="hidden sm:inline">
-              Bayero University, Kano · ADUSTECH · FUT Babura · Northwest · Leicester · York St John
+              Bayero University Kano, ADUSTECH, FUT Babura, Northwest, Leicester, York St John
             </span>
           </p>
           <h1 className="mt-4 text-3xl font-bold leading-[1.12] sm:mt-5 sm:text-4xl sm:leading-[1.05] md:text-6xl lg:text-7xl">
@@ -47,9 +47,11 @@ export default function Home() {
             Cluster E of the National Digital Economy University Led Research Programme.
           </p>
           <p className="ui-body mt-4 sm:mt-5">
-            At least {PROGRAMME.fibre} of new fibre brings millions of Nigerians online for the first
-            time. We build the evidence regulators need to protect them — and thirty researchers to
-            keep producing it.
+            Project BRIDGE will lay at least {PROGRAMME.fibre} of fibre and bring millions of
+            Nigerians online for the first time. Many of them have never met online fraud, harmful
+            content or misuse of their data. We are producing the research that regulators need in
+            order to protect them, and training thirty researchers who will carry the work on after
+            the programme ends.
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row">
@@ -94,7 +96,7 @@ export default function Home() {
                     {i.name}
                   </p>
                   <p className="mt-1 text-xs text-muted-foreground">
-                    {i.role} · {i.country}
+                    {i.role} in {i.country}
                   </p>
                 </Link>
               </li>
@@ -108,7 +110,7 @@ export default function Home() {
         <SectionHead
           eyebrow="How the cluster is organised"
           title="Three pillars, six research streams"
-          lead="Every question names the agency, the instrument and the decision it serves."
+          lead="Each research question names the agency, the instrument and the decision it is meant to serve."
           action={
             <Link className="text-sm text-primary hover:underline" to="/research">
               All six streams →
@@ -151,17 +153,17 @@ export default function Home() {
         <article className="rounded-xl border border-primary/40 bg-primary/[0.06] p-5 sm:p-7">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
             <div className="min-w-0">
-              <Eyebrow tone="primary">Open call · subject to contract award</Eyebrow>
+              <Eyebrow tone="primary">Open call, subject to contract award</Eyebrow>
               <h2 className="mt-3 text-xl font-bold leading-snug sm:text-2xl">
                 Fifteen postdoctoral fellowships and fifteen PhD studentships in fundamental digital
                 trust and safety research
               </h2>
               <ul className="mt-4 grid gap-2 sm:grid-cols-2">
                 {[
-                  'PhDs registered at BUK; postdocs employed by the four Nigerian universities',
-                  'A funded three-month stay at Leicester or York St John',
-                  'Each post tied to a numbered topic and a named policy output',
-                  `${phdTopics} doctoral and ${postdocTopics} postdoctoral topics for 30 positions`,
+                  'PhD candidates register at Bayero University, Kano. Postdoctoral researchers are employed by the four Nigerian universities.',
+                  'Each researcher spends three months at Leicester or York St John, and the programme pays for the visit.',
+                  'Every position is attached to a numbered topic and to a policy output with a named agency.',
+                  `We advertise ${phdTopics} doctoral and ${postdocTopics} postdoctoral topics for the thirty positions.`,
                 ].map((x) => (
                   <li key={x} className="flex gap-2.5 text-sm leading-6">
                     <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-primary" />
@@ -179,21 +181,21 @@ export default function Home() {
                 <Eyebrow tone="primary">Postdoctoral fellowships</Eyebrow>
                 <p className="ui-figure mt-1">15</p>
                 <p className="mt-1 text-xs leading-5 text-muted-foreground">
-                  24 months minimum, from Month 6.
+                  At least 24 months, beginning in Month 6.
                 </p>
               </Row>
               <Row>
                 <Eyebrow tone="primary">PhD studentships</Eyebrow>
                 <p className="ui-figure mt-1">15</p>
                 <p className="mt-1 text-xs leading-5 text-muted-foreground">
-                  Stipend and costs, Month 9 to Month 36.
+                  A stipend and research costs, from Month 9 to Month 36.
                 </p>
               </Row>
               <Row>
                 <Eyebrow>Gender target</Eyebrow>
                 <p className="mt-1 text-sm leading-6">
-                  At least <span className="font-bold text-primary">40 percent</span> women, reported at
-                  every stage of selection.
+                  At least <span className="font-bold text-primary">40 percent</span> of each cohort
+                  will be women. The panel reports the figure at every stage of selection.
                 </p>
               </Row>
             </div>
@@ -221,7 +223,8 @@ export default function Home() {
           <div className="relative max-w-2xl">
             <h2 className="text-2xl font-bold md:text-3xl">Work with Cluster E</h2>
             <p className="ui-body mt-3">
-              Enquiries from agencies, platforms, civil society and researchers are welcome.
+              We welcome enquiries from government agencies, platforms, civil society organisations
+              and researchers.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <BrandLink to="/contact">Contact the cluster</BrandLink>

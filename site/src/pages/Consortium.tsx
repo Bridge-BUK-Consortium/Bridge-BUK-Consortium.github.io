@@ -12,7 +12,7 @@ export default function Consortium() {
       <PageHero
         eyebrow="Consortium"
         title="Six universities, two countries"
-        lead={`A joint venture led by ${PROGRAMME.lead}. Its members publish on hate speech in Nigerian languages, cybersecurity, digital identity, data protection and fraud — and run platforms already deployed in Nigerian markets.`}
+        lead={`A joint venture led by ${PROGRAMME.lead}. Its members have published work on hate speech in Nigerian languages, cybersecurity, digital identity, data protection and consumer fraud. They also run digital platforms that are already in use in Nigerian markets.`}
       />
 
       {/* Logo strip */}
@@ -25,7 +25,7 @@ export default function Consortium() {
             ))}
           </div>
           <p className="mt-6 text-center font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-            Client · {PROGRAMME.client}
+            Client: {PROGRAMME.client}
           </p>
         </div>
       </section>
@@ -34,7 +34,7 @@ export default function Consortium() {
         <SectionHead
           eyebrow="Joint venture"
           title="The joint venture"
-          lead="BUK holds the contract and hosts the PhD registrations, the Research School and the annotation teams."
+          lead="Bayero University, Kano holds the contract. It registers all the PhD candidates and hosts the Research School and the annotation teams."
         />
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-2">
           {ng.map((i) => (
@@ -77,7 +77,7 @@ export default function Consortium() {
         <SectionHead
           eyebrow="Sub-consultants"
           title="The UK hosts"
-          lead="Every researcher spends three months at a UK host, early enough to shape their direction."
+          lead="Every researcher spends three months at one of the two universities in the United Kingdom. The visits come early, so that the hosts can help shape the research before the main fieldwork begins."
         />
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-2">
           {uk.map((i) => (
@@ -118,8 +118,8 @@ export default function Consortium() {
       <Section>
         <SectionHead
           eyebrow="Research environments"
-          title="Live platforms"
-          lead="Each is a case study and a live testbed for the cluster’s prototypes."
+          title="Platforms already in use"
+          lead="Each platform serves as a case study, and as a place to test what the cluster builds."
         />
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 lg:grid-cols-4">
           {PLATFORMS.map((p) => (
