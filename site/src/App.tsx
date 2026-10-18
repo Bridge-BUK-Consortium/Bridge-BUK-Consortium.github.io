@@ -2,6 +2,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import { useCallback, useEffect, useState } from 'react'
 import Header from './components/Header'
 import SearchDialog, { useSearchHotkey } from './components/SearchDialog'
+import ReviewNotice from './components/ReviewNotice'
 import { ThemeProvider } from './theme'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -12,6 +13,7 @@ import People from './pages/People'
 import Consortium from './pages/Consortium'
 import Programme from './pages/Programme'
 import Contact from './pages/Contact'
+import Review from './pages/Review'
 import NotFound from './pages/NotFound'
 
 function ScrollToTop() {
@@ -34,6 +36,7 @@ export default function App() {
     <div className="flex min-h-screen flex-col">
       <ScrollToTop />
       <Header onSearch={open} />
+      <ReviewNotice />
       <SearchDialog open={searchOpen} onClose={close} />
       <main className="flex-1">
         <Routes>
@@ -45,6 +48,7 @@ export default function App() {
           <Route path="/consortium" element={<Consortium />} />
           <Route path="/programme" element={<Programme />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/review" element={<Review />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

@@ -1,4 +1,5 @@
 import { TERMS } from '../data/positions'
+import Placeholder from '../components/Placeholder'
 
 /**
  * The two schemes share every attribute, so they are shown against each
@@ -87,11 +88,12 @@ export default function SchemeComparison() {
       <div className="mt-8 grid gap-4 sm:gap-5 md:grid-cols-2">
         {(['Postdoc', 'PhD'] as const).map((which) => (
           <div key={which} className="ui-card p-5 sm:p-6">
-            <div className="flex items-center gap-2">
+            <div className="mb-4 flex items-center gap-2">
               <Chip which={which} />
               <h3 className="ui-card-title">Who can apply</h3>
             </div>
-            <ul className="mt-4 space-y-3">
+            <Placeholder id={which === 'PhD' ? 'eligibility-phd' : 'eligibility-postdoc'} block>
+            <ul className="space-y-3">
               {TERMS[which].eligibility.map((e) => (
                 <li key={e} className="grid grid-cols-[1rem_minmax(0,1fr)] gap-2">
                   <svg
@@ -110,6 +112,7 @@ export default function SchemeComparison() {
                 </li>
               ))}
             </ul>
+            </Placeholder>
           </div>
         ))}
       </div>

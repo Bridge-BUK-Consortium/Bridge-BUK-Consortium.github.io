@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { PROGRAMME, PILLARS, STREAMS, PRINCIPLES } from '../data/programme'
 import { INSTITUTIONS } from '../data/people'
 import { POSITIONS } from '../data/positions'
+import Placeholder from '../components/Placeholder'
 import {
   Eyebrow,
   Section,
@@ -32,27 +33,33 @@ export default function Home() {
           aria-hidden="true"
         />
         <div className="relative mx-auto max-w-7xl px-4 py-9 sm:px-5 sm:py-11 md:py-12">
+          {/* Identification belongs here, not in the lead slot: it is what
+              the page is, not what it says. The six universities are named
+              in the consortium strip directly below. */}
           <p className="ui-eyebrow ui-eyebrow-muted">
-            <span className="sm:hidden">Six universities in Nigeria and the UK</span>
-            <span className="hidden sm:inline">
-              Bayero University Kano, ADUSTECH, FUT Babura, Northwest, Leicester, York St John
-            </span>
+            Cluster E, National Digital Economy University Led Research Programme
           </p>
           <h1 className="ui-display mt-3 font-bold text-balance sm:mt-4">
             <span className="text-gradient">
               Trust, Safety, Consumer Protection and Online Harms
             </span>
           </h1>
-          <p className="ui-lead ui-lead-wide mt-4 sm:mt-5">
-            Cluster E of the National Digital Economy University Led Research Programme.
-          </p>
-          <p className="ui-body ui-body-wide mt-3.5 sm:mt-4">
-            Project BRIDGE will lay at least {PROGRAMME.fibre} of fibre and bring millions of
-            Nigerians online for the first time. Many of them have never met online fraud, harmful
-            content or misuse of their data. We are producing the research that regulators need in
-            order to protect them, and training thirty researchers who will carry the work on after
-            the programme ends.
-          </p>
+
+          <ul className="mt-5 grid gap-3 sm:mt-6">
+            {[
+              `${PROGRAMME.fibre} of new fibre is bringing millions of Nigerians online for the first time.`,
+              'We produce the research regulators need in order to protect them.',
+              'We train thirty researchers who will carry the work on.',
+            ].map((point) => (
+              <li key={point} className="grid grid-cols-[0.9rem_minmax(0,1fr)] items-start gap-3">
+                <span
+                  aria-hidden="true"
+                  className="mt-2.5 h-1.5 w-1.5 rounded-full bg-primary sm:mt-3"
+                />
+                <span className="ui-lead ui-lead-wide">{point}</span>
+              </li>
+            ))}
+          </ul>
 
           <div className="mt-6 flex flex-col gap-3 sm:mt-7 sm:flex-row">
             <PrimaryLink to="/research">Explore the research</PrimaryLink>
@@ -193,10 +200,15 @@ export default function Home() {
               </Row>
               <Row>
                 <Eyebrow>Gender target</Eyebrow>
-                <p className="mt-1 text-sm leading-6">
-                  At least <span className="font-bold text-primary">40 percent</span> of each cohort
-                  will be women. The panel reports the figure at every stage of selection.
-                </p>
+                <div className="mt-2">
+                  <Placeholder id="gender-target" block>
+                    <span className="block text-sm leading-6">
+                      At least <span className="font-bold text-primary">40 percent</span> of each
+                      cohort will be women. The panel reports the figure at every stage of
+                      selection.
+                    </span>
+                  </Placeholder>
+                </div>
               </Row>
             </div>
           </div>

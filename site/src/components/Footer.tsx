@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PROGRAMME } from '../data/programme'
+import Placeholder from '../components/Placeholder'
 
 export default function Footer() {
   return (
@@ -13,7 +14,11 @@ export default function Footer() {
               {PROGRAMME.lead}, with the University of Leicester and York St John University, for the{' '}
               {PROGRAMME.programme} under {PROGRAMME.project}.
             </p>
-            <p className="ui-meta mt-4">{PROGRAMME.email}</p>
+            <div className="mt-4">
+              <Placeholder id="contact-email">
+                <span className="ui-meta">{PROGRAMME.email}</span>
+              </Placeholder>
+            </div>
           </div>
 
           <nav className="grid grid-cols-2 gap-x-6 gap-y-3 text-sm sm:gap-x-10 sm:gap-y-2" aria-label="Footer">
