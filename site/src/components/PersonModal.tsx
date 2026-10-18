@@ -39,7 +39,7 @@ export default function PersonModal({
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
       />
 
-      <div className="ui-card relative flex max-h-[88vh] w-full max-w-2xl flex-col overflow-hidden rounded-b-none shadow-2xl sm:rounded-b-[inherit]">
+      <div className="ui-card ui-overlay relative flex max-h-[88vh] w-full max-w-2xl flex-col overflow-hidden rounded-b-none shadow-2xl sm:rounded-b-[inherit]">
         <div className="flex items-start justify-between gap-4 border-b border-border p-5 sm:p-6">
           <div className="min-w-0">
             <p className="ui-eyebrow">

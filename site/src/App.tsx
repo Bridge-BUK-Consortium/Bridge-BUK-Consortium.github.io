@@ -3,7 +3,6 @@ import { useCallback, useEffect, useState } from 'react'
 import Header from './components/Header'
 import SearchDialog, { useSearchHotkey } from './components/SearchDialog'
 import ReviewNotice from './components/ReviewNotice'
-import { ThemeProvider } from './theme'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import Research from './pages/Research'
@@ -32,7 +31,6 @@ export default function App() {
   useSearchHotkey(open)
 
   return (
-    <ThemeProvider>
     <div className="flex min-h-screen flex-col">
       <ScrollToTop />
       <Header onSearch={open} />
@@ -54,6 +52,5 @@ export default function App() {
       </main>
       <Footer />
     </div>
-    </ThemeProvider>
   )
 }

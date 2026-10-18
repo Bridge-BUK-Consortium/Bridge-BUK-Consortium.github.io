@@ -35,10 +35,8 @@ function SchemeHead({ which }: { which: 'Postdoc' | 'PhD' }) {
 function Chip({ which }: { which: 'Postdoc' | 'PhD' }) {
   return (
     <span
-      className={`ui-eyebrow inline-flex shrink-0 items-center rounded-full border px-2 py-0.5 text-[10px] ${
-        which === 'Postdoc'
-          ? 'border-primary/50 bg-primary/10 text-primary'
-          : 'border-accent/50 bg-accent/10 text-accent'
+      className={`ui-eyebrow shrink-0 text-[10px] ${
+        which === 'Postdoc' ? 'text-primary' : 'text-accent'
       }`}
     >
       {which === 'Postdoc' ? 'Postdoc' : 'PhD'}

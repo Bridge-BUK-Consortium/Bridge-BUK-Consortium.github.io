@@ -55,7 +55,7 @@ export function FilterGroup<T extends string>({
             type="button"
             aria-pressed={value === o.value}
             onClick={() => onChange(o.value)}
-            className={`min-h-10 rounded-full border px-3.5 text-[13px] transition-colors sm:min-h-11 sm:px-4 sm:text-sm ${
+            className={`ui-radius min-h-10 border px-3.5 text-[13px] transition-colors sm:min-h-11 sm:px-4 sm:text-sm ${
               value === o.value
                 ? 'border-primary/50 bg-primary/10 text-foreground'
                 : 'border-border text-muted-foreground hover:bg-secondary hover:text-foreground'

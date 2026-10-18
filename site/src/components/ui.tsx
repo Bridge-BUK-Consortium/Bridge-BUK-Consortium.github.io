@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import type { ReactNode } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
 
 /* Eyebrow: the most repeated element in the system. Monospace, uppercase,
    11px, wide tracking. Tracking scales with importance. */
@@ -69,14 +69,17 @@ export function Card({
   children,
   className = '',
   hover = false,
+  style,
 }: {
   children: ReactNode
   className?: string
   hover?: boolean
+  style?: CSSProperties
 }) {
   return (
     <div
       className={`ui-card p-5 sm:p-6 ${hover ? 'group ui-card-hover' : ''} ${className}`}
+      style={style}
     >
       {children}
     </div>
@@ -142,10 +145,8 @@ export function Arrow() {
 export function Tag({ children, tone = 'border' }: { children: ReactNode; tone?: 'border' | 'primary' }) {
   return (
     <span
-      className={`ui-eyebrow inline-flex items-center rounded-full border px-2.5 py-1 text-[10px] ${
-        tone === 'primary'
-          ? 'border-primary/50 bg-primary/10 text-primary'
-          : 'border-border text-muted-foreground'
+      className={`ui-eyebrow mr-2 text-[10px] ${
+        tone === 'primary' ? 'text-primary' : 'text-muted-foreground'
       }`}
     >
       {children}
@@ -153,7 +154,7 @@ export function Tag({ children, tone = 'border' }: { children: ReactNode; tone?:
   )
 }
 
-/* Ambient blooms + graph-paper motif, used on every page hero. */
+/* The page hero: an inverted band with the eyebrow, title and lead. */
 export function PageHero({
   eyebrow,
   title,
@@ -167,11 +168,6 @@ export function PageHero({
 }) {
   return (
     <section className="ui-invert relative overflow-hidden border-b border-border">
-      <div className="absolute inset-0 grid-motif opacity-40" aria-hidden="true" />
-      <div
-        className="ui-bloom absolute -top-40 left-1/3 h-80 w-80 rounded-full bg-primary/15 blur-3xl"
-        aria-hidden="true"
-      />
       <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-5 sm:py-14 md:py-24">
         <Eyebrow tone="primary">{eyebrow}</Eyebrow>
         <h1 className="ui-display mt-3 max-w-4xl font-bold text-balance sm:mt-4">{title}</h1>

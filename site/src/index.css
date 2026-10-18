@@ -1,20 +1,12 @@
 @import "tailwindcss";
 
 /* =====================================================================
-   TWO TEMPLATES, ONE COMPONENT TREE.
+   ONE DESIGN SYSTEM, TAKEN FROM THE PROPOSAL COVER.
 
-   Every surface reads from semantic tokens, so switching the data-theme
-   attribute on <html> re-skins the whole site without touching markup.
-
-     lab    — ported from sofair.uk: one monospace family for everything,
-              cool near-black, muted gold, 56px graph-paper motif, wide
-              uppercase tracking, glow on hover.
-     paper  — ported from bold-lab.ai: Inter at very heavy weights, warm
-              paper ground, teal eyebrows with zero tracking, fluid
-              clamp() type with tight leading, lift-and-shadow on hover.
-
+   Deep BUK green on white, mint panels, heavy Public Sans headings,
+   wide uppercase green eyebrows, a green rule along the top of the page.
    @theme declares the token names (and so generates the utilities);
-   the [data-theme] blocks below give each template its values.
+   the :root block below gives them their values.
    ===================================================================== */
 
 @theme {
@@ -45,98 +37,50 @@
   --color-invert-foreground: var(--ui-invert-foreground);
 }
 
-/* ---------------------------------------------------------------
-   Template 1 — "lab" (sofair.uk). Also the default.
-   --------------------------------------------------------------- */
-:root,
-:root[data-theme='lab'] {
-  --ui-font-sans: "Courier New", Courier, monospace;
-  --ui-font-display: "Courier New", Courier, monospace;
-  --ui-font-mono: "Courier New", Courier, monospace;
+:root {
+  --ui-font-sans: "Public Sans", Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ui-font-display: "Public Sans", Inter, ui-sans-serif, system-ui, sans-serif;
+  --ui-font-mono: "Public Sans", Inter, ui-sans-serif, system-ui, sans-serif;
 
-  --ui-background: oklch(16% 0.02 250);
-  --ui-foreground: oklch(97% 0.005 250);
-  --ui-card: oklch(20% 0.022 252);
-  --ui-card-foreground: oklch(97% 0.005 250);
-  --ui-primary: oklch(85% 0.12 95);
-  --ui-primary-foreground: oklch(20% 0.02 95);
-  --ui-secondary: oklch(26% 0.025 252);
-  --ui-secondary-foreground: oklch(95% 0.005 250);
-  --ui-muted: oklch(24% 0.02 252);
-  --ui-muted-foreground: oklch(72% 0.02 250);
-  --ui-accent: oklch(62% 0.16 268);
-  --ui-accent-foreground: oklch(98% 0.005 250);
-  --ui-destructive: oklch(62% 0.22 25);
-  --ui-border: oklch(32% 0.02 252);
-  --ui-input: oklch(30% 0.02 252);
-  --ui-ring: oklch(85% 0.12 95);
-  --ui-signal: oklch(90% 0.09 95);
-  --ui-brand: #f5c518;
-  --ui-brand-foreground: #171717;
-  /* The lab template is already dark, so its "inverted" band is simply
-     the page ground: heroes sit flush, the way sofair.uk does it. */
-  --ui-invert: oklch(16% 0.02 250);
-  --ui-invert-foreground: oklch(97% 0.005 250);
-
-  --ui-radius: 0.5rem;
-  --ui-radius-lg: 0.75rem;
-  --ui-eyebrow-tracking: 0.24em;
-  --ui-eyebrow-weight: 400;
-  --ui-eyebrow-size: 11px;
-  --ui-eyebrow-color: var(--ui-muted-foreground);
-  --ui-heading-weight: 700;
-  --ui-heading-leading: 1.12;
-  --ui-heading-tracking: 0;
-  --ui-body-leading: 1.7;
-  --ui-motif-opacity: 1;
-  --ui-shadow: none;
-  --ui-lift: 0;
-}
-
-/* ---------------------------------------------------------------
-   Template 2 — "paper" (bold-lab.ai).
-   --------------------------------------------------------------- */
-:root[data-theme='paper'] {
-  --ui-font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --ui-font-display: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --ui-font-mono: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
-
-  --ui-background: #fbfaf6;
-  --ui-foreground: #09111f;
+  --ui-background: #ffffff;
+  --ui-foreground: #13201a;
   --ui-card: #ffffff;
-  --ui-card-foreground: #09111f;
-  --ui-primary: #2f8f83;
+  --ui-card-foreground: #13201a;
+  --ui-primary: #00704a;
   --ui-primary-foreground: #ffffff;
-  --ui-secondary: #eef2f4;
-  --ui-secondary-foreground: #202b3c;
-  --ui-muted: #eef2f4;
-  --ui-muted-foreground: #667085;
-  --ui-accent: #2b64d8;
+  --ui-secondary: #eef4f0;
+  --ui-secondary-foreground: #13201a;
+  --ui-muted: #eef4f0;
+  --ui-muted-foreground: #4f5d56;
+  --ui-accent: #5fa88c;
   --ui-accent-foreground: #ffffff;
   --ui-destructive: #b42318;
-  --ui-border: #d8dee6;
-  --ui-input: #d8dee6;
-  --ui-ring: #c87912;
-  --ui-signal: #2b64d8;
-  --ui-brand: #b7791f;
+  --ui-border: #d5e3db;
+  --ui-input: #d5e3db;
+  --ui-ring: #00704a;
+  --ui-signal: #00704a;
+  --ui-brand: #00704a;
   --ui-brand-foreground: #ffffff;
-  /* The inverted band: ink ground, paper text. */
-  --ui-invert: #09111f;
+  /* The inverted band: forest ground, white text. */
+  --ui-invert: #0b3b29;
   --ui-invert-foreground: #ffffff;
+  /* The cover's ramp: the four title lines step from deep green to an
+     outlined mint. Pillars A, B and C take the first three steps. */
+  --ui-ramp-1: #0b3b29;
+  --ui-ramp-2: #00704a;
+  --ui-ramp-3: #5fa88c;
+  --ui-ramp-4: #b9dccb;
 
-  --ui-radius: 8px;
-  --ui-radius-lg: 8px;
-  --ui-eyebrow-tracking: 0;
-  --ui-eyebrow-weight: 850;
-  --ui-eyebrow-size: 12px;
+  --ui-radius: 4px;
+  --ui-radius-lg: 6px;
+  --ui-eyebrow-tracking: 0.16em;
+  --ui-eyebrow-weight: 800;
+  --ui-eyebrow-size: 11.5px;
   --ui-eyebrow-color: var(--ui-primary);
-  --ui-heading-weight: 850;
-  --ui-heading-leading: 0.99;
-  --ui-heading-tracking: -0.015em;
+  --ui-heading-weight: 800;
+  --ui-heading-leading: 1.04;
+  --ui-heading-tracking: -0.025em;
   --ui-body-leading: 1.65;
-  --ui-motif-opacity: 0;
-  --ui-shadow: 0 18px 60px #09111f1a;
-  --ui-lift: -2px;
 }
 
 @layer base {
@@ -150,12 +94,6 @@
     }
   }
 
-  /* The paper template sizes from a fixed 16px root, because its type
-     scale is already fluid through clamp(). */
-  :root[data-theme='paper'],
-  :root[data-theme='paper'] body {
-    font-size: 16px;
-  }
 
   *,
   ::after,
@@ -170,11 +108,6 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  :root[data-theme='paper'] body {
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    font-synthesis: none;
-  }
 
   h1,
   h2,
@@ -201,7 +134,7 @@
 }
 
 @layer utilities {
-  /* ----- Shared, theme-aware component surfaces ----- */
+  /* ----- Shared component surfaces ----- */
 
   .ui-eyebrow {
     font-family: var(--font-mono);
@@ -226,55 +159,32 @@
       border-color 0.18s ease;
   }
 
-  .ui-card-hover:hover {
-    border-color: color-mix(in oklab, var(--color-primary) 45%, transparent);
-    transform: translateY(var(--ui-lift));
-    box-shadow: var(--ui-shadow);
+  /* Content blocks are not boxes. A block is a hairline rule with the text
+     set flush below it, the way the proposal sets its tables. Only floating
+     surfaces (menus, dialogs) carry ui-overlay and keep the box. */
+  .ui-card:not(.ui-overlay) {
+    border-width: 1px 0 0;
+    border-radius: 0;
+    background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  /* In the lab template the hover is a gold glow; in paper it is the
-     lift and soft shadow set above, so the glow is suppressed. */
-  :root[data-theme='lab'] .ui-card-hover:hover {
-    box-shadow:
-      0 0 0 1px color-mix(in oklab, var(--color-primary) 25%, transparent),
-      0 18px 60px -24px color-mix(in oklab, var(--color-primary) 45%, transparent);
+  .ui-card-hover:hover {
+    border-color: var(--color-primary);
   }
+
+  .ui-card-hover:hover .ui-card-title {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
 
   .ui-radius {
     border-radius: var(--ui-radius);
   }
 
-  /* 56px graph paper. Present in lab, switched off in paper. */
-  .grid-motif {
-    background-image:
-      linear-gradient(to right, color-mix(in oklab, var(--color-border) 60%, transparent) 1px, transparent 1px),
-      linear-gradient(to bottom, color-mix(in oklab, var(--color-border) 60%, transparent) 1px, transparent 1px);
-    background-size: 56px 56px;
-    opacity: var(--ui-motif-opacity);
-  }
-
-  .text-gradient {
-    background-image: linear-gradient(100deg, var(--color-foreground) 20%, var(--color-signal) 70%);
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-  }
-
-  /* The paper template sets its display type solid, not gradient. */
-  :root[data-theme='paper'] .text-gradient {
-    background-image: none;
-    color: var(--color-foreground);
-    -webkit-text-fill-color: currentColor;
-  }
-
-  .glow-ring {
-    box-shadow:
-      0 0 0 1px color-mix(in oklab, var(--color-primary) 25%, transparent),
-      0 18px 60px -24px color-mix(in oklab, var(--color-primary) 45%, transparent);
-  }
-
-  /* Fluid display sizes, the way bold-lab.ai scales. In the lab template
-     the clamps resolve smaller and the leading is looser. */
+  /* Fluid display sizes, the way bold-lab.ai scales.  */
   .ui-display {
     font-size: clamp(1.75rem, 1.05rem + 2.9vw, 3.9rem);
     line-height: var(--ui-heading-leading);
@@ -285,21 +195,9 @@
     line-height: var(--ui-heading-leading);
   }
 
-  /* Monospace sets far wider than Inter, so the lab template needs a
-     smaller floor or long headings run to five lines on a phone. */
-  :root[data-theme='lab'] .ui-display {
-    font-size: clamp(1.75rem, 1.1rem + 2.5vw, 3.25rem);
-  }
-
-  :root[data-theme='lab'] .ui-title {
-    font-size: clamp(1.2rem, 0.9rem + 1.6vw, 2.5rem);
-  }
 
   /* ---- Type roles ------------------------------------------------
-     Courier New has two weights, so the lab template cannot lean on
-     weight for hierarchy the way Inter can. These roles separate by
-     size, colour, case and measure instead, and each template tunes
-     the same roles to its own range. */
+     Each template tunes the same roles to its own range. */
 
   .ui-lead {
     font-size: clamp(1.125rem, 1rem + 0.6vw, 1.5rem);
@@ -308,11 +206,6 @@
     max-width: 46ch;
   }
 
-  :root[data-theme='paper'] .ui-lead {
-    font-size: clamp(1.05rem, 0.95rem + 0.7vw, 1.5rem);
-    font-weight: 500;
-    max-width: 54ch;
-  }
 
   /* Body copy sits a clear step below the lead: smaller, muted, and on a
      narrower measure so the eye can tell them apart at a glance. */
@@ -361,10 +254,6 @@
     color: var(--color-foreground);
   }
 
-  :root[data-theme='paper'] .ui-card-title {
-    font-size: clamp(1.1rem, 1rem + 0.5vw, 1.45rem);
-    letter-spacing: -0.01em;
-  }
 
   /* A figure: the one place a number should dominate its label. */
   .ui-figure {
@@ -382,10 +271,6 @@
     color: var(--color-muted-foreground);
   }
 
-  :root[data-theme='paper'] .ui-meta {
-    letter-spacing: 0.02em;
-    font-weight: 600;
-  }
 
   /* Names wrap to a second line rather than truncate: a clipped name
      is worse than a taller card. */
@@ -404,7 +289,7 @@
     overflow: hidden;
   }
 
-  /* An inverted band: ink-on-paper flips to paper-on-ink. */
+  /* An inverted band: green ground, white text. */
   .ui-invert {
     background-color: var(--color-invert);
     color: var(--color-invert-foreground);
@@ -416,23 +301,55 @@
 
   /* Inside an inverted band the semantic colours are re-pointed, so every
      child (muted text, borders, cards, chips) adapts without extra classes. */
-  :root[data-theme='paper'] .ui-invert {
+
+  /* ----- Cover details ----- */
+
+  /* The green rule along the top edge of the proposal cover. */
+  body {
+    border-top: 6px solid var(--ui-primary);
+  }
+
+  .ui-display {
+    font-size: clamp(2rem, 1.2rem + 3.2vw, 4.25rem);
+  }
+
+  .ui-lead {
+    font-weight: 500;
+    max-width: 56ch;
+  }
+
+  .ui-card-title {
+    font-size: clamp(1.1rem, 1rem + 0.45vw, 1.4rem);
+    letter-spacing: -0.015em;
+  }
+
+  .ui-meta {
+    letter-spacing: 0.06em;
+    font-weight: 700;
+  }
+
+  .ui-invert {
+    --color-primary-foreground: #0b3b29;
+    --color-brand: #9fd6bd;
+    --color-brand-foreground: #0b3b29;
     --color-foreground: #ffffff;
     --color-muted-foreground: #ffffffc7;
-    --color-border: #ffffff2e;
-    --color-card: #ffffff14;
+    --color-border: #ffffff26;
+    --color-card: #ffffff12;
     --color-secondary: #ffffff1a;
-    --color-primary: #7fd4c6;
-    --ui-eyebrow-color: #7fd4c6;
+    --color-primary: #9fd6bd;
+    --color-signal: #9fd6bd;
+    --ui-eyebrow-color: #9fd6bd;
   }
 
-  :root[data-theme='paper'] .ui-invert .text-gradient {
-    color: #ffffff;
+  /* A tinted band: the pale panel from the cover's data block. */
+  .ui-tint {
+    background-color: var(--color-secondary);
   }
 
-  /* The blurred colour blooms read as glow on a dark ground and as a
-     smudge on a light one, so the paper template drops them. */
-  :root[data-theme='paper'] .ui-bloom {
-    display: none;
-  }
+  /* The big figures step up the ramp, so a row of four reads as one motif. */
+  .ui-figure-row > :nth-child(1) .ui-figure { color: var(--ui-ramp-1); }
+  .ui-figure-row > :nth-child(2) .ui-figure { color: var(--ui-ramp-2); }
+  .ui-figure-row > :nth-child(3) .ui-figure { color: var(--ui-ramp-2); }
+  .ui-figure-row > :nth-child(4) .ui-figure { color: var(--ui-ramp-3); }
 }

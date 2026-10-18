@@ -36,11 +36,11 @@ To add one: drop `public/logos/adustech.png` and add `ADUSTECH: 'logos/adustech.
 
 ## Deploying to GitHub Pages
 
-`.github/workflows/deploy.yml` builds and deploys on every push to `main`.
+`.github/workflows/deploy.yml` builds and deploys on every push to `cluster-e-site`.
 
 1. Push this repository to GitHub.
 2. Settings → Pages → **Source: GitHub Actions**.
-3. Push to `main`. The site appears at `https://<org>.github.io/<repo>/`.
+3. Push to `cluster-e-site`. The site appears at `https://<org>.github.io/<repo>/`.
 
 Three details make Pages work:
 
@@ -57,34 +57,14 @@ Three details make Pages work:
 Put the domain in `public/CNAME` (one line, no protocol), set it under Settings → Pages,
 and remove the `VITE_BASE` env block from the workflow.
 
-## Two templates
+## Design system
 
-The site ships two complete visual templates over one component tree. A dropdown in the
-header switches between them; the choice is saved to `localStorage` and can be linked
-directly with `?theme=lab` or `?theme=paper`. A small inline script in `index.html` applies
-the saved template before first paint, so there is no flash.
-
-| | **lab** (default) | **paper** |
-| --- | --- | --- |
-| Ported from | sofair.uk | bold-lab.ai |
-| Type | Courier New for everything | Inter, weights 780–850 |
-| Ground | Cool near-black `oklch(16% .02 250)` | Warm paper `#fbfaf6` |
-| Accent | Muted gold `oklch(85% .12 95)` | Teal `#2f8f83`, blue `#2b64d8` |
-| Eyebrows | Uppercase, `0.24em` tracking | Uppercase, zero tracking, weight 850 |
-| Headings | Weight 700, leading 1.12 | Weight 850, leading 0.99, tight tracking |
-| Radius | 8px / 12px | 8px throughout |
-| Texture | 56px graph-paper motif | None |
-| Card hover | Gold glow ring | Lift 2px + soft shadow |
-| Page heroes | Flush with the page | Inverted ink band |
-
-`src/index.css` holds the whole system. `@theme` declares the token *names* (and so generates
-the Tailwind utilities); the two `[data-theme]` blocks supply the values. Because components
-reference semantic tokens — `bg-card`, `text-muted-foreground`, `.ui-card`, `.ui-eyebrow` —
-neither template needs its own markup. Inverted bands re-point the semantic colours locally,
-so children adapt with no extra classes.
-
-To add a third template: add an entry to `THEMES` in `src/theme.tsx` and a matching
-`:root[data-theme='…']` block.
+The look is taken from the cover of the Full Technical Proposal: deep BUK green on white, mint
+panels, heavy Public Sans headings and uppercase green labels. `src/index.css` holds the whole
+system. `@theme` declares the token *names* (and so generates the Tailwind utilities); the `:root`
+block supplies the values. Components read only semantic tokens, so a colour change is a one-line
+edit there. Inverted bands (`.ui-invert`) re-point the tokens locally, so a dark green band needs no
+special markup. The four-step green ramp from the cover is `--ui-ramp-1` to `--ui-ramp-4`.
 
 ## Search
 

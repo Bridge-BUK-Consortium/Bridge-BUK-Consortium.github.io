@@ -107,7 +107,7 @@ export default function Contact() {
           ].map((m) => (
             <span
               key={m}
-              className="rounded-full border border-border px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground"
+              className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground"
             >
               {m}
             </span>

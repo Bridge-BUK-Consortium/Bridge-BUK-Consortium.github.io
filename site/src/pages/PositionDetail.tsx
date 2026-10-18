@@ -46,11 +46,6 @@ export default function PositionDetail() {
   return (
     <>
       <section className="relative overflow-hidden border-b border-border">
-        <div className="absolute inset-0 grid-motif opacity-40" aria-hidden="true" />
-        <div
-          className="ui-bloom absolute -top-40 left-1/3 h-80 w-80 rounded-full bg-primary/15 blur-3xl"
-          aria-hidden="true"
-        />
         <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-5 md:py-16">
           <Link
             to="/opportunities"
@@ -99,7 +94,7 @@ export default function PositionDetail() {
                 </p>
               )}
               {streams.map((s) => (
-                <div key={s.id} className="mt-6 rounded-lg border border-border bg-card px-4 py-4">
+                <div key={s.id} className="mt-6 border-t border-border pt-4">
                   <Eyebrow tone="primary">{s.id}</Eyebrow>
                   <h3 className="mt-2 text-base font-bold">{s.title}</h3>
                   <p className="ui-body-sm mt-2">{s.summary}</p>
@@ -139,7 +134,7 @@ export default function PositionDetail() {
               <ol className="mt-4 space-y-4">
                 {SELECTION.map((s, i) => (
                   <li key={s} className="flex gap-4">
-                    <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full border border-primary/50 bg-primary/10 font-mono text-[11px] text-primary">
+                    <span className="mt-0.5 w-7 shrink-0 font-mono text-sm font-bold text-primary">
                       {i + 1}
                     </span>
                     <p className="text-[15px] leading-7 text-muted-foreground">{s}</p>
@@ -208,7 +203,7 @@ export default function PositionDetail() {
               <li key={s.code}>
                 <Link
                   to={`/opportunities/${s.code}`}
-                  className="group block h-full rounded-lg border border-border bg-card px-4 py-4 transition-colors hover:border-primary/40"
+                  className="group block h-full border-t border-border py-4"
                 >
                   <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-primary">
                     {s.code}

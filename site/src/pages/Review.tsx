@@ -82,7 +82,7 @@ export default function Review() {
             'The inline marker and this entry both disappear. When the list is empty, the notice at the top of the site goes with it.',
           ].map((step, i) => (
             <li key={step} className="grid grid-cols-[1.75rem_minmax(0,1fr)] gap-3">
-              <span className="ui-meta grid h-7 w-7 place-items-center rounded-full border border-border text-primary">
+              <span className="ui-meta w-7 font-bold text-primary">
                 {i + 1}
               </span>
               <span className="ui-body">{step}</span>

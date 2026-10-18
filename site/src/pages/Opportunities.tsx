@@ -100,7 +100,7 @@ export default function Opportunities() {
         lead="The cluster will fund fifteen postdoctoral researchers and fifteen PhD candidates. Every PhD candidate registers at Bayero University, Kano, and every postdoctoral researcher is employed by one of the four Nigerian universities in the joint venture. Each of the thirty spends three months at a university in the United Kingdom."
       >
         <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:max-w-3xl">
-          <div className="rounded-lg border border-primary/40 bg-primary/[0.06] px-4 py-3.5">
+          <div className="border-t-2 border-primary pt-3">
             <Eyebrow tone="primary">Postdoctoral fellowships</Eyebrow>
             <p className="ui-figure mt-1">
               15 <span className="ui-body-sm font-normal">positions</span>
@@ -109,7 +109,7 @@ export default function Opportunities() {
               {nPostdoc} topics advertised, each at least 24 months from Month 6
             </p>
           </div>
-          <div className="rounded-lg border border-primary/40 bg-primary/[0.06] px-4 py-3.5">
+          <div className="border-t-2 border-primary pt-3">
             <Eyebrow tone="primary">PhD studentships</Eyebrow>
             <p className="ui-figure mt-1">
               15 <span className="ui-body-sm font-normal">positions</span>
@@ -234,7 +234,7 @@ export default function Opportunities() {
             <ol className="space-y-5">
               {SELECTION.map((s, i) => (
                 <li key={s} className="flex gap-4">
-                  <span className="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full border border-primary/50 bg-primary/10 font-mono text-[11px] text-primary">
+                  <span className="mt-0.5 w-7 shrink-0 font-mono text-sm font-bold text-primary">
                     {i + 1}
                   </span>
                   <p className="text-sm leading-6 text-muted-foreground">{s}</p>

@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import ThemeSwitcher from './ThemeSwitcher'
 
 const NAV = [
   { to: '/research', label: 'Research' },
@@ -72,7 +71,6 @@ export default function Header({ onSearch }: { onSearch: () => void }) {
             </kbd>
           </button>
 
-          <ThemeSwitcher />
 
           <Link
             to="/contact"
