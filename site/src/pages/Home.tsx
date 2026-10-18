@@ -161,7 +161,7 @@ export default function Home() {
                   'PhDs registered at BUK; postdocs employed by the four Nigerian universities',
                   'A funded three-month stay at Leicester or York St John',
                   'Each post tied to a numbered topic and a named policy output',
-                  `${phdTopics} doctoral and ${postdocTopics} postdoctoral topics for 30 places`,
+                  `${phdTopics} doctoral and ${postdocTopics} postdoctoral topics for 30 positions`,
                 ].map((x) => (
                   <li key={x} className="flex gap-2.5 text-sm leading-6">
                     <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-primary" />

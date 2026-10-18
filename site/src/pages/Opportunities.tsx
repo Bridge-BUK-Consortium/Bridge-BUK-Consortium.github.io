@@ -103,7 +103,7 @@ export default function Opportunities() {
           <div className="rounded-lg border border-primary/40 bg-primary/[0.06] px-4 py-3.5">
             <Eyebrow tone="primary">Postdoctoral fellowships</Eyebrow>
             <p className="ui-figure mt-1">
-              15 <span className="ui-body-sm font-normal">places</span>
+              15 <span className="ui-body-sm font-normal">positions</span>
             </p>
             <p className="mt-1 text-xs leading-5 text-muted-foreground">
               {nPostdoc} topics advertised · at least 24 months from Month 6
@@ -112,7 +112,7 @@ export default function Opportunities() {
           <div className="rounded-lg border border-primary/40 bg-primary/[0.06] px-4 py-3.5">
             <Eyebrow tone="primary">PhD studentships</Eyebrow>
             <p className="ui-figure mt-1">
-              15 <span className="ui-body-sm font-normal">places</span>
+              15 <span className="ui-body-sm font-normal">positions</span>
             </p>
             <p className="mt-1 text-xs leading-5 text-muted-foreground">
               {nPhd} topics advertised · stipend from Month 9 to Month 36
@@ -138,7 +138,7 @@ export default function Opportunities() {
       <Section bordered={false}>
         <SectionHead
           eyebrow="What is offered"
-          title="Two schemes, thirty places"
+          title="Two schemes, thirty positions"
           lead="Only funded participants count towards the thirty."
         />
         <SchemeComparison />
@@ -149,7 +149,7 @@ export default function Opportunities() {
         <SectionHead
           eyebrow="Advertised topics"
           title="Every advertised topic"
-          lead="Five PhDs and five postdocs per pillar. The pool is wider than the places on purpose."
+          lead="Five PhDs and five postdocs per pillar. The pool is wider than the number of positions on purpose."
         />
 
         <div className="mt-7 sm:mt-8">
