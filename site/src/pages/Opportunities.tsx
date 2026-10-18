@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import {
   POSITIONS,
-  TERMS,
   SELECTION,
   RECRUITMENT_POOL,
   COHORT_ALLOCATION,
@@ -13,6 +12,7 @@ import { PILLARS, STREAMS } from '../data/programme'
 import { Eyebrow, Section, SectionHead, Card, PageHero, Tag, BrandLink } from '../components/ui'
 import { FilterPanel, FilterGroup } from '../components/Filters'
 import DataTable from '../components/DataTable'
+import SchemeComparison from '../components/SchemeComparison'
 
 type Filter = 'All' | 'Postdoc' | 'PhD'
 
@@ -138,58 +138,10 @@ export default function Opportunities() {
       <Section bordered={false}>
         <SectionHead
           eyebrow="What is offered"
-          title="What is offered"
+          title="Two schemes, thirty places"
           lead="Only funded participants count towards the thirty."
         />
-        <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-2">
-          {(['Postdoc', 'PhD'] as const).map((k) => {
-            const t = TERMS[k]
-            return (
-              <Card key={k} hover>
-                <Eyebrow tone="primary">{t.label}</Eyebrow>
-                <p className="ui-figure mt-3">
-                  {t.places}{' '}
-                  <span className="ui-body-sm font-normal">
-                    places · {t.topics} topics
-                  </span>
-                </p>
-                <dl className="mt-6 space-y-4">
-                  {[
-                    ['Employment and registration', t.registration],
-                    ['Duration', t.duration],
-                    ['Funding and support', t.funding],
-                    ['UK research stay', t.ukStay],
-                    ['Supervision and mentoring', t.supervision],
-                    ['Expected outputs', t.outputs],
-                    ['Recruitment timetable', t.recruitment],
-                  ].map(([label, body]) => (
-                    <div key={label}>
-                      <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-                        {label}
-                      </dt>
-                      <dd className="mt-1 text-sm leading-6">{body}</dd>
-                    </div>
-                  ))}
-                  <div>
-                    <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-                      Eligibility
-                    </dt>
-                    <dd className="mt-2">
-                      <ul className="space-y-2">
-                        {t.eligibility.map((e) => (
-                          <li key={e} className="flex gap-2.5 text-sm leading-6">
-                            <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
-                            <span className="text-muted-foreground">{e}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </dd>
-                  </div>
-                </dl>
-              </Card>
-            )
-          })}
-        </div>
+        <SchemeComparison />
       </Section>
 
       {/* The advertisements */}
