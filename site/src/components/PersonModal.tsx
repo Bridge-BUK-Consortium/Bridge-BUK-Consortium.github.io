@@ -1,3 +1,4 @@
+import Avatar from './Avatar'
 import { useEffect, useRef } from 'react'
 import type { Person } from '../data/people'
 
@@ -41,7 +42,9 @@ export default function PersonModal({
 
       <div className="ui-card ui-overlay relative flex max-h-[88vh] w-full max-w-2xl flex-col overflow-hidden rounded-b-none shadow-2xl sm:rounded-b-[inherit]">
         <div className="flex items-start justify-between gap-4 border-b border-border p-5 sm:p-6">
-          <div className="min-w-0">
+          <div className="flex min-w-0 items-start gap-4">
+            <Avatar person={person} size="lg" />
+            <div className="min-w-0">
             <p className="ui-eyebrow">
               {person.group}
             </p>
@@ -49,6 +52,7 @@ export default function PersonModal({
               {person.name}
             </h2>
             <p className="mt-1 text-sm text-muted-foreground">{person.institution}</p>
+            </div>
           </div>
           <button
             ref={closeRef}

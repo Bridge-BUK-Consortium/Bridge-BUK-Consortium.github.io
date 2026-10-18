@@ -9,12 +9,15 @@ export type Person = {
   role: string
   months?: number
   bio?: string
+  /** File in public/team/. Members without one get an initials tile. */
+  photo?: string
 }
 
 export const PEOPLE: Person[] = [
   {
     code: 'K-1',
     name: 'Dr. Shamsuddeen Hassan Muhammad',
+    photo: 'team/shamsuddeen.jpg',
     institution: 'Bayero University, Kano',
     group: 'Key Expert',
     title: 'Team Lead, and leads Pillar A',
@@ -27,6 +30,7 @@ export const PEOPLE: Person[] = [
   {
     code: 'K-2',
     name: 'Assoc. Prof. Aminu Bello Usman',
+    photo: 'team/aminu.jpg',
     institution: 'York St John University',
     group: 'Key Expert',
     title: 'Senior Research Specialist, and leads Pillar B',
@@ -39,6 +43,7 @@ export const PEOPLE: Person[] = [
   {
     code: 'K-3',
     name: 'Dr. Muhammad Shehu Abubakar-Sadiq',
+    photo: 'team/shehu.jpg',
     institution: 'University of Leicester, and Bayero University, Kano',
     group: 'Key Expert',
     title: 'Senior Research Specialist, and leads Pillar C',
@@ -51,6 +56,7 @@ export const PEOPLE: Person[] = [
   {
     code: 'K-4',
     name: 'Assoc. Prof. Khalid Haruna',
+    photo: 'team/khalid.jpg',
     institution: 'Federal University of Technology, Babura',
     group: 'Key Expert',
     title: 'Data and Analytics Specialist, and deputy Team Lead',
@@ -63,6 +69,7 @@ export const PEOPLE: Person[] = [
   {
     code: 'K-5',
     name: 'Maryam Ibrahim Mukhtar',
+    photo: 'team/maryam.jpg',
     institution: 'Bayero University, Kano',
     group: 'Key Expert',
     title: 'Project Administrator',
@@ -75,6 +82,7 @@ export const PEOPLE: Person[] = [
   {
     code: 'N-1',
     name: 'Prof. Muhammad Yahuza Bello',
+    photo: 'team/yahuza.jpg',
     institution: 'Bayero University, Kano',
     group: 'Professorial Lead',
     title: 'Professorial Lead, and chairs the Quality Panel',
@@ -87,6 +95,7 @@ export const PEOPLE: Person[] = [
   {
     code: 'N-2',
     name: 'Prof. Bashir Shehu Galadanci',
+    photo: 'team/bashir.jpg',
     institution: 'Bayero University, Kano',
     group: 'Non-Key Expert',
     title: 'Policy and governance lead, and co-leads RS6',
@@ -99,6 +108,7 @@ export const PEOPLE: Person[] = [
   {
     code: 'N-3',
     name: 'Dr. Ibrahim Said Ahmad',
+    photo: 'team/ibrahim.jpg',
     institution: 'Bayero University, Kano',
     group: 'Non-Key Expert',
     title: 'Dataset and annotation lead',
@@ -119,6 +129,7 @@ export const PEOPLE: Person[] = [
   {
     code: 'N-5',
     name: 'Prof. Salisu Mamman Abdulrahman',
+    photo: 'team/salisu.jpg',
     institution: 'Aliko Dangote University of Science and Technology, Wudil',
     group: 'Non-Key Expert',
     title: 'ADUSTECH’s named professor, and co-leads RS6',
@@ -130,6 +141,7 @@ export const PEOPLE: Person[] = [
   {
     code: 'N-6',
     name: 'Dr. Hadiza Ali Umar',
+    photo: 'team/hadiza.jpg',
     institution: 'Bayero University, Kano',
     group: 'Non-Key Expert',
     title: 'RS4 survey co-lead',
@@ -140,6 +152,7 @@ export const PEOPLE: Person[] = [
   {
     code: 'N-7',
     name: 'Dr. Jaafar Zubairu Maitama',
+    photo: 'team/jaafar.jpg',
     institution: 'Bayero University, Kano',
     group: 'Non-Key Expert',
     title: 'RS1 co-lead',
@@ -150,6 +163,7 @@ export const PEOPLE: Person[] = [
   {
     code: 'N-8',
     name: 'Dr. Saratu Yusuf Ilu',
+    photo: 'team/saratu.jpg',
     institution: 'Bayero University, Kano',
     group: 'Non-Key Expert',
     title: 'Cross-Cluster Focal Point',
@@ -160,6 +174,7 @@ export const PEOPLE: Person[] = [
   {
     code: 'N-9',
     name: 'Dr. Saminu Aliyu Kiri',
+    photo: 'team/saminu.jpg',
     institution: 'Bayero University, Kano',
     group: 'Non-Key Expert',
     title: 'Research administration support',
@@ -170,6 +185,7 @@ export const PEOPLE: Person[] = [
   {
     code: 'N-10',
     name: 'Sanah Abdullah Muaz',
+    photo: 'team/sanah.jpg',
     institution: 'Bayero University, Kano',
     group: 'Non-Key Expert',
     title: 'Annotation lead',

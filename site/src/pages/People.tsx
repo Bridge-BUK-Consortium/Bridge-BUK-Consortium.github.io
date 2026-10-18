@@ -2,18 +2,11 @@ import { useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { PEOPLE, type Person } from '../data/people'
 import PersonModal from '../components/PersonModal'
+import Avatar from '../components/Avatar'
 import { Section, PageHero, Card } from '../components/ui'
 import { FilterPanel, FilterGroup } from '../components/Filters'
 
 const GROUPS = ['All', 'Key Expert', 'Professorial Lead', 'Non-Key Expert', 'UK Professorial Lead'] as const
-
-const initials = (name: string) =>
-  name
-    .replace(/^(Dr\.|Prof\.|Assoc\. Prof\.|Mrs\.|Mr\.|Ms\.)\s+/, '')
-    .split(/\s+/)
-    .slice(0, 2)
-    .map((w) => w[0])
-    .join('')
 
 function PersonCard({ p, onOpen }: { p: Person; onOpen: () => void }) {
   return (
@@ -24,9 +17,7 @@ function PersonCard({ p, onOpen }: { p: Person; onOpen: () => void }) {
       aria-label={`${p.name}, full profile`}
     >
       <div className="flex w-full min-w-0 items-start gap-3">
-        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-border bg-background/60 font-mono text-xs text-primary sm:h-12 sm:w-12 sm:text-sm">
-          {initials(p.name)}
-        </span>
+        <Avatar person={p} />
         <span className="min-w-0 flex-1">
           <span className="ui-card-title ui-clamp-2 block">{p.name}</span>
           <span className="ui-meta mt-0.5 block truncate">{p.institution}</span>
