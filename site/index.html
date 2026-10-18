@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Inter is used by the "paper" template; the "lab" template needs no webfont. -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Apply the saved template before first paint, so there is no flash.
+      try {
+        var q = new URLSearchParams(location.search).get('theme');
+        var t = q || localStorage.getItem('cluster-e-theme') || 'lab';
+        if (t !== 'lab' && t !== 'paper') t = 'lab';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'lab');
+      }
+    </script>
+    <title>Cluster E — Trust, Safety, Consumer Protection and Online Harms</title>
+    <meta name="description" content="Cluster E of the National Digital Economy University Led Research Programme, Project BRIDGE. Led by Bayero University, Kano with ADUSTECH, FUT Babura, Northwest University, Leicester and York St John." />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

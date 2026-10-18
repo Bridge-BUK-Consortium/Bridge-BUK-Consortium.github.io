@@ -1,0 +1,317 @@
+@import "tailwindcss";
+
+/* =====================================================================
+   TWO TEMPLATES, ONE COMPONENT TREE.
+
+   Every surface reads from semantic tokens, so switching the data-theme
+   attribute on <html> re-skins the whole site without touching markup.
+
+     lab    — ported from sofair.uk: one monospace family for everything,
+              cool near-black, muted gold, 56px graph-paper motif, wide
+              uppercase tracking, glow on hover.
+     paper  — ported from bold-lab.ai: Inter at very heavy weights, warm
+              paper ground, teal eyebrows with zero tracking, fluid
+              clamp() type with tight leading, lift-and-shadow on hover.
+
+   @theme declares the token names (and so generates the utilities);
+   the [data-theme] blocks below give each template its values.
+   ===================================================================== */
+
+@theme {
+  --font-sans: var(--ui-font-sans);
+  --font-display: var(--ui-font-display);
+  --font-mono: var(--ui-font-mono);
+
+  --color-background: var(--ui-background);
+  --color-foreground: var(--ui-foreground);
+  --color-card: var(--ui-card);
+  --color-card-foreground: var(--ui-card-foreground);
+  --color-primary: var(--ui-primary);
+  --color-primary-foreground: var(--ui-primary-foreground);
+  --color-secondary: var(--ui-secondary);
+  --color-secondary-foreground: var(--ui-secondary-foreground);
+  --color-muted: var(--ui-muted);
+  --color-muted-foreground: var(--ui-muted-foreground);
+  --color-accent: var(--ui-accent);
+  --color-accent-foreground: var(--ui-accent-foreground);
+  --color-destructive: var(--ui-destructive);
+  --color-border: var(--ui-border);
+  --color-input: var(--ui-input);
+  --color-ring: var(--ui-ring);
+  --color-signal: var(--ui-signal);
+  --color-brand: var(--ui-brand);
+  --color-brand-foreground: var(--ui-brand-foreground);
+  --color-invert: var(--ui-invert);
+  --color-invert-foreground: var(--ui-invert-foreground);
+}
+
+/* ---------------------------------------------------------------
+   Template 1 — "lab" (sofair.uk). Also the default.
+   --------------------------------------------------------------- */
+:root,
+:root[data-theme='lab'] {
+  --ui-font-sans: "Courier New", Courier, monospace;
+  --ui-font-display: "Courier New", Courier, monospace;
+  --ui-font-mono: "Courier New", Courier, monospace;
+
+  --ui-background: oklch(16% 0.02 250);
+  --ui-foreground: oklch(97% 0.005 250);
+  --ui-card: oklch(20% 0.022 252);
+  --ui-card-foreground: oklch(97% 0.005 250);
+  --ui-primary: oklch(85% 0.12 95);
+  --ui-primary-foreground: oklch(20% 0.02 95);
+  --ui-secondary: oklch(26% 0.025 252);
+  --ui-secondary-foreground: oklch(95% 0.005 250);
+  --ui-muted: oklch(24% 0.02 252);
+  --ui-muted-foreground: oklch(72% 0.02 250);
+  --ui-accent: oklch(62% 0.16 268);
+  --ui-accent-foreground: oklch(98% 0.005 250);
+  --ui-destructive: oklch(62% 0.22 25);
+  --ui-border: oklch(32% 0.02 252);
+  --ui-input: oklch(30% 0.02 252);
+  --ui-ring: oklch(85% 0.12 95);
+  --ui-signal: oklch(90% 0.09 95);
+  --ui-brand: #f5c518;
+  --ui-brand-foreground: #171717;
+  /* The lab template is already dark, so its "inverted" band is simply
+     the page ground: heroes sit flush, the way sofair.uk does it. */
+  --ui-invert: oklch(16% 0.02 250);
+  --ui-invert-foreground: oklch(97% 0.005 250);
+
+  --ui-radius: 0.5rem;
+  --ui-radius-lg: 0.75rem;
+  --ui-eyebrow-tracking: 0.24em;
+  --ui-eyebrow-weight: 400;
+  --ui-eyebrow-size: 11px;
+  --ui-eyebrow-color: var(--ui-muted-foreground);
+  --ui-heading-weight: 700;
+  --ui-heading-leading: 1.12;
+  --ui-heading-tracking: 0;
+  --ui-body-leading: 1.7;
+  --ui-motif-opacity: 1;
+  --ui-shadow: none;
+  --ui-lift: 0;
+}
+
+/* ---------------------------------------------------------------
+   Template 2 — "paper" (bold-lab.ai).
+   --------------------------------------------------------------- */
+:root[data-theme='paper'] {
+  --ui-font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ui-font-display: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ui-font-mono: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --ui-background: #fbfaf6;
+  --ui-foreground: #09111f;
+  --ui-card: #ffffff;
+  --ui-card-foreground: #09111f;
+  --ui-primary: #2f8f83;
+  --ui-primary-foreground: #ffffff;
+  --ui-secondary: #eef2f4;
+  --ui-secondary-foreground: #202b3c;
+  --ui-muted: #eef2f4;
+  --ui-muted-foreground: #667085;
+  --ui-accent: #2b64d8;
+  --ui-accent-foreground: #ffffff;
+  --ui-destructive: #b42318;
+  --ui-border: #d8dee6;
+  --ui-input: #d8dee6;
+  --ui-ring: #c87912;
+  --ui-signal: #2b64d8;
+  --ui-brand: #b7791f;
+  --ui-brand-foreground: #ffffff;
+  /* The inverted band: ink ground, paper text. */
+  --ui-invert: #09111f;
+  --ui-invert-foreground: #ffffff;
+
+  --ui-radius: 8px;
+  --ui-radius-lg: 8px;
+  --ui-eyebrow-tracking: 0;
+  --ui-eyebrow-weight: 850;
+  --ui-eyebrow-size: 12px;
+  --ui-eyebrow-color: var(--ui-primary);
+  --ui-heading-weight: 850;
+  --ui-heading-leading: 0.99;
+  --ui-heading-tracking: -0.015em;
+  --ui-body-leading: 1.65;
+  --ui-motif-opacity: 0;
+  --ui-shadow: 0 18px 60px #09111f1a;
+  --ui-lift: -2px;
+}
+
+@layer base {
+  html {
+    font-size: 16px;
+  }
+
+  @media (width >= 640px) {
+    html {
+      font-size: 17px;
+    }
+  }
+
+  /* The paper template sizes from a fixed 16px root, because its type
+     scale is already fluid through clamp(). */
+  :root[data-theme='paper'],
+  :root[data-theme='paper'] body {
+    font-size: 16px;
+  }
+
+  *,
+  ::after,
+  ::before {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :root[data-theme='paper'] body {
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-synthesis: none;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: var(--ui-heading-weight);
+    line-height: var(--ui-heading-leading);
+    letter-spacing: var(--ui-heading-tracking);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  /* Honour the OS setting for the switcher's animations. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::after,
+    ::before {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* ----- Shared, theme-aware component surfaces ----- */
+
+  .ui-eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--ui-eyebrow-size);
+    font-weight: var(--ui-eyebrow-weight);
+    letter-spacing: var(--ui-eyebrow-tracking);
+    text-transform: uppercase;
+    color: var(--ui-eyebrow-color);
+  }
+
+  .ui-eyebrow-muted {
+    color: var(--color-muted-foreground);
+  }
+
+  .ui-card {
+    border: 1px solid var(--color-border);
+    background-color: var(--color-card);
+    border-radius: var(--ui-radius-lg);
+    transition:
+      transform 0.18s ease,
+      box-shadow 0.18s ease,
+      border-color 0.18s ease;
+  }
+
+  .ui-card-hover:hover {
+    border-color: color-mix(in oklab, var(--color-primary) 45%, transparent);
+    transform: translateY(var(--ui-lift));
+    box-shadow: var(--ui-shadow);
+  }
+
+  /* In the lab template the hover is a gold glow; in paper it is the
+     lift and soft shadow set above, so the glow is suppressed. */
+  :root[data-theme='lab'] .ui-card-hover:hover {
+    box-shadow:
+      0 0 0 1px color-mix(in oklab, var(--color-primary) 25%, transparent),
+      0 18px 60px -24px color-mix(in oklab, var(--color-primary) 45%, transparent);
+  }
+
+  .ui-radius {
+    border-radius: var(--ui-radius);
+  }
+
+  /* 56px graph paper. Present in lab, switched off in paper. */
+  .grid-motif {
+    background-image:
+      linear-gradient(to right, color-mix(in oklab, var(--color-border) 60%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklab, var(--color-border) 60%, transparent) 1px, transparent 1px);
+    background-size: 56px 56px;
+    opacity: var(--ui-motif-opacity);
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(100deg, var(--color-foreground) 20%, var(--color-signal) 70%);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  /* The paper template sets its display type solid, not gradient. */
+  :root[data-theme='paper'] .text-gradient {
+    background-image: none;
+    color: var(--color-foreground);
+    -webkit-text-fill-color: currentColor;
+  }
+
+  .glow-ring {
+    box-shadow:
+      0 0 0 1px color-mix(in oklab, var(--color-primary) 25%, transparent),
+      0 18px 60px -24px color-mix(in oklab, var(--color-primary) 45%, transparent);
+  }
+
+  /* Fluid display sizes, the way bold-lab.ai scales. In the lab template
+     the clamps resolve smaller and the leading is looser. */
+  .ui-display {
+    font-size: clamp(2rem, 5.4vw, 4.25rem);
+    line-height: var(--ui-heading-leading);
+  }
+
+  .ui-title {
+    font-size: clamp(1.6rem, 4vw, 3rem);
+    line-height: var(--ui-heading-leading);
+  }
+
+  :root[data-theme='lab'] .ui-display {
+    font-size: clamp(1.9rem, 4.6vw, 3.75rem);
+  }
+
+  /* An inverted band: ink-on-paper flips to paper-on-ink. */
+  .ui-invert {
+    background-color: var(--color-invert);
+    color: var(--color-invert-foreground);
+  }
+
+  .ui-prose {
+    line-height: var(--ui-body-leading);
+  }
+
+  /* Inside an inverted band the semantic colours are re-pointed, so every
+     child (muted text, borders, cards, chips) adapts without extra classes. */
+  :root[data-theme='paper'] .ui-invert {
+    --color-foreground: #ffffff;
+    --color-muted-foreground: #ffffffc7;
+    --color-border: #ffffff2e;
+    --color-card: #ffffff14;
+    --color-secondary: #ffffff1a;
+    --color-primary: #7fd4c6;
+    --ui-eyebrow-color: #7fd4c6;
+  }
+
+  :root[data-theme='paper'] .ui-invert .text-gradient {
+    color: #ffffff;
+  }
+}
