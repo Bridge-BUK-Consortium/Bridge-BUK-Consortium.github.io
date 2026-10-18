@@ -31,22 +31,22 @@ export default function Home() {
           className="ui-bloom absolute -bottom-40 right-0 h-72 w-72 rounded-full bg-accent/20 blur-3xl"
           aria-hidden="true"
         />
-        <div className="relative mx-auto max-w-7xl px-4 py-11 sm:px-5 sm:py-14 md:py-20">
+        <div className="relative mx-auto max-w-7xl px-4 py-9 sm:px-5 sm:py-11 md:py-12">
           <p className="ui-eyebrow ui-eyebrow-muted">
             <span className="sm:hidden">Six universities in Nigeria and the UK</span>
             <span className="hidden sm:inline">
               Bayero University Kano, ADUSTECH, FUT Babura, Northwest, Leicester, York St John
             </span>
           </p>
-          <h1 className="mt-4 text-3xl font-bold leading-[1.12] sm:mt-5 sm:text-4xl sm:leading-[1.05] md:text-6xl lg:text-7xl">
+          <h1 className="ui-display mt-3 font-bold text-balance sm:mt-4">
             <span className="text-gradient">
               Trust, Safety, Consumer Protection and Online Harms
             </span>
           </h1>
-          <p className="ui-lead mt-5 sm:mt-6">
+          <p className="ui-lead ui-lead-wide mt-4 sm:mt-5">
             Cluster E of the National Digital Economy University Led Research Programme.
           </p>
-          <p className="ui-body mt-4 sm:mt-5">
+          <p className="ui-body ui-body-wide mt-3.5 sm:mt-4">
             Project BRIDGE will lay at least {PROGRAMME.fibre} of fibre and bring millions of
             Nigerians online for the first time. Many of them have never met online fraud, harmful
             content or misuse of their data. We are producing the research that regulators need in
@@ -54,7 +54,7 @@ export default function Home() {
             the programme ends.
           </p>
 
-          <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row">
+          <div className="mt-6 flex flex-col gap-3 sm:mt-7 sm:flex-row">
             <PrimaryLink to="/research">Explore the research</PrimaryLink>
             <GhostLink to="/opportunities">
               Funded positions: 15 postdocs, 15 PhDs
@@ -62,7 +62,7 @@ export default function Home() {
           </div>
 
           {/* Key figures */}
-          <dl className="mt-10 grid grid-cols-2 gap-x-5 gap-y-7 border-t border-border pt-7 sm:mt-12 sm:gap-6 lg:grid-cols-4">
+          <dl className="mt-8 grid grid-cols-2 gap-x-5 gap-y-7 border-t border-border pt-6 sm:mt-9 sm:gap-6 lg:grid-cols-4">
             {[
               { k: '6', v: 'research streams in three pillars' },
               { k: '30', v: 'funded postdocs and PhD candidates' },

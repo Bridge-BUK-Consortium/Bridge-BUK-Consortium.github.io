@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { THEMES, useTheme, type ThemeId } from '../theme'
 
-export default function ThemeSwitcher({ compact = false }: { compact?: boolean }) {
+export default function ThemeSwitcher() {
   const { theme, setTheme } = useTheme()
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
@@ -34,7 +34,7 @@ export default function ThemeSwitcher({ compact = false }: { compact?: boolean }
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-label={`Template: ${current.name}. Change template`}
-        className="ui-radius inline-flex min-h-11 items-center gap-2 border border-border bg-background/40 px-3 text-sm transition-colors hover:bg-secondary"
+        className="ui-radius inline-flex min-h-11 min-w-11 items-center justify-center gap-2 border border-border bg-background/40 px-2.5 text-sm transition-colors hover:bg-secondary sm:px-3"
       >
         <svg
           viewBox="0 0 24 24"
@@ -52,8 +52,8 @@ export default function ThemeSwitcher({ compact = false }: { compact?: boolean }
           <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" />
           <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
         </svg>
-        {!compact && <span className="hidden sm:inline">Template:</span>}
-        <span className="font-semibold">{current.name}</span>
+        <span className="hidden xl:inline">Template:</span>
+        <span className="hidden font-semibold sm:inline">{current.name}</span>
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -61,7 +61,7 @@ export default function ThemeSwitcher({ compact = false }: { compact?: boolean }
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className={`h-3.5 w-3.5 transition-transform ${open ? 'rotate-180' : ''}`}
+          className={`hidden h-3.5 w-3.5 transition-transform sm:block ${open ? 'rotate-180' : ''}`}
           aria-hidden="true"
         >
           <path d="m6 9 6 6 6-6" />
@@ -72,7 +72,11 @@ export default function ThemeSwitcher({ compact = false }: { compact?: boolean }
         <ul
           role="listbox"
           aria-label="Site template"
-          className="ui-card absolute right-0 z-50 mt-2 w-72 overflow-hidden p-1 shadow-xl"
+          /* On a phone the trigger sits near the right edge, so a panel
+             anchored to it hangs off to the left. Below sm the panel is
+             pinned to the viewport instead, with an even gutter on both
+             sides; from sm it hangs from the button as usual. */
+          className="ui-card fixed inset-x-4 top-[4.5rem] z-50 overflow-hidden p-1 shadow-xl sm:absolute sm:inset-x-auto sm:right-0 sm:top-full sm:mt-2 sm:w-72"
         >
           {THEMES.map((t) => (
             <li key={t.id}>

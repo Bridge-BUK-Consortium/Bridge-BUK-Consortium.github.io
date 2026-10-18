@@ -27,7 +27,7 @@ export default function Header({ onSearch }: { onSearch: () => void }) {
           />
           <span className="min-w-0">
             <span className="block truncate text-sm font-bold sm:text-base">Cluster E</span>
-            <span className="ui-eyebrow ui-eyebrow-muted block truncate text-[10px]">
+            <span className="ui-eyebrow ui-eyebrow-muted hidden truncate text-[10px] min-[380px]:block">
               Project BRIDGE
             </span>
           </span>
@@ -72,9 +72,7 @@ export default function Header({ onSearch }: { onSearch: () => void }) {
             </kbd>
           </button>
 
-          <div className="hidden sm:block">
-            <ThemeSwitcher />
-          </div>
+          <ThemeSwitcher />
 
           <Link
             to="/contact"
@@ -133,9 +131,6 @@ export default function Header({ onSearch }: { onSearch: () => void }) {
                 {n.label}
               </NavLink>
             ))}
-            <div className="mt-2 flex items-center gap-2 sm:hidden">
-              <ThemeSwitcher compact />
-            </div>
             <Link
               to="/contact"
               onClick={() => setOpen(false)}

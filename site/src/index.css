@@ -276,7 +276,7 @@
   /* Fluid display sizes, the way bold-lab.ai scales. In the lab template
      the clamps resolve smaller and the leading is looser. */
   .ui-display {
-    font-size: clamp(1.75rem, 1.1rem + 3.2vw, 4.25rem);
+    font-size: clamp(1.75rem, 1.05rem + 2.9vw, 3.9rem);
     line-height: var(--ui-heading-leading);
   }
 
@@ -288,7 +288,7 @@
   /* Monospace sets far wider than Inter, so the lab template needs a
      smaller floor or long headings run to five lines on a phone. */
   :root[data-theme='lab'] .ui-display {
-    font-size: clamp(1.75rem, 1.15rem + 3vw, 3.75rem);
+    font-size: clamp(1.75rem, 1.1rem + 2.5vw, 3.25rem);
   }
 
   :root[data-theme='lab'] .ui-title {
@@ -305,7 +305,7 @@
     font-size: clamp(1.125rem, 1rem + 0.6vw, 1.5rem);
     line-height: 1.45;
     color: var(--color-foreground);
-    max-width: 44ch;
+    max-width: 46ch;
   }
 
   :root[data-theme='paper'] .ui-lead {
@@ -339,6 +339,18 @@
     .ui-body-sm {
       font-size: 0.875rem;
     }
+  }
+
+  /* The hero runs on a wider measure than body copy elsewhere: it has to
+     fit above the fold alongside the figures, and a narrow column there
+     costs lines, not clarity. Declared after .ui-body so it wins on
+     source order rather than specificity. */
+  .ui-lead-wide {
+    max-width: 62ch;
+  }
+
+  .ui-body-wide {
+    max-width: 94ch;
   }
 
   /* Card and list headings: solid foreground, tight, never muted. */
