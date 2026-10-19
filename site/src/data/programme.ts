@@ -2,8 +2,6 @@ export const PROGRAMME = {
   cluster: 'Cluster E',
   name: 'CREDENCE',
   centre: 'The Nigerian Centre for Trust and Safety Online',
-  definition: 'belief that something is true; trust.',
-  meaning: 'We earn that belief online, with evidence that Nigeria\'s regulators can act on.',
   clusterTitle: 'Trust, Safety, Consumer Protection and Online Harms',
   programme: 'National Digital Economy University Led Research Programme',
   project: 'Project BRIDGE',

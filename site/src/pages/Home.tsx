@@ -23,21 +23,10 @@ export default function Home() {
       {/* ---------------- Hero: forest band, the cover's ground ---------------- */}
       <section className="ui-invert">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 sm:py-14 md:py-16">
-          {/* Masthead: the name on the left, what it means on the right. */}
-          <div className="grid gap-3 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-end lg:gap-14">
-            <div className="min-w-0">
-              <p className="ui-eyebrow">{PROGRAMME.centre}</p>
-              <p className="mt-2 text-4xl font-extrabold tracking-wide sm:text-5xl">{PROGRAMME.name}</p>
-            </div>
-            <p
-              className="max-w-[46ch] border-l-2 pl-3 text-sm leading-6 sm:text-base sm:leading-7 lg:mb-1 lg:max-w-none"
-              style={{ borderColor: 'var(--ui-ramp-2)' }}
-            >
-              <span className="font-semibold italic">credence</span>{' '}
-              <span className="ui-eyebrow align-middle">noun</span>{' '}
-              <span className="italic">{PROGRAMME.definition}</span>{' '}
-              <span className="block">{PROGRAMME.meaning}</span>
-            </p>
+          {/* Masthead: the name. */}
+          <div className="min-w-0">
+            <p className="ui-eyebrow">{PROGRAMME.centre}</p>
+            <p className="mt-2 text-4xl font-extrabold tracking-wide sm:text-5xl">{PROGRAMME.name}</p>
           </div>
           <p className="ui-eyebrow mt-4">
             {PROGRAMME.project} {PROGRAMME.cluster}, {PROGRAMME.programme}
