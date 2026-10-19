@@ -103,57 +103,32 @@ export default function Home() {
       {/* ---------------- Who we are: mint band, the cover's panel ---------------- */}
       <section className="ui-tint border-b border-border" aria-label="About the consortium">
         <div className="mx-auto max-w-7xl px-4 py-9 sm:px-5 sm:py-12">
-          <div className="grid gap-6 md:grid-cols-3 md:gap-10">
-            <p className="ui-body ui-body-wide">
+          <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:gap-16">
+            <p className="ui-body ui-body-wide" style={{ fontSize: '1.125rem', lineHeight: 1.75 }}>
               CREDENCE, the Nigerian Centre for Trust and Safety Online, is Project BRIDGE Cluster E: a consortium of six universities led by{' '}
               <strong className="text-foreground">Bayero University, Kano</strong>. Four are in
               Nigeria: Bayero, Aliko Dangote University of Science and Technology, the Federal
               University of Technology Babura and Northwest University. Two are in the United
               Kingdom: the University of Leicester and York St John University.
             </p>
-            <p className="ui-body ui-body-wide">
-              The Federal Ministry of Communications, Innovation and Digital Economy asked
-              universities to study the harms that reach Nigerians as they come online. We answer
-              with six research streams on hate speech, online fraud, digital identity, data
-              protection, youth safety and regulation. Each stream delivers its findings to the
-              agency that can act on them.
-            </p>
-            <div className="min-w-0">
-              <p className="ui-eyebrow">What we start from</p>
-              <ul className="mt-3 grid gap-3">
-                {[
-                  ['AfriHate', 'hate and abusive speech in 15 African languages, including Hausa, Yoruba, Igbo and Pidgin. NAACL 2025; UNESCO IRCAI Global Top 100.'],
-                  ['NaijaHate', 'FMCIDE\u2019s own research grant, which produced HausaHate and HERDPhobia.'],
-                  ['NaijaSenti and BRIGHTER', 'sentiment and emotion in Nigerian languages. BRIGHTER won Best Resource Paper at ACL 2025.'],
-                  ['Four working platforms', 'VigilSentinel for security operations, Wazobia Invoice for offline-first business finance, SPIDVerify for identity checks and NaijaSafe for online safety.'],
-                ].map(([name, text]) => (
-                  <li key={name} className="grid grid-cols-[0.9rem_minmax(0,1fr)] items-start gap-2">
-                    <span className="mt-2.5 h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
-                    <span className="ui-body-sm">
-                      <strong className="text-foreground">{name}</strong>: {text}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
 
-          <dl className="ui-figure-row mt-8 grid grid-cols-2 gap-x-5 gap-y-7 border-t border-border pt-6 sm:mt-10 sm:gap-6 lg:grid-cols-4">
-            {[
-              { k: '6', v: 'research streams in three pillars' },
-              { k: '30', v: 'funded postdocs and PhD candidates' },
-              { k: '36', v: 'months, December 2026 to November 2029' },
-              { k: '18', v: 'policy briefs to named agencies' },
-            ].map((s) => (
-              <div key={s.v}>
-                <dt className="sr-only">{s.v}</dt>
-                <dd>
-                  <span className="ui-figure block">{s.k}</span>
-                  <span className="ui-body-sm mt-1.5 block">{s.v}</span>
-                </dd>
-              </div>
-            ))}
-          </dl>
+            <dl className="ui-figure-row grid grid-cols-2 gap-x-6 gap-y-7 border-t border-border pt-6 lg:border-t-0 lg:border-l lg:pl-10 lg:pt-0">
+              {[
+                { k: '6', v: 'research streams in three pillars' },
+                { k: '30', v: 'funded postdocs and PhD candidates' },
+                { k: '36', v: 'months, December 2026 to November 2029' },
+                { k: '18', v: 'policy briefs to named agencies' },
+              ].map((s) => (
+                <div key={s.v}>
+                  <dt className="sr-only">{s.v}</dt>
+                  <dd>
+                    <span className="ui-figure block">{s.k}</span>
+                    <span className="ui-body-sm mt-1.5 block">{s.v}</span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </div>
       </section>
 
