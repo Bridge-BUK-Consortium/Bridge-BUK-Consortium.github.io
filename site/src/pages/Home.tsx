@@ -304,7 +304,7 @@ export default function Home() {
               </h2>
               <ul className="mt-4 grid gap-2 sm:grid-cols-2">
                 {[
-                  'PhD candidates register at Bayero University, Kano. Postdoctoral researchers are employed by the four Nigerian universities.',
+                  'The thirty positions are shared among the four Nigerian universities: each registers its own PhD candidates and employs its own postdoctoral researchers.',
                   'Each researcher spends three months at Leicester or York St John, and the programme pays for the visit.',
                   'Every position is attached to a numbered topic and to a policy output with a named agency.',
                   `We advertise ${phdTopics} doctoral and ${postdocTopics} postdoctoral topics for the thirty positions.`,

@@ -477,10 +477,10 @@ export const RECRUITMENT_POOL = [
 ]
 
 export const COHORT_ALLOCATION = [
-  { institution: 'Bayero University, Kano', role: 'Registers all PhD candidates; employs postdocs; primary supervision', postdocs: '8', phds: '15 registered (8 primary)', streams: 'RS1, RS2, RS4, RS6' },
-  { institution: 'Aliko Dangote University of Science and Technology, Wudil', role: 'Employs postdocs; primary supervision', postdocs: '3', phds: '3 primary', streams: 'RS2, RS3' },
-  { institution: 'Federal University of Technology, Babura', role: 'Employs postdocs; primary supervision', postdocs: '2', phds: '2 primary', streams: 'RS3, RS5' },
-  { institution: 'Northwest University, Kano', role: 'Employs postdocs; primary supervision', postdocs: '2', phds: '2 primary', streams: 'RS5, RS6' },
+  { institution: 'Bayero University, Kano', role: 'Registers PhD candidates; employs postdocs; primary supervision', postdocs: '8', phds: '8', streams: 'RS1, RS2, RS4, RS6' },
+  { institution: 'Aliko Dangote University of Science and Technology, Wudil', role: 'Registers PhD candidates; employs postdocs; primary supervision', postdocs: '3', phds: '3', streams: 'RS2, RS3' },
+  { institution: 'Federal University of Technology, Babura', role: 'Registers PhD candidates; employs postdocs; primary supervision', postdocs: '2', phds: '2', streams: 'RS3, RS5' },
+  { institution: 'Northwest University, Kano', role: 'Registers PhD candidates; employs postdocs; primary supervision', postdocs: '2', phds: '2', streams: 'RS5, RS6' },
   { institution: 'University of Leicester', role: 'Hosts three-month research stays', postdocs: '8', phds: '7', streams: 'RS2, RS3, RS4, RS6' },
   { institution: 'York St John University', role: 'Hosts three-month research stays', postdocs: '7', phds: '8', streams: 'RS1, RS3, RS4, RS5' },
 ]

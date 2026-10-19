@@ -276,7 +276,7 @@ export const INSTITUTIONS = [
     detail:
       'Federal university, 1977. Hosts the National Cybersecurity Centre (NITDA, 2025) and the NCC Centre of Excellence. Home of HausaNLP and the Arewa Data Science Academy. Grants from the Lacuna Fund, Google Research, Oracle, Wellcome Trust and the National AI Research Scheme.',
     postdocs: 8,
-    phds: '15 registered (8 primary)',
+    phds: '8 registered',
     streams: 'RS1, RS2, RS4, RS6',
     url: 'https://www.buk.edu.ng',
   },
@@ -289,7 +289,7 @@ export const INSTITUTIONS = [
     detail:
       'Kano State university 40 km from BUK, shortlisted as Kano University of Science and Technology. Doctoral and MSc programmes in AI and data science; 200 workstations across four laboratories, plus embedded network and hardware labs.',
     postdocs: 3,
-    phds: '3 primary',
+    phds: '3 registered',
     streams: 'RS2, RS3',
     url: 'https://www.adustech.edu.ng',
   },
@@ -302,7 +302,7 @@ export const INSTITUTIONS = [
     detail:
       'Federal university in Jigawa State. Works on recommender systems, data analytics, machine learning and malware detection. Reaches underserved communities in Jigawa.',
     postdocs: 2,
-    phds: '2 primary',
+    phds: '2 registered',
     streams: 'RS3, RS5',
   },
   {
@@ -314,7 +314,7 @@ export const INSTITUTIONS = [
     detail:
       'Kano State university with a Faculty of Computing. Holds NCC and TETFund research grants (2022). Publishes on blockchain trust, public-sector fraud, and intrusion and phishing detection.',
     postdocs: 2,
-    phds: '2 primary',
+    phds: '2 registered',
     streams: 'RS5, RS6',
   },
   {

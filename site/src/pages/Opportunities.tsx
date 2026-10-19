@@ -97,7 +97,7 @@ export default function Opportunities() {
       <PageHero
         eyebrow="Opportunities"
         title="Thirty funded positions"
-        lead="The cluster will fund fifteen postdoctoral researchers and fifteen PhD candidates. Every PhD candidate registers at Bayero University, Kano, and every postdoctoral researcher is employed by one of the four Nigerian universities in the joint venture. Each of the thirty spends three months at a university in the United Kingdom."
+        lead="The cluster will fund fifteen postdoctoral researchers and fifteen PhD candidates. The positions are shared among the four Nigerian universities in the joint venture: Bayero University, Kano takes eight of each, ADUSTECH three, and FUT Babura and Northwest University two each. Every PhD candidate registers at the university of the primary supervisor, and every postdoctoral researcher is employed by one of the four. Each of the thirty spends three months at a university in the United Kingdom."
       >
         <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:max-w-3xl">
           <div className="border-t-2 border-primary pt-3">

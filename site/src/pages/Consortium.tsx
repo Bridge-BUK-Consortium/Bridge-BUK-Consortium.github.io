@@ -34,7 +34,7 @@ export default function Consortium() {
         <SectionHead
           eyebrow="Joint venture"
           title="The joint venture"
-          lead="Bayero University, Kano holds the contract. It registers all the PhD candidates and hosts the Research School and the annotation teams."
+          lead="Bayero University, Kano holds the contract. It registers eight of the fifteen PhD candidates and hosts the Research School and the annotation teams; the other three universities register the rest."
         />
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-2">
           {ng.map((i) => (
