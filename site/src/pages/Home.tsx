@@ -23,8 +23,10 @@ export default function Home() {
       {/* ---------------- Hero: forest band, the cover's ground ---------------- */}
       <section className="ui-invert">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 sm:py-14 md:py-16">
-          <p className="ui-eyebrow">
-            Cluster E, National Digital Economy University Led Research Programme
+          <p className="ui-eyebrow">{PROGRAMME.centre}</p>
+          <p className="mt-2 text-4xl font-extrabold tracking-wide sm:text-5xl">{PROGRAMME.name}</p>
+          <p className="ui-eyebrow mt-3">
+            Project BRIDGE Cluster E, National Digital Economy University Led Research Programme
           </p>
 
           <div className="mt-4 grid gap-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-14">
@@ -106,7 +108,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 py-9 sm:px-5 sm:py-12">
           <div className="grid gap-6 md:grid-cols-3 md:gap-10">
             <p className="ui-body ui-body-wide">
-              Cluster E is a consortium of six universities led by{' '}
+              CREDENCE, the Nigerian Centre for Trust and Safety Online, is Project BRIDGE Cluster E: a consortium of six universities led by{' '}
               <strong className="text-foreground">Bayero University, Kano</strong>. Four are in
               Nigeria: Bayero, Aliko Dangote University of Science and Technology, the Federal
               University of Technology Babura and Northwest University. Two are in the United
@@ -298,7 +300,7 @@ export default function Home() {
       <Section>
         <div>
           <div className="max-w-2xl">
-            <h2 className="text-2xl font-bold md:text-3xl">Work with Cluster E</h2>
+            <h2 className="text-2xl font-bold md:text-3xl">Work with CREDENCE</h2>
             <p className="ui-body mt-3">
               We welcome enquiries from government agencies, platforms, civil society organisations
               and researchers.

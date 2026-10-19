@@ -8,9 +8,10 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 sm:py-12">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
-            <p className="text-lg font-bold">Cluster E</p>
+            <p className="text-lg font-bold">{PROGRAMME.name}</p>
+            <p className="ui-eyebrow mt-1">{PROGRAMME.centre}</p>
             <p className="ui-body-sm mt-2">
-              {PROGRAMME.clusterTitle}. A joint venture of four Nigerian universities led by{' '}
+              {PROGRAMME.project} {PROGRAMME.cluster}: {PROGRAMME.clusterTitle}. A joint venture of four Nigerian universities led by{' '}
               {PROGRAMME.lead}, with the University of Leicester and York St John University, for the{' '}
               {PROGRAMME.programme} under {PROGRAMME.project}.
             </p>
@@ -32,7 +33,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 border-t border-border pt-6 text-center text-xs leading-6 text-muted-foreground">
-          <p>© {new Date().getFullYear()} Cluster E</p>
+          <p>© {new Date().getFullYear()} {PROGRAMME.name}, {PROGRAMME.centre}</p>
           <p className="mt-1 hidden sm:block">
             Bayero University Kano, Aliko Dangote University of Science and Technology Wudil,
             Federal University of Technology Babura, Northwest University Kano, University of

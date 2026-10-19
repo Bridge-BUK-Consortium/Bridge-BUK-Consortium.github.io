@@ -5,7 +5,7 @@
    and mints, so the same mark works on the forest ground. */
 export default function ClusterMark({
   className = '',
-  title = 'Cluster E',
+  title = 'CREDENCE, Project BRIDGE Cluster E',
 }: {
   className?: string
   title?: string

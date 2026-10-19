@@ -1,6 +1,7 @@
-# Cluster E — project website
+# CREDENCE: project website
 
-Static site for **Cluster E: Trust, Safety, Consumer Protection and Online Harms**, part of
+Static site for **CREDENCE, the Nigerian Centre for Trust and Safety Online**, which is
+**Project BRIDGE Cluster E: Trust, Safety, Consumer Protection and Online Harms**, part of
 the National Digital Economy University Led Research Programme under Project BRIDGE.
 Content is drawn from the Full Technical Proposal in `../Cluster_E_proposal_overleaf/main.tex`.
 

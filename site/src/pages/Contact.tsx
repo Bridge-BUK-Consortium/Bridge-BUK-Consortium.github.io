@@ -10,7 +10,7 @@ export default function Contact() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Talk to Cluster E"
+        title="Talk to CREDENCE"
         lead="We welcome enquiries from government agencies, platforms, civil society organisations and researchers, and questions about the funded positions."
       />
 
