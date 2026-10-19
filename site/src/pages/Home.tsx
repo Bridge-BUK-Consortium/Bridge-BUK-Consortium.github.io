@@ -118,11 +118,24 @@ export default function Home() {
               protection, youth safety and regulation. Each stream delivers its findings to the
               agency that can act on them.
             </p>
-            <p className="ui-body ui-body-wide">
-              The team built AfriHate and NaijaSenti, the largest hate speech and sentiment
-              datasets for Nigerian languages, and runs four platforms already in use in Nigeria:
-              VigilSentinel, Wazobia Invoice, SPIDVerify and NaijaSafe.
-            </p>
+            <div className="min-w-0">
+              <p className="ui-eyebrow">What we start from</p>
+              <ul className="mt-3 grid gap-3">
+                {[
+                  ['AfriHate', 'hate and abusive speech in 15 African languages, including Hausa, Yoruba, Igbo and Pidgin. NAACL 2025; UNESCO IRCAI Global Top 100.'],
+                  ['NaijaHate', 'FMCIDE\u2019s own research grant, which produced HausaHate and HERDPhobia.'],
+                  ['NaijaSenti and BRIGHTER', 'sentiment and emotion in Nigerian languages. BRIGHTER won Best Resource Paper at ACL 2025.'],
+                  ['Four working platforms', 'VigilSentinel for security operations, Wazobia Invoice for offline-first business finance, SPIDVerify for identity checks and NaijaSafe for online safety.'],
+                ].map(([name, text]) => (
+                  <li key={name} className="grid grid-cols-[0.9rem_minmax(0,1fr)] items-start gap-2">
+                    <span className="mt-2.5 h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
+                    <span className="ui-body-sm">
+                      <strong className="text-foreground">{name}</strong>: {text}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           <dl className="ui-figure-row mt-8 grid grid-cols-2 gap-x-5 gap-y-7 border-t border-border pt-6 sm:mt-10 sm:gap-6 lg:grid-cols-4">
