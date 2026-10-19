@@ -23,32 +23,29 @@ export default function Home() {
       {/* ---------------- Hero: forest band, the cover's ground ---------------- */}
       <section className="ui-invert">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 sm:py-14 md:py-16">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-14">
+          {/* Masthead: the name on the left, what it means on the right. */}
+          <div className="grid gap-3 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-end lg:gap-14">
             <div className="min-w-0">
-              <p className="ui-eyebrow">
-                {PROGRAMME.project}, {PROGRAMME.cluster}
-              </p>
-              <h1 className="mt-3 text-5xl font-extrabold leading-none tracking-tight sm:text-7xl">
-                {PROGRAMME.name}
-              </h1>
-              <p className="mt-3 text-xl font-semibold text-balance sm:text-2xl">{PROGRAMME.centre}</p>
+              <p className="ui-eyebrow">{PROGRAMME.centre}</p>
+              <p className="mt-2 text-4xl font-extrabold tracking-wide sm:text-5xl">{PROGRAMME.name}</p>
+            </div>
+            <p
+              className="max-w-[46ch] border-l-2 pl-3 text-sm leading-6 sm:text-base sm:leading-7 lg:mb-1 lg:max-w-none"
+              style={{ borderColor: 'var(--ui-ramp-2)' }}
+            >
+              <span className="font-semibold italic">credence</span>{' '}
+              <span className="ui-eyebrow align-middle">noun</span>{' '}
+              <span className="italic">{PROGRAMME.definition}</span>{' '}
+              <span className="block">{PROGRAMME.meaning}</span>
+            </p>
+          </div>
+          <p className="ui-eyebrow mt-4">
+            {PROGRAMME.project} {PROGRAMME.cluster}, {PROGRAMME.programme}
+          </p>
 
-              {/* What the name means, set like a dictionary entry. */}
-              <p
-                className="mt-6 max-w-[60ch] border-l-4 pl-4 text-base leading-7 sm:text-lg sm:leading-8"
-                style={{ borderColor: 'var(--ui-ramp-2)' }}
-              >
-                <span className="block">
-                  <span className="font-semibold italic">credence</span>{' '}
-                  <span className="ui-eyebrow align-middle">noun</span>{' '}
-                  <span className="italic">{PROGRAMME.definition}</span>
-                </span>
-                <span className="mt-2 block">{PROGRAMME.meaning}</span>
-              </p>
-
-              <p className="ui-eyebrow mt-6">
-                {PROGRAMME.cluster}: {PROGRAMME.clusterTitle}
-              </p>
+          <div className="mt-4 grid gap-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-14">
+            <div className="min-w-0">
+              <h1 className="ui-display font-bold text-balance">{PROGRAMME.clusterTitle}</h1>
 
               <ul className="mt-5 grid gap-3 sm:mt-6">
                 {[
@@ -61,7 +58,7 @@ export default function Home() {
                       aria-hidden="true"
                       className="mt-2.5 h-1.5 w-1.5 rounded-full bg-primary sm:mt-3"
                     />
-                    <span className="text-base leading-7 sm:text-lg sm:leading-8">{point}</span>
+                    <span className="ui-lead ui-lead-wide">{point}</span>
                   </li>
                 ))}
               </ul>
