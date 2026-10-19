@@ -23,13 +23,9 @@ export default function Home() {
       {/* ---------------- Hero: forest band, the cover's ground ---------------- */}
       <section className="ui-invert">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 sm:py-14 md:py-16">
-          {/* Masthead: the name. */}
-          <div className="min-w-0">
-            <p className="ui-eyebrow">{PROGRAMME.centre}</p>
-            <p className="mt-2 text-4xl font-extrabold tracking-wide sm:text-5xl">{PROGRAMME.name}</p>
-          </div>
-          <p className="ui-eyebrow mt-4">
-            {PROGRAMME.project} {PROGRAMME.cluster}, {PROGRAMME.programme}
+          {/* One quiet line names the cluster; the header already carries the CREDENCE brand. */}
+          <p className="ui-eyebrow">
+            {PROGRAMME.name} · {PROGRAMME.project} {PROGRAMME.cluster}
           </p>
 
           <div className="mt-4 grid gap-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-14">
