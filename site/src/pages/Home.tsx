@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { PROGRAMME, PILLARS, STREAMS, PRINCIPLES, MINISTER, LEAD_VIDEO } from '../data/programme'
-import { INSTITUTIONS } from '../data/people'
 import { POSITIONS } from '../data/positions'
 import Placeholder from '../components/Placeholder'
 import {
@@ -158,30 +157,6 @@ export default function Home() {
             <p className="mt-5 font-semibold">{MINISTER.name}</p>
             <p className="ui-body-sm">{MINISTER.title}</p>
           </div>
-        </div>
-      </section>
-
-      {/* ---------------- Consortium strip ---------------- */}
-      <section className="border-b border-border" aria-label="Consortium">
-        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-5 sm:py-10">
-          <Eyebrow>Joint venture and sub-consultants</Eyebrow>
-          <ul className="mt-5 grid gap-3 sm:mt-6 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
-            {INSTITUTIONS.map((i) => (
-              <li key={i.short}>
-                <Link
-                  to="/consortium"
-                  className="group block h-full border-t border-border py-3.5 sm:py-4"
-                >
-                  <p className="text-sm font-bold underline-offset-4 group-hover:underline">
-                    {i.name}
-                  </p>
-                  <p className="mt-1 text-xs text-muted-foreground">
-                    {i.role} in {i.country}
-                  </p>
-                </Link>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
