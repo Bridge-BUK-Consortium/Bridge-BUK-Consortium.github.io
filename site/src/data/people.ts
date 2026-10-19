@@ -300,7 +300,7 @@ export const INSTITUTIONS = [
     role: 'JV partner',
     focus: 'Recommender systems, data analytics, cybersecurity',
     detail:
-      'New federal university of technology in Jigawa State. Five School of Computing laboratories (computer science, networking, cyber security, software engineering, hardware) and fibre to every building. PGD, MSc and PhD programmes in preparation. Reaches underserved communities in Jigawa.',
+      'New federal university of technology in Jigawa State. Five School of Computing laboratories (computer science, networking, cyber security, software engineering, hardware) and fibre to every building. Reaches underserved communities in Jigawa.',
     postdocs: 2,
     phds: '2 registered',
     streams: 'RS3, RS5',
