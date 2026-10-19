@@ -9,6 +9,8 @@ export type Position = {
   streams: StreamId[]
   agencies: string[]
   note?: string
+  /** A short research abstract, written like the opening of a paper. */
+  abstract?: string
 }
 
 /* The open call advertises a topic pool wider than the number of funded
@@ -23,9 +25,11 @@ export const POSITIONS: Position[] = [
     code: 'A-P1',
     type: 'PhD',
     pillar: 'A',
-    title: 'Hate speech detection for low-resource Nigerian languages',
+    title: 'Beyond keywords: culturally grounded hate speech detection for nine Nigerian languages',
     focus:
-      'Build and evaluate detection models for the nine languages of RS1, with per-language error analysis at a fixed operating threshold.',
+      'Build detection models that handle code-switching, dialect variation and implicit, coded hate, with per-language error analysis at a fixed operating threshold. Extends AfriHate and HausaHate.',
+    abstract:
+      'Hate speech in Nigerian online spaces is rarely written as a list of slurs. It is code-switched between Hausa, Pidgin and English, carried by proverbs, nicknames and coded references to ethnicity and religion, and it changes around elections and local conflicts. Keyword filters and models trained on English miss most of it and wrongly flag ordinary speech. This project builds hate and abusive language detection for nine Nigerian languages that reads such content in context. It extends the AfriHate and HausaHate datasets with new annotation for implicit and coded hate, studies how cultural knowledge and dialect affect model errors, and compares multilingual and Africa-centred language models under realistic conditions. Every model is reported with per-language error analysis at a fixed operating threshold, so that NITDA and INEC can see where it can be trusted and where human review is still needed. The candidate will publish the datasets, models and evaluation protocol openly.',
     streams: ['RS1'],
     agencies: ['NITDA', 'INEC'],
   },
@@ -33,30 +37,36 @@ export const POSITIONS: Position[] = [
     code: 'A-P2',
     type: 'PhD',
     pillar: 'A',
-    title: 'Do platforms moderate Nigerian-language content equally?',
+    title: 'From polarisation to violence: modelling escalation in Nigerian online discourse',
     focus:
-      'Run the matched-pair audit of removal rate and time to action for Nigerian-language and English content, and propose an appeal route.',
+      'Detect polarising, dehumanising and extremist narratives across Nigerian languages, and test which online signals come before documented offline violence, using network analysis and process tracing under a restricted-access protocol. Builds on POLAR.',
+    abstract:
+      'Online polarisation does not always end in violence, but violence in Nigeria is often preceded by a visible hardening of online talk: us-versus-them framing, dehumanising language and calls to act. This project asks which of these signals can be measured reliably in Nigerian languages, and which of them come before documented offline incidents. Building on POLAR, the multilingual polarisation benchmark, the candidate will model polarising, dehumanising and extremist narratives in Hausa, Nigerian Pidgin and English, trace how they spread through networks of accounts and channels, and align them in time with incident records. Process tracing on selected cases will test whether the signals are causes, symptoms or noise. All work runs under a restricted-access protocol approved by the ethics committee, and no data that could identify individuals is released. The output is an evidence-based risk framework for ONSA and NITDA that separates genuine early warning from ordinary political disagreement.',
     streams: ['RS1'],
-    agencies: ['NITDA', 'NCC'],
+    agencies: ['ONSA', 'NITDA'],
+    note: 'Restricted-access data protocol; additional ethics clearance and safeguarding training apply.',
   },
   {
     code: 'A-P3',
     type: 'PhD',
     pillar: 'A',
-    title: 'Online radicalisation pathways in northern Nigeria',
+    title: 'Safe in English, unsafe in Hausa? Red-teaming large language models for Nigerian languages',
     focus:
-      'Identify indicators that precede documented offline violence, using process tracing and network analysis under a restricted-access protocol.',
+      'Build culturally grounded safety benchmarks and red-teaming protocols for Hausa, Yoruba, Igbo and Nigerian Pidgin; measure harmful generation, refusal failures and cross-lingual safety gaps in widely used chatbots; and test mitigations.',
+    abstract:
+      'Millions of Nigerians now use chatbots built on large language models, often in their own languages. These models are made safe mainly through English data, and early evidence suggests that a request a model refuses in English may be answered in a low-resource language. This project measures that gap for Hausa, Yoruba, Igbo and Nigerian Pidgin. The candidate will build culturally grounded safety benchmarks with native speakers, covering harms that matter locally, such as ethnic and religious incitement, scams, health misinformation and harms to children. Community red-teaming will be used to find failures that translated English benchmarks miss. Widely used models will be evaluated for harmful generation, over-refusal and inconsistency across languages, and the project will test mitigations such as multilingual safety tuning and language-aware guardrails. The results give NITDA and NCC evidence for guidance on generative AI in Nigeria, and give developers an open benchmark to test against.',
     streams: ['RS1'],
-    agencies: ['ONSA'],
-    note: 'Restricted-access data protocol; additional ethics clearance and safeguarding training apply.',
+    agencies: ['NITDA', 'NCC'],
   },
   {
     code: 'A-P4',
     type: 'PhD',
     pillar: 'A',
-    title: 'AI-generated content, deepfakes and financial and electoral integrity',
+    title: 'Who said that? Detecting synthetic speech, text and video in low-resource languages',
     focus:
-      'Develop detection and provenance methods for synthetic media used in fraud and disinformation, and propose a labelling and liability regime.',
+      'Develop detection and provenance methods for deepfakes and machine-generated content used in fraud and election disinformation, and propose a labelling and liability regime.',
+    abstract:
+      'Cloned voices that impersonate relatives or bank staff, fake audio of politicians and machine-written news in Hausa are now cheap to produce. Detection tools are trained almost entirely on English and on well-resourced voices, so they fail on Nigerian languages and accents. This project builds a Nigerian benchmark of synthetic speech, text and video in the five core languages, and develops detection and provenance methods that work on low-end phones and short, noisy clips. It builds on earlier work that detected machine-generated Hausa news with high accuracy, and extends it to audio and video. The candidate will study how synthetic media is used in fraud and in election disinformation, test how well current detectors and watermarking schemes transfer to Nigerian languages, and set out a labelling and liability regime that NITDA, CBN and INEC could adopt.',
     streams: ['RS1', 'RS2'],
     agencies: ['NITDA', 'CBN', 'INEC'],
   },
@@ -64,9 +74,11 @@ export const POSITIONS: Position[] = [
     code: 'A-P5',
     type: 'PhD',
     pillar: 'A',
-    title: 'Children and harmful online content',
+    title: 'What children see online: measuring and reducing exposure to harmful content in northern Nigeria',
     focus:
-      'Measure underage exposure, assess blocking and filtering, and propose a framework with parents and schools in northern Nigeria.',
+      'Measure underage exposure, test blocking and filtering, and propose a framework with parents and schools in northern Nigeria.',
+    abstract:
+      'Children in northern Nigeria are going online through shared and second-hand phones, often without parental controls or age checks, and there is almost no data on what they see. This project measures it. Working with schools, parents and the cluster’s youth survey of 2,000 students, the candidate will estimate how often children meet violent, sexual, hateful and scam content, on which platforms and in which languages. The project will then test whether blocking, filtering and age-appropriate settings work on the devices and networks children actually use. The findings feed a practical framework for parents and schools and evidence for NITDA and the Federal Ministry of Education. The work follows a strict child protection protocol and is supervised jointly with the cluster’s age assurance research.',
     streams: ['RS5'],
     agencies: ['NITDA', 'Federal Ministry of Education'],
     note: 'Supervised jointly with the Pillar C child-safety work (C-P1). Child protection protocol applies.',
@@ -75,9 +87,11 @@ export const POSITIONS: Position[] = [
     code: 'A-D1',
     type: 'Postdoc',
     pillar: 'A',
-    title: 'Election-period harmful speech early warning',
+    title: 'Early warning at election time: a repeatable pipeline for monitoring harmful speech',
     focus:
-      'Turn the 2027 election corpus into a repeatable monitoring method and a post-election review note for INEC.',
+      'Turn the 2027 election archive and the off-cycle governorship elections into a monitoring method that INEC can rerun, with a post-election review note.',
+    abstract:
+      'Each Nigerian election produces a surge of hateful and misleading content, but every monitoring effort so far has been built from scratch and then lost. This fellowship turns the cluster’s 2027 election archive into a repeatable pipeline that INEC and its partners can run again. The fellow will design the collection, annotation and detection steps so that they work across the four core Nigerian languages, test the pipeline on the off-cycle governorship elections, and measure how early it can flag rising harm and how many false alarms it raises. The deliverables are an open, documented monitoring method, a post-election review note for INEC, and a playbook for the next general election cycle.',
     streams: ['RS1'],
     agencies: ['INEC', 'NITDA'],
   },
@@ -85,9 +99,11 @@ export const POSITIONS: Position[] = [
     code: 'A-D2',
     type: 'Postdoc',
     pillar: 'A',
-    title: 'Content moderation governance for Nigeria',
+    title: 'Equal moderation? Auditing platforms and designing content governance for Nigerian languages',
     focus:
-      'Lead the co-design workshops and draft the governance model, tested against the EU Digital Services Act and the UK Online Safety Act.',
+      'Run the matched-pair audit of removal rate and time to action for Nigerian-language and English content, then lead the co-design workshops and draft the governance model, tested against the EU Digital Services Act and the UK Online Safety Act.',
+    abstract:
+      'Platforms say their rules apply equally in every language. This fellowship tests that claim for Nigeria. The fellow will run a pre-registered, matched-pair audit: comparable hateful items in Hausa, Yoruba, Igbo, Nigerian Pidgin and English are reported through the platforms’ own channels, and the study compares how often and how fast each is removed. The evidence then goes into co-design workshops with NITDA, NCC and civil society. The fellow will draft a content moderation governance model for Nigeria, setting out what platforms should be required to do, report and fix, and test it against the EU Digital Services Act and the UK Online Safety Act.',
     streams: ['RS1', 'RS6'],
     agencies: ['NITDA', 'NCC', 'FMCIDE'],
   },
@@ -95,9 +111,11 @@ export const POSITIONS: Position[] = [
     code: 'A-D3',
     type: 'Postdoc',
     pillar: 'A',
-    title: 'Digital literacy programme evaluation and safety toolkit',
+    title: 'Does digital literacy work? Evaluating school programmes and co-designing a multilingual safety toolkit',
     focus:
-      'Run the matched comparison of exposed and unexposed schools and build the Month 30 toolkit in Hausa, Nigerian Pidgin and English.',
+      'Run the matched comparison of exposed and unexposed schools and build the Month 30 toolkit with students and teachers in Hausa, Nigerian Pidgin and English.',
+    abstract:
+      'Nigeria funds digital literacy programmes in schools, but there is little evidence on whether they make students safer online. This fellowship evaluates them. Using the cluster’s youth survey, the fellow will compare schools that have received UBEC and NITDA programmes with similar schools that have not, and measure differences in risky behaviour, harm and reporting. The fellow will then co-design a safety toolkit with students and teachers in Hausa, Nigerian Pidgin and English, test it in classrooms, and turn the results into curriculum recommendations for the Federal Ministry of Education.',
     streams: ['RS5'],
     agencies: ['UBEC', 'Federal Ministry of Education', 'NITDA'],
   },
@@ -105,9 +123,11 @@ export const POSITIONS: Position[] = [
     code: 'A-D4',
     type: 'Postdoc',
     pillar: 'A',
-    title: 'A Nigerian age assurance and online child safety standard',
+    title: 'Proving age without revealing identity: a Nigerian age assurance and child safety standard',
     focus:
       'Turn the PhD work on age verification (C-P1) and child exposure (A-P5) into a technical specification and model regulations.',
+    abstract:
+      'Keeping children away from harmful content usually means asking everyone to prove their age, which can expose personal data and shut out people without formal identity documents. This fellowship designs a better route for Nigeria. Building on the cluster’s PhD work on privacy-preserving age verification and on children’s exposure, the fellow will set out a technical specification for age assurance that proves a user is old enough without revealing who they are, works on low-end devices, and fits the Nigeria Data Protection Act. The specification is paired with model regulations for NDPC and NITDA, benchmarked against the UK and EU approaches.',
     streams: ['RS4', 'RS5'],
     agencies: ['NDPC', 'NITDA'],
   },
@@ -115,8 +135,11 @@ export const POSITIONS: Position[] = [
     code: 'A-D5',
     type: 'Postdoc',
     pillar: 'A',
-    title: 'Gender norms and girls’ online safety',
-    focus: 'Lead the focus groups in 20 schools and propose reporting routes that girls will use.',
+    title: 'Online violence against women and girls: detection and reporting routes in Nigerian languages',
+    focus:
+      'Detect gendered abuse using AfriHate and BRIGHTER emotion signals, lead the focus groups in 20 schools, and design reporting routes that girls and women will use.',
+    abstract:
+      'Women and girls in Nigeria face online abuse that is often sexualised, shaming or threatening, and it is usually written in local languages that moderation systems do not read well. Many never report it, because reporting routes are unknown, unsafe or useless. This fellowship tackles both problems. The fellow will build detection for gendered abuse in Nigerian languages, using AfriHate and the emotion signals in BRIGHTER to separate abuse from ordinary conflict. In parallel, the fellow will lead focus groups with girls and boys in 20 schools to learn what they experience and why they do or do not report. The output is evidence and a set of reporting routes, designed with girls and women, for the Federal Ministry of Women Affairs and UBEC.',
     streams: ['RS5'],
     agencies: ['Federal Ministry of Women Affairs', 'UBEC'],
   },

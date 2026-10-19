@@ -27,7 +27,7 @@ export const INDEX: Hit[] = [
     title: `${p.code} ${p.title}`,
     subtitle: `${p.type === 'PhD' ? 'PhD studentship' : 'Postdoctoral fellowship'} in Pillar ${p.pillar}, ${p.streams.join(' and ')}`,
     haystack: norm(
-      [p.code, p.type, p.title, p.focus, p.note ?? '', p.pillar, ...p.streams, ...p.agencies].join(' '),
+      [p.code, p.type, p.title, p.focus, p.abstract ?? '', p.note ?? '', p.pillar, ...p.streams, ...p.agencies].join(' '),
     ),
     to: `/opportunities/${p.code}`,
   })),

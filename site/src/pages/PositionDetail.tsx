@@ -87,7 +87,16 @@ export default function PositionDetail() {
             <div>
               <Eyebrow tone="primary">The research</Eyebrow>
               <h2 className="ui-card-title mt-3 text-xl">What this position works on</h2>
-              <p className="ui-body mt-4">{p.focus}</p>
+              {p.abstract ? (
+                <>
+                  <h3 className="mt-5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
+                    Abstract
+                  </h3>
+                  <p className="ui-body mt-2">{p.abstract}</p>
+                </>
+              ) : (
+                <p className="ui-body mt-4">{p.focus}</p>
+              )}
               {p.note && (
                 <p className="mt-4 border-l-2 border-primary/60 pl-4 text-[15px] leading-7 sm:pl-5">
                   {p.note}
