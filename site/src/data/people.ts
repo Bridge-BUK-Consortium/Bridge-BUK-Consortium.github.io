@@ -2,7 +2,7 @@ export type Person = {
   code: string
   name: string
   institution: string
-  group: 'Key Expert' | 'Professorial Lead' | 'Non-Key Expert' | 'UK Professorial Lead'
+  group: 'Key Expert' | 'Professorial Lead' | 'Non-Key Expert' | 'UK Professorial Lead' | 'Research Staff'
   title: string
   /** Abridged line shown on the card. The full `role` and `bio` live in the modal. */
   summary: string
@@ -252,6 +252,17 @@ export const PEOPLE: Person[] = [
     role: 'Academic host and mentor for the seven postdocs and eight PhD candidates visiting York St John; advises RS1 on explainable detection models and RS5 on the digital literacy curriculum recommendations; reviews visit outputs.',
     months: 4,
     bio: 'Professor of Artificial Intelligence (rank to be confirmed: the York St John staff page and the RaY profile disagree), previously more than twenty years at Keele University, where posts included Interim Head of School and Director of Education. Senior Fellow of the Higher Education Academy. Has led projects funded by UKRI, Innovate UK and the British Heart Foundation, and supervised more than 15 PhD candidates.',
+  },
+  {
+    code: 'S-1',
+    name: 'Dr. Idris Abdulmumin',
+    institution: 'HausaNLP',
+    group: 'Research Staff',
+    title: 'Research Engineer',
+    summary:
+      'Builds and runs the data, training and evaluation pipelines behind the cluster’s language models and datasets.',
+    role: 'Research Engineer for Pillar A and the Data and Analytics function: builds and maintains the annotation, model training and evaluation pipelines for RS1 and RS5; prepares datasets and models for release with K-4; supports the postdoctoral researchers and PhD candidates on reproducible code.',
+    bio: 'Natural language processing researcher and member of HausaNLP. Co-author of AfriHate (NAACL 2025) and AfriSenti (EMNLP 2023), two of the datasets the cluster builds on.',
   },
 ]
 

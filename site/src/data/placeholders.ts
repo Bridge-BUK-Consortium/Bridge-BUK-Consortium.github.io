@@ -17,6 +17,14 @@ export type Unverified = {
 
 export const UNVERIFIED: Unverified[] = [
   {
+    id: 'research-engineer',
+    label: 'Research Engineer: Dr. Idris Abdulmumin',
+    where: 'People page',
+    needed:
+      'Added on 19 October 2026 at the Team Lead\u2019s request; he is not yet in the Full Technical Proposal. Confirm the spelling of his name, his title and home institution, his role and his time on the project, and send a photograph. If he is to be costed, add him to the proposal as support staff or a Non-Key Expert.',
+    status: 'unconfirmed',
+  },
+  {
     id: 'contact-email',
     label: 'Cluster contact address',
     where: 'Contact page, footer',

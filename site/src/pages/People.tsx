@@ -6,7 +6,7 @@ import Avatar from '../components/Avatar'
 import { Section, PageHero, Card } from '../components/ui'
 import { FilterPanel, FilterGroup } from '../components/Filters'
 
-const GROUPS = ['All', 'Key Expert', 'Professorial Lead', 'Non-Key Expert', 'UK Professorial Lead'] as const
+const GROUPS = ['All', 'Key Expert', 'Professorial Lead', 'Non-Key Expert', 'UK Professorial Lead', 'Research Staff'] as const
 
 function PersonCard({ p, onOpen }: { p: Person; onOpen: () => void }) {
   return (
