@@ -23,17 +23,32 @@ export default function Home() {
       {/* ---------------- Hero: forest band, the cover's ground ---------------- */}
       <section className="ui-invert">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 sm:py-14 md:py-16">
-          <p className="ui-eyebrow">{PROGRAMME.centre}</p>
-          <p className="mt-2 text-4xl font-extrabold tracking-wide sm:text-5xl">{PROGRAMME.name}</p>
-          <p className="ui-eyebrow mt-3">
-            Project BRIDGE Cluster E, National Digital Economy University Led Research Programme
-          </p>
-
-          <div className="mt-4 grid gap-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-14">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-14">
             <div className="min-w-0">
-              <h1 className="ui-display font-bold text-balance">
-                Trust, Safety, Consumer Protection and Online Harms
+              <p className="ui-eyebrow">
+                {PROGRAMME.project}, {PROGRAMME.cluster}
+              </p>
+              <h1 className="mt-3 text-5xl font-extrabold leading-none tracking-tight sm:text-7xl">
+                {PROGRAMME.name}
               </h1>
+              <p className="mt-3 text-xl font-semibold text-balance sm:text-2xl">{PROGRAMME.centre}</p>
+
+              {/* What the name means, set like a dictionary entry. */}
+              <p
+                className="mt-6 max-w-[60ch] border-l-4 pl-4 text-base leading-7 sm:text-lg sm:leading-8"
+                style={{ borderColor: 'var(--ui-ramp-2)' }}
+              >
+                <span className="block">
+                  <span className="font-semibold italic">credence</span>{' '}
+                  <span className="ui-eyebrow align-middle">noun</span>{' '}
+                  <span className="italic">{PROGRAMME.definition}</span>
+                </span>
+                <span className="mt-2 block">{PROGRAMME.meaning}</span>
+              </p>
+
+              <p className="ui-eyebrow mt-6">
+                {PROGRAMME.cluster}: {PROGRAMME.clusterTitle}
+              </p>
 
               <ul className="mt-5 grid gap-3 sm:mt-6">
                 {[
@@ -46,7 +61,7 @@ export default function Home() {
                       aria-hidden="true"
                       className="mt-2.5 h-1.5 w-1.5 rounded-full bg-primary sm:mt-3"
                     />
-                    <span className="ui-lead ui-lead-wide">{point}</span>
+                    <span className="text-base leading-7 sm:text-lg sm:leading-8">{point}</span>
                   </li>
                 ))}
               </ul>
