@@ -160,6 +160,46 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ---------------- The Team Lead, on film ---------------- */}
+      <Section>
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:items-center lg:gap-14">
+          <div className="min-w-0">
+            <SectionHead
+              eyebrow="From the Team Lead"
+              title="Three minutes on what CREDENCE will do"
+              lead="Dr. Shamsuddeen Hassan Muhammad, who leads the cluster, on the harms that reach Nigerians as they come online, the evidence the cluster will give regulators, and the thirty researchers it will train."
+            />
+          </div>
+          <div className="min-w-0">
+            {LEAD_VIDEO.url ? (
+              <div className="aspect-video w-full border-t-2 border-primary">
+                <iframe
+                  src={LEAD_VIDEO.url}
+                  title={LEAD_VIDEO.title}
+                  className="h-full w-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            ) : (
+              <Placeholder id="lead-video" block>
+                <figure className="ui-invert flex aspect-video w-full items-stretch overflow-hidden">
+                  <img
+                    src={`${import.meta.env.BASE_URL}${LEAD_VIDEO.still}`}
+                    alt=""
+                    className="h-full w-auto shrink-0 object-cover object-top"
+                  />
+                  <figcaption className="flex min-w-0 flex-col justify-end gap-2 p-4 sm:p-5">
+                    <span className="ui-eyebrow">Video to follow</span>
+                    <span className="text-sm font-semibold leading-snug sm:text-base">{LEAD_VIDEO.title}</span>
+                  </figcaption>
+                </figure>
+              </Placeholder>
+            )}
+          </div>
+        </div>
+      </Section>
+
       {/* ---------------- Pillars ---------------- */}
       <Section id="pillars" bordered={false}>
         <SectionHead
@@ -209,46 +249,6 @@ export default function Home() {
               </Card>
             )
           })}
-        </div>
-      </Section>
-
-      {/* ---------------- The Team Lead, on film ---------------- */}
-      <Section>
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:items-center lg:gap-14">
-          <div className="min-w-0">
-            <SectionHead
-              eyebrow="From the Team Lead"
-              title="Three minutes on what CREDENCE will do"
-              lead="Dr. Shamsuddeen Hassan Muhammad, who leads the cluster, on the harms that reach Nigerians as they come online, the evidence the cluster will give regulators, and the thirty researchers it will train."
-            />
-          </div>
-          <div className="min-w-0">
-            {LEAD_VIDEO.url ? (
-              <div className="aspect-video w-full border-t-2 border-primary">
-                <iframe
-                  src={LEAD_VIDEO.url}
-                  title={LEAD_VIDEO.title}
-                  className="h-full w-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            ) : (
-              <Placeholder id="lead-video" block>
-                <figure className="ui-invert flex aspect-video w-full items-stretch overflow-hidden">
-                  <img
-                    src={`${import.meta.env.BASE_URL}${LEAD_VIDEO.still}`}
-                    alt=""
-                    className="h-full w-auto shrink-0 object-cover object-top"
-                  />
-                  <figcaption className="flex min-w-0 flex-col justify-end gap-2 p-4 sm:p-5">
-                    <span className="ui-eyebrow">Video to follow</span>
-                    <span className="text-sm font-semibold leading-snug sm:text-base">{LEAD_VIDEO.title}</span>
-                  </figcaption>
-                </figure>
-              </Placeholder>
-            )}
-          </div>
         </div>
       </Section>
 
