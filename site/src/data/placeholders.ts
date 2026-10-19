@@ -17,6 +17,22 @@ export type Unverified = {
 
 export const UNVERIFIED: Unverified[] = [
   {
+    id: 'minister-quote',
+    label: "The Minister's quotation",
+    where: 'Home page',
+    needed:
+      'Carried over from the first website. Confirm the source, date and exact wording of the quotation, and that the Ministry is content for its photograph and words to appear on the site.',
+    status: 'unsourced',
+  },
+  {
+    id: 'lead-video',
+    label: "The Team Lead's video",
+    where: 'Home page',
+    needed:
+      'No video exists yet. Record a two to three minute piece to camera (what the cluster does, for whom, and the thirty positions), upload it to YouTube and put the embed address in LEAD_VIDEO.url in src/data/programme.ts.',
+    status: 'unconfirmed',
+  },
+  {
     id: 'research-engineer',
     label: 'Research Engineer: Dr. Idris Abdulmumin',
     where: 'People page',

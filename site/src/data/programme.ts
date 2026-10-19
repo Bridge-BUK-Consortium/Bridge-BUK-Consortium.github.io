@@ -15,6 +15,24 @@ export const PROGRAMME = {
   email: 'clustere@buk.edu.ng',
 } as const
 
+/* The sponsor's endorsement, carried over from the first site. */
+export const MINISTER = {
+  name: "Dr. 'Bosun Tijani",
+  title: 'Honourable Minister of Communications, Innovation and Digital Economy',
+  quote:
+    'Nigeria is not waiting for the world to connect us. We are building our own infrastructure, and the world is choosing to invest alongside us.',
+  photo: 'minister.jpg',
+} as const
+
+/* The Team Lead's short film about the project. Set `url` to a YouTube
+   embed address (https://www.youtube.com/embed/<id>) once it is recorded;
+   until then the page shows his photograph and a note. */
+export const LEAD_VIDEO = {
+  url: '',
+  title: 'Dr. Shamsuddeen Hassan Muhammad explains CREDENCE',
+  still: 'team/shamsuddeen.jpg',
+} as const
+
 export const PILLARS = [
   {
     id: 'A',

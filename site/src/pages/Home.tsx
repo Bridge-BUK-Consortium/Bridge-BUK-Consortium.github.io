@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { PROGRAMME, PILLARS, STREAMS, PRINCIPLES } from '../data/programme'
+import { PROGRAMME, PILLARS, STREAMS, PRINCIPLES, MINISTER, LEAD_VIDEO } from '../data/programme'
 import { INSTITUTIONS } from '../data/people'
 import { POSITIONS } from '../data/positions'
 import Placeholder from '../components/Placeholder'
@@ -147,6 +147,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ---------------- The sponsor's word ---------------- */}
+      <section className="border-b border-border" aria-label="Endorsement">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-5 sm:py-14 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:items-center md:gap-14">
+          <figure className="mx-auto w-full max-w-sm md:mx-0">
+            <img
+              src={`${import.meta.env.BASE_URL}${MINISTER.photo}`}
+              alt={MINISTER.name}
+              width="800"
+              height="800"
+              className="block aspect-square w-full object-cover object-top"
+            />
+            <figcaption className="ui-invert flex items-baseline justify-between gap-3 px-4 py-2.5">
+              <span className="ui-eyebrow">{MINISTER.name}</span>
+              <span className="ui-eyebrow">FMCIDE</span>
+            </figcaption>
+          </figure>
+          <div className="min-w-0">
+            <Eyebrow tone="primary">Programme sponsor, Federal Republic of Nigeria</Eyebrow>
+            <Placeholder id="minister-quote" block>
+              <blockquote className="ui-title mt-3 font-bold text-balance">
+                &ldquo;{MINISTER.quote}&rdquo;
+              </blockquote>
+            </Placeholder>
+            <p className="mt-5 font-semibold">{MINISTER.name}</p>
+            <p className="ui-body-sm">{MINISTER.title}</p>
+          </div>
+        </div>
+      </section>
+
       {/* ---------------- Consortium strip ---------------- */}
       <section className="border-b border-border" aria-label="Consortium">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-5 sm:py-10">
@@ -220,6 +249,46 @@ export default function Home() {
               </Card>
             )
           })}
+        </div>
+      </Section>
+
+      {/* ---------------- The Team Lead, on film ---------------- */}
+      <Section>
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:items-center lg:gap-14">
+          <div className="min-w-0">
+            <SectionHead
+              eyebrow="From the Team Lead"
+              title="Three minutes on what CREDENCE will do"
+              lead="Dr. Shamsuddeen Hassan Muhammad, who leads the cluster, on the harms that reach Nigerians as they come online, the evidence the cluster will give regulators, and the thirty researchers it will train."
+            />
+          </div>
+          <div className="min-w-0">
+            {LEAD_VIDEO.url ? (
+              <div className="aspect-video w-full border-t-2 border-primary">
+                <iframe
+                  src={LEAD_VIDEO.url}
+                  title={LEAD_VIDEO.title}
+                  className="h-full w-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            ) : (
+              <Placeholder id="lead-video" block>
+                <figure className="ui-invert flex aspect-video w-full items-stretch overflow-hidden">
+                  <img
+                    src={`${import.meta.env.BASE_URL}${LEAD_VIDEO.still}`}
+                    alt=""
+                    className="h-full w-auto shrink-0 object-cover object-top"
+                  />
+                  <figcaption className="flex min-w-0 flex-col justify-end gap-2 p-4 sm:p-5">
+                    <span className="ui-eyebrow">Video to follow</span>
+                    <span className="text-sm font-semibold leading-snug sm:text-base">{LEAD_VIDEO.title}</span>
+                  </figcaption>
+                </figure>
+              </Placeholder>
+            )}
+          </div>
         </div>
       </Section>
 
