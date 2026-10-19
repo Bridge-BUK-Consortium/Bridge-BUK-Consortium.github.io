@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { PROGRAMME, PILLARS, STREAMS, PRINCIPLES, MINISTER, LEAD_VIDEO } from '../data/programme'
+import { PROGRAMME, PILLARS, STREAMS, MINISTER, LEAD_VIDEO } from '../data/programme'
 import { POSITIONS } from '../data/positions'
 import Placeholder from '../components/Placeholder'
 import {
@@ -311,19 +311,6 @@ export default function Home() {
           </div>
         </article>
       </section>
-
-      {/* ---------------- Principles ---------------- */}
-      <Section bordered={false}>
-        <SectionHead eyebrow="How we work" title="Six guiding principles" />
-        <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {PRINCIPLES.map((p) => (
-            <Card key={p.name} hover>
-              <h3 className="ui-card-title">{p.name}</h3>
-              <p className="ui-body-sm mt-3">{p.detail}</p>
-            </Card>
-          ))}
-        </div>
-      </Section>
 
       {/* ---------------- CTA ---------------- */}
       <Section>
