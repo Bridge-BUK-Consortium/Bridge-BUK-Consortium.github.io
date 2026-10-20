@@ -202,7 +202,6 @@ export default function Home() {
       {/* ---------------- Pillars ---------------- */}
       <Section id="pillars" bordered={false}>
         <SectionHead
-          eyebrow="How the cluster is organised"
           title="Three pillars, six research streams"
           lead="Each research question names the agency, the instrument and the decision it is meant to serve."
           action={

@@ -77,8 +77,7 @@ function Stream({ id }: { id: StreamId }) {
       >
         {ICONS[id]}
       </svg>
-      <p className="ui-eyebrow mt-2">{id}</p>
-      <p className="mt-1 text-sm font-semibold leading-snug text-foreground group-hover:underline">
+      <p className="mt-2 text-sm font-semibold leading-snug text-foreground group-hover:underline">
         {s.title}
       </p>
       <p className="mt-2 flex flex-wrap gap-1 font-mono text-[10px] uppercase tracking-[0.08em] text-muted-foreground">
