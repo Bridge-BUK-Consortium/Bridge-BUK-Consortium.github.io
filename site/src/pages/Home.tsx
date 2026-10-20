@@ -1,16 +1,15 @@
 import { Link } from 'react-router-dom'
-import { PROGRAMME, PILLARS, STREAMS, MINISTER, LEAD_VIDEO } from '../data/programme'
+import { PROGRAMME, PILLARS, MINISTER, LEAD_VIDEO } from '../data/programme'
 import { POSITIONS } from '../data/positions'
 import Placeholder from '../components/Placeholder'
+import PillarsMap from '../components/PillarsMap'
 import {
   Eyebrow,
   Section,
   SectionHead,
-  Card,
   Row,
   GhostLink,
   BrandLink,
-  Tag,
 } from '../components/ui'
 
 export default function Home() {
@@ -212,43 +211,8 @@ export default function Home() {
             </Link>
           }
         />
-        <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-3">
-          {PILLARS.map((p) => {
-            const streams = STREAMS.filter((s) => s.pillar === p.id)
-            return (
-              <Card
-                key={p.id}
-                hover
-                className="border-t-4"
-                style={{ borderTopColor: `var(--ui-ramp-${'ABC'.indexOf(p.id) + 1})` }}
-              >
-                <Eyebrow tone="primary">Pillar {p.id}</Eyebrow>
-                <h3 className="ui-card-title mt-3 text-xl">{p.name}</h3>
-                <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground">
-                  {p.leadCode} {p.lead}
-                </p>
-                <ul className="mt-4 space-y-3">
-                  {streams.map((s) => (
-                    <li
-                      key={s.id}
-                      className="border-l-2 pl-3"
-                      style={{ borderLeftColor: `var(--ui-ramp-${'ABC'.indexOf(p.id) + 1})` }}
-                    >
-                      <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-primary">
-                        {s.id}
-                      </p>
-                      <p className="mt-0.5 text-sm font-semibold leading-6">{s.title}</p>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {p.mdas.slice(0, 4).map((m) => (
-                    <Tag key={m}>{m}</Tag>
-                  ))}
-                </div>
-              </Card>
-            )
-          })}
+        <div className="mt-7 sm:mt-10">
+          <PillarsMap />
         </div>
       </Section>
 
