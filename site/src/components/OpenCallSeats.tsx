@@ -1,4 +1,4 @@
-import { BrandLink, Eyebrow, GhostLink } from './ui'
+import { BrandLink, GhostLink } from './ui'
 
 /**
  * Thirty seats. Two rows of fifteen seated figures, postdocs in ramp-4
@@ -33,8 +33,7 @@ function Seats({ colour }: { colour: string }) {
 export default function OpenCallSeats() {
   return (
     <>
-      <Eyebrow tone="primary">Open call, subject to contract award</Eyebrow>
-      <h2 className="ui-display mt-3 max-w-4xl font-bold text-balance">
+      <h2 className="ui-display max-w-4xl font-bold text-balance">
         Thirty funded places for the next generation of researchers.
       </h2>
 
