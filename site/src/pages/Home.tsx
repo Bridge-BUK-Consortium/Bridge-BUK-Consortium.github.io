@@ -1,20 +1,17 @@
 import { Link } from 'react-router-dom'
 import { PROGRAMME, PILLARS, MINISTER, LEAD_VIDEO } from '../data/programme'
-import { POSITIONS } from '../data/positions'
 import Placeholder from '../components/Placeholder'
 import PillarsMap from '../components/PillarsMap'
+import OpenCallSeats from '../components/OpenCallSeats'
 import {
   Eyebrow,
   Section,
   SectionHead,
-  Row,
   GhostLink,
   BrandLink,
 } from '../components/ui'
 
 export default function Home() {
-  const phdTopics = POSITIONS.filter((p) => p.type === 'PhD').length
-  const postdocTopics = POSITIONS.filter((p) => p.type === 'Postdoc').length
 
   return (
     <>
@@ -218,60 +215,7 @@ export default function Home() {
       {/* ---------------- Recruitment call ---------------- */}
       <section className="ui-invert">
         <article className="mx-auto max-w-7xl px-4 py-12 sm:px-5 sm:py-14 md:py-20">
-          <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start">
-            <div className="min-w-0">
-              <Eyebrow tone="primary">Open call, subject to contract award</Eyebrow>
-              <h2 className="mt-3 text-xl font-bold leading-snug sm:text-2xl">
-                Fifteen postdoctoral fellowships and fifteen PhD studentships in fundamental digital
-                trust and safety research
-              </h2>
-              <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-                {[
-                  'The thirty positions are shared among the four Nigerian universities: each registers its own PhD candidates and employs its own postdoctoral researchers.',
-                  'Each PhD candidate spends three months at Leicester or York St John, and the programme pays for the visit.',
-                  'Every position is attached to a numbered topic and to a policy output with a named agency.',
-                  `We advertise ${phdTopics} doctoral and ${postdocTopics} postdoctoral topics for the thirty positions.`,
-                ].map((x) => (
-                  <li key={x} className="flex gap-2.5 text-sm leading-6">
-                    <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-primary" />
-                    <span className="text-muted-foreground">{x}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <BrandLink to="/opportunities">See all advertised positions</BrandLink>
-                <GhostLink to="/opportunities#how-to-apply">How to apply</GhostLink>
-              </div>
-            </div>
-            <div className="space-y-3">
-              <Row>
-                <Eyebrow tone="primary">Postdoctoral fellowships</Eyebrow>
-                <p className="ui-figure mt-1">15</p>
-                <p className="mt-1 text-xs leading-5 text-muted-foreground">
-                  At least 24 months, beginning in Month 6.
-                </p>
-              </Row>
-              <Row>
-                <Eyebrow tone="primary">PhD studentships</Eyebrow>
-                <p className="ui-figure mt-1">15</p>
-                <p className="mt-1 text-xs leading-5 text-muted-foreground">
-                  A stipend and research costs, from Month 9 to Month 36.
-                </p>
-              </Row>
-              <Row>
-                <Eyebrow>Gender target</Eyebrow>
-                <div className="mt-2">
-                  <Placeholder id="gender-target" block>
-                    <span className="block text-sm leading-6">
-                      At least <span className="font-bold text-primary">40 percent</span> of each
-                      cohort will be women. The panel reports the figure at every stage of
-                      selection.
-                    </span>
-                  </Placeholder>
-                </div>
-              </Row>
-            </div>
-          </div>
+          <OpenCallSeats />
         </article>
       </section>
 
