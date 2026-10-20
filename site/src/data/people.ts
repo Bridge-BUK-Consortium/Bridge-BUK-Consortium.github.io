@@ -44,14 +44,14 @@ export const PEOPLE: Person[] = [
     code: 'K-3',
     name: 'Dr. Muhammad Shehu Abubakar-Sadiq',
     photo: 'team/shehu.jpg',
-    institution: 'University of Leicester, and Bayero University, Kano',
+    institution: 'University of Leicester',
     group: 'Key Expert',
     title: 'Senior Research Specialist, and leads Pillar C',
     summary:
       'Leads Pillar C and co-leads the self-sovereign identity work in RS3.',
     role: 'Leads Pillar C (Consumer and Data Protection): RS2 and RS4; co-leads RS3 with K-2 on the self-sovereign identity module; Leicester visit coordinator with Prof. Anjum.',
     months: 7.25,
-    bio: 'Teaching Fellow in Cyber Security in the School of Computing and Mathematical Sciences at Leicester, who also holds a lectureship at BUK. Works on self-sovereign identity, GDPR-compliant privacy systems and fraud prevention, with links to the Surrey Centre for Cyber Security (DECaDE) and INESC TEC Porto.',
+    bio: 'Teaching Fellow in Cyber Security in the School of Computing and Mathematical Sciences at Leicester. Works on self-sovereign identity, GDPR-compliant privacy systems and fraud prevention, with links to the Surrey Centre for Cyber Security (DECaDE) and INESC TEC Porto.',
   },
   {
     code: 'K-4',
