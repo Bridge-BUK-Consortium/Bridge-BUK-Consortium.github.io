@@ -37,7 +37,7 @@ export const PEOPLE: Person[] = [
     summary:
       'Leads Pillar B and owns information security, ethics and the MDA training programme.',
     role: 'Leads Pillar B (Trust): RS3 and RS6; information security and ethics owner; leads the MDA training programme; contributes Cyber360 and deepfake awareness materials to the RS5 digital literacy evaluation.',
-    months: 9,
+    months: 5,
     bio: 'Director of the Cybersecurity Research Group at York St John, working on trust-based systems, data privacy and biometric security.',
   },
   {
@@ -50,7 +50,7 @@ export const PEOPLE: Person[] = [
     summary:
       'Leads Pillar C and co-leads the self-sovereign identity work in RS3.',
     role: 'Leads Pillar C (Consumer and Data Protection): RS2 and RS4; co-leads RS3 with K-2 on the self-sovereign identity module; Leicester visit coordinator with Prof. Anjum.',
-    months: 9,
+    months: 7.25,
     bio: 'Teaching Fellow in Cyber Security in the School of Computing and Mathematical Sciences at Leicester, who also holds a lectureship at BUK. Works on self-sovereign identity, GDPR-compliant privacy systems and fraud prevention, with links to the Surrey Centre for Cyber Security (DECaDE) and INESC TEC Porto.',
   },
   {
@@ -202,7 +202,7 @@ export const PEOPLE: Person[] = [
     summary:
       'Professor of ICT Law. Drafts the model regulatory code and leads the NDPA enforcement audit.',
     role: 'Codes the NDPA Enforcement Case Tracker; leads the comparative analysis of the EU, UK, Kenya, India and South Africa; drafts the model regulatory code; writes the FCCPC and CBN regulatory gap analysis; tests the moderation governance model against the EU Digital Services Act and the UK Online Safety Act.',
-    months: 12,
+    months: 5,
     bio: 'Professor of ICT Law, Head of the Department of Public Law from 2021 to 2025, and coordinator of the LLM in ICT Law since 2019. PhD on e-commerce and consumer protection law, Universiti Utara Malaysia. Two years of legislative drafting at the Kano State House of Assembly.',
   },
   {
@@ -214,7 +214,7 @@ export const PEOPLE: Person[] = [
     summary:
       'The cluster’s economist. Designs and runs all three large national surveys.',
     role: 'Designs and pilots the three large surveys with K-4; designs the discrete choice experiment and usability protocol for the RS3 agent study; runs the focus group and interview programmes in RS1, RS2, RS5 and RS6; trains the enumerators.',
-    months: 18,
+    months: 5,
     bio: 'Senior Lecturer in Economics with a PhD from Ahmadu Bello University, Zaria. Fieldwork in northern Nigeria for the Sasakawa Africa Association, USAID Markets II, an ILO study of Nigeria’s micro pension scheme, and research on learning poverty in Kaduna State.',
   },
   {
@@ -236,9 +236,9 @@ export const PEOPLE: Person[] = [
     group: 'UK Professorial Lead',
     title: 'Leicester’s professorial lead',
     summary:
-      'Leicester’s professorial lead and academic host for fifteen visiting researchers.',
-    role: 'Academic host and mentor for the eight postdocs and seven PhD candidates visiting Leicester; advises Pillar C on scaling the RS2 fraud detection API and on federated learning where data cannot leave a regulator or bank; reviews visit outputs; represents Leicester on the Consortium Steering Committee.',
-    months: 4,
+      'Leicester’s professorial lead and academic host for seven visiting PhD candidates.',
+    role: 'Academic host and co-supervisor for the seven PhD candidates visiting Leicester; advises Pillar C on scaling the RS2 fraud detection API and on federated learning where data cannot leave a regulator or bank; reviews visit outputs; represents Leicester on the Consortium Steering Committee.',
+    months: 2,
     bio: 'Professor of Distributed Systems and Director of Enterprise and Impact in the School of Computing and Mathematical Sciences. Leads two EPSRC projects on AI-driven digital twins, is AI lead for METEOR at Space Park Leicester, and has worked for twenty years with CERN on distributed analytics for the Large Hadron Collider.',
   },
   {
@@ -248,9 +248,9 @@ export const PEOPLE: Person[] = [
     group: 'UK Professorial Lead',
     title: 'York St John’s professorial lead',
     summary:
-      'York St John’s professorial lead and academic host for fifteen visiting researchers.',
-    role: 'Academic host and mentor for the seven postdocs and eight PhD candidates visiting York St John; advises RS1 on explainable detection models and RS5 on the digital literacy curriculum recommendations; reviews visit outputs.',
-    months: 4,
+      'York St John’s professorial lead and academic host for eight visiting PhD candidates.',
+    role: 'Academic host and co-supervisor for the eight PhD candidates visiting York St John; advises RS1 on explainable detection models and RS5 on the digital literacy curriculum recommendations; reviews visit outputs.',
+    months: 2,
     bio: 'Professor of Artificial Intelligence (rank to be confirmed: the York St John staff page and the RaY profile disagree), previously more than twenty years at Keele University, where posts included Interim Head of School and Director of Education. Senior Fellow of the Higher Education Academy. Has led projects funded by UKRI, Innovate UK and the British Heart Foundation, and supervised more than 15 PhD candidates.',
   },
   {
@@ -324,8 +324,8 @@ export const INSTITUTIONS = [
     role: 'Sub-consultant',
     focus: 'Cybersecurity, privacy, self-sovereign identity, fraud prevention',
     detail:
-      'School of Computing and Mathematical Sciences: cybersecurity, information security, digital forensics. Hosts 8 postdoc and 7 PhD research stays. Contributes K-3 and Prof. Ashiq Anjum.',
-    postdocs: 8,
+      'School of Computing and Mathematical Sciences: cybersecurity, information security, digital forensics. Hosts seven PhD research stays. Contributes K-3 and Prof. Ashiq Anjum.',
+    postdocs: 0,
     phds: '7 research stays',
     streams: 'RS2, RS3, RS4, RS6',
     url: 'https://le.ac.uk',
@@ -337,8 +337,8 @@ export const INSTITUTIONS = [
     role: 'Sub-consultant',
     focus: 'Cybersecurity, trust systems, data privacy, FinTech security',
     detail:
-      'Hosts the Cybersecurity Research Group and the Cyber360 platform: trust-based systems, data privacy, biometric security. Hosts 7 postdoc and 8 PhD research stays. Contributes K-2 and Prof. Theocharis Kyriacou.',
-    postdocs: 7,
+      'Hosts the Cybersecurity Research Group and the Cyber360 platform: trust-based systems, data privacy, biometric security. Hosts eight PhD research stays. Contributes K-2 and Prof. Theocharis Kyriacou.',
+    postdocs: 0,
     phds: '8 research stays',
     streams: 'RS1, RS3, RS4, RS5',
     url: 'https://www.yorksj.ac.uk',

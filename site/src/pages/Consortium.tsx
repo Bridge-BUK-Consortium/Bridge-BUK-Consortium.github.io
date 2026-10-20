@@ -77,7 +77,7 @@ export default function Consortium() {
         <SectionHead
           eyebrow="Sub-consultants"
           title="The UK hosts"
-          lead="Every researcher spends three months at one of the two universities in the United Kingdom. The visits come early, so that the hosts can help shape the research before the main fieldwork begins."
+          lead="Every PhD candidate spends three months at one of the two universities in the United Kingdom in Months 13 to 15, so that the UK co-supervisors shape each thesis before the proposal defence."
         />
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-2">
           {uk.map((i) => (
@@ -93,9 +93,9 @@ export default function Consortium() {
               <dl className="mt-5 grid grid-cols-3 gap-3 border-t border-border pt-4">
                 <div>
                   <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-                    Postdoc stays
+                    Months
                   </dt>
-                  <dd className="mt-1 font-bold text-primary">{i.postdocs}</dd>
+                  <dd className="mt-1 font-bold text-primary">{i.short === 'Leicester' ? 'K-3 7.25; N-14 2' : 'K-2 5; N-15 2'}</dd>
                 </div>
                 <div>
                   <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">

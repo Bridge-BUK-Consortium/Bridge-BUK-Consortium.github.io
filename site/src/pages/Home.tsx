@@ -228,7 +228,7 @@ export default function Home() {
               <ul className="mt-4 grid gap-2 sm:grid-cols-2">
                 {[
                   'The thirty positions are shared among the four Nigerian universities: each registers its own PhD candidates and employs its own postdoctoral researchers.',
-                  'Each researcher spends three months at Leicester or York St John, and the programme pays for the visit.',
+                  'Each PhD candidate spends three months at Leicester or York St John, and the programme pays for the visit.',
                   'Every position is attached to a numbered topic and to a policy output with a named agency.',
                   `We advertise ${phdTopics} doctoral and ${postdocTopics} postdoctoral topics for the thirty positions.`,
                 ].map((x) => (
