@@ -1,7 +1,7 @@
 export const PROGRAMME = {
   cluster: 'Cluster E',
   name: 'CREDENCE',
-  centre: 'The Nigerian Centre for Trust and Safety Online',
+  centre: 'The Nigerian Centre for Online Trust and Safety (NCOTS)',
   clusterTitle: 'Trust, Safety, Consumer Protection and Online Harms',
   programme: 'National Digital Economy University Led Research Programme',
   project: 'Project BRIDGE',

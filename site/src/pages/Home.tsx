@@ -103,7 +103,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 py-9 sm:px-5 sm:py-12">
           <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] lg:gap-16">
             <p className="ui-body ui-body-wide" style={{ fontSize: '1.125rem', lineHeight: 1.75 }}>
-              CREDENCE, the Nigerian Centre for Trust and Safety Online, is Project BRIDGE Cluster E: a consortium of six universities led by{' '}
+              CREDENCE, the Nigerian Centre for Online Trust and Safety (NCOTS), is Project BRIDGE Cluster E: a consortium of six universities led by{' '}
               <strong className="text-foreground">Bayero University, Kano</strong>. Four are in
               Nigeria: Bayero, Aliko Dangote University of Science and Technology, the Federal
               University of Technology Babura and Northwest University. Two are in the United
