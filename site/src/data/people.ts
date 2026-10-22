@@ -250,7 +250,7 @@ export const PEOPLE: Person[] = [
     summary:
       'York St John’s professorial lead and academic host for eight visiting PhD candidates.',
     role: 'Academic host and co-supervisor for the eight PhD candidates visiting York St John; advises RS1 on explainable detection models and RS5 on the digital literacy curriculum recommendations; reviews visit outputs.',
-    months: 2,
+    months: 3,
     bio: 'Professor of Artificial Intelligence since 2026, after joining York St John in 2025. Previously eighteen years at Keele University, rising to Reader, with posts as Interim Head of School and Director of Education. Senior Fellow of the Higher Education Academy. Principal Investigator of GivEducation projects on AI tools for curriculum design in schools and of a Knowledge Transfer Partnership with Bentley Motors; has taken four doctoral candidates to completion as primary supervisor.',
   },
   {
