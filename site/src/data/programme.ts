@@ -46,7 +46,7 @@ export const PILLARS = [
     id: 'B',
     name: 'Trust',
     streams: ['RS3', 'RS6'],
-    lead: 'Assoc. Prof. Aminu Bello Usman',
+    lead: 'Prof. Aminu Bello Usman',
     leadCode: 'K-2',
     mdas: ['CBN', 'NIMC', 'NITDA', 'NDPC', 'FMCIDE'],
   },

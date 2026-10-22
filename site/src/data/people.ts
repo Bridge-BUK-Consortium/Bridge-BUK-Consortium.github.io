@@ -29,7 +29,7 @@ export const PEOPLE: Person[] = [
   },
   {
     code: 'K-2',
-    name: 'Assoc. Prof. Aminu Bello Usman',
+    name: 'Prof. Aminu Bello Usman',
     photo: 'team/aminu.jpg',
     institution: 'York St John University',
     group: 'Key Expert',
