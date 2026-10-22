@@ -73,14 +73,6 @@ export const UNVERIFIED: Unverified[] = [
     status: 'unconfirmed',
   },
   {
-    id: 'kyriacou-rank',
-    label: 'Prof. Theocharis Kyriacou’s rank',
-    where: 'People',
-    needed:
-      'The proposal records a conflict: the York St John staff page says Professor of Artificial Intelligence, the RaY profile says Associate Professor. Confirm in writing and correct every mention.',
-    status: 'unconfirmed',
-  },
-  {
     id: 'uk-host',
     label: 'The UK host shown on each advertisement',
     where: 'Every advertisement',
