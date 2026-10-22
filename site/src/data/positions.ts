@@ -67,7 +67,7 @@ export const POSITIONS: Position[] = [
       'Develop detection and provenance methods for deepfakes and machine-generated content used in fraud and election disinformation, and propose a labelling and liability regime.',
     abstract:
       'Cloned voices that impersonate relatives or bank staff, fake audio of politicians and machine-written news in Hausa are now cheap to produce. Detection tools are trained almost entirely on English and on well-resourced voices, so they fail on Nigerian languages and accents. This project builds a Nigerian benchmark of synthetic speech, text and video in the five core languages, and develops detection and provenance methods that work on low-end phones and short, noisy clips. It builds on earlier work that detected machine-generated Hausa news with high accuracy, and extends it to audio and video. The candidate will study how synthetic media is used in fraud and in election disinformation, test how well current detectors and watermarking schemes transfer to Nigerian languages, and set out a labelling and liability regime that NITDA, CBN and INEC could adopt.',
-    streams: ['RS1', 'RS2'],
+    streams: ['RS1', 'RS5'],
     agencies: ['NITDA', 'CBN', 'INEC'],
   },
   {
@@ -79,7 +79,7 @@ export const POSITIONS: Position[] = [
       'Measure underage exposure, test blocking and filtering, and propose a framework with parents and schools in northern Nigeria.',
     abstract:
       'Children in northern Nigeria are going online through shared and second-hand phones, often without parental controls or age checks, and there is almost no data on what they see. This project measures it. Working with schools, parents and the cluster’s youth survey of 2,000 students, the candidate will estimate how often children meet violent, sexual, hateful and scam content, on which platforms and in which languages. The project will then test whether blocking, filtering and age-appropriate settings work on the devices and networks children actually use. The findings feed a practical framework for parents and schools and evidence for NITDA and the Federal Ministry of Education. The work follows a strict child protection protocol and is supervised jointly with the cluster’s age assurance research.',
-    streams: ['RS5'],
+    streams: ['RS2'],
     agencies: ['NITDA', 'Federal Ministry of Education'],
     note: 'Supervised jointly with the Pillar C child-safety work (C-P1). Child protection protocol applies.',
   },
@@ -104,7 +104,7 @@ export const POSITIONS: Position[] = [
       'Run the matched-pair audit of removal rate and time to action for Nigerian-language and English content, then lead the co-design workshops and draft the governance model, tested against the EU Digital Services Act and the UK Online Safety Act.',
     abstract:
       'Platforms say their rules apply equally in every language. This fellowship tests that claim for Nigeria. The fellow will run a pre-registered, matched-pair audit: comparable hateful items in Hausa, Yoruba, Igbo, Nigerian Pidgin and English are reported through the platforms’ own channels, and the study compares how often and how fast each is removed. The evidence then goes into co-design workshops with NITDA, NCC and civil society. The fellow will draft a content moderation governance model for Nigeria, setting out what platforms should be required to do, report and fix, and test it against the EU Digital Services Act and the UK Online Safety Act.',
-    streams: ['RS1', 'RS6'],
+    streams: ['RS1', 'RS4'],
     agencies: ['NITDA', 'NCC', 'FMCIDE'],
   },
   {
@@ -116,7 +116,7 @@ export const POSITIONS: Position[] = [
       'Run the matched comparison of exposed and unexposed schools and build the Month 30 toolkit with students and teachers in Hausa, Yoruba, Igbo, Nigerian Pidgin and English.',
     abstract:
       'Nigeria funds digital literacy programmes in schools, but there is little evidence on whether they make students safer online. This fellowship evaluates them. Using the cluster’s youth survey, the fellow will compare schools that have received UBEC and NITDA programmes with similar schools that have not, and measure differences in risky behaviour, harm and reporting. The fellow will then co-design a safety toolkit with students and teachers in Hausa, Yoruba, Igbo, Nigerian Pidgin and English, test it in classrooms, and turn the results into curriculum recommendations for the Federal Ministry of Education.',
-    streams: ['RS5'],
+    streams: ['RS2'],
     agencies: ['UBEC', 'Federal Ministry of Education', 'NITDA'],
   },
   {
@@ -128,7 +128,7 @@ export const POSITIONS: Position[] = [
       'Turn the PhD work on age verification (C-P1) and child exposure (A-P5) into a technical specification and model regulations.',
     abstract:
       'Keeping children away from harmful content usually means asking everyone to prove their age, which can expose personal data and shut out people without formal identity documents. This fellowship designs a better route for Nigeria. Building on the cluster’s PhD work on privacy-preserving age verification and on children’s exposure, the fellow will set out a technical specification for age assurance that proves a user is old enough without revealing who they are, works on low-end devices, and fits the Nigeria Data Protection Act. The specification is paired with model regulations for NDPC and NITDA, benchmarked against the UK and EU approaches.',
-    streams: ['RS4', 'RS5'],
+    streams: ['RS2', 'RS6'],
     agencies: ['NDPC', 'NITDA'],
   },
   {
@@ -140,7 +140,7 @@ export const POSITIONS: Position[] = [
       'Detect gendered abuse using AfriHate and BRIGHTER emotion signals, lead the focus groups in 20 schools, and design reporting routes that girls and women will use.',
     abstract:
       'Women and girls in Nigeria face online abuse that is often sexualised, shaming or threatening, and it is usually written in local languages that moderation systems do not read well. Many never report it, because reporting routes are unknown, unsafe or useless. This fellowship tackles both problems. The fellow will build detection for gendered abuse in Nigerian languages, using AfriHate and the emotion signals in BRIGHTER to separate abuse from ordinary conflict. In parallel, the fellow will lead focus groups with girls and boys in 20 schools to learn what they experience and why they do or do not report. The output is evidence and a set of reporting routes, designed with girls and women, for the Federal Ministry of Women Affairs and UBEC.',
-    streams: ['RS5'],
+    streams: ['RS2'],
     agencies: ['Federal Ministry of Women Affairs', 'UBEC'],
   },
 
@@ -202,7 +202,7 @@ export const POSITIONS: Position[] = [
     title: 'Adaptive governance and consumer safeguards in regulator-run sandboxes',
     focus:
       'Compare how regulator sandboxes admit innovation, and design safeguards that do not weaken consumer protection.',
-    streams: ['RS6'],
+    streams: ['RS4'],
     agencies: ['CBN', 'SEC', 'NITDA'],
   },
   {
@@ -212,7 +212,7 @@ export const POSITIONS: Position[] = [
     title: 'Who enforces digital safety?',
     focus:
       'Map the mandates of NDPC, NITDA, NCC, CBN and FCCPC, find gaps and overlaps, and propose a coordination protocol.',
-    streams: ['RS6'],
+    streams: ['RS4'],
     agencies: ['FMCIDE', 'NDPC', 'NITDA', 'NCC', 'CBN', 'FCCPC'],
   },
   {
@@ -262,7 +262,7 @@ export const POSITIONS: Position[] = [
     title: 'Digital trust, regulatory innovation and authentication policy',
     focus:
       'Translate RS3 evidence into authentication standards and agent banking guidance, and examine how regulatory sandboxes can build in security, privacy and consumer safeguards.',
-    streams: ['RS3', 'RS6'],
+    streams: ['RS3', 'RS4'],
     agencies: ['CBN', 'NITDA'],
   },
   {
@@ -272,7 +272,7 @@ export const POSITIONS: Position[] = [
     title: 'Regulatory interoperability: one consumer, many regulators',
     focus:
       'Map overlapping mandates across one digital consumer journey and propose a joint enforcement playbook.',
-    streams: ['RS6'],
+    streams: ['RS4'],
     agencies: ['CBN', 'NDPC', 'NITDA', 'NCC', 'FCCPC'],
   },
 
@@ -284,7 +284,7 @@ export const POSITIONS: Position[] = [
     title: 'Privacy-preserving age verification for online platforms',
     focus:
       'Design age assurance that proves a user is an adult without revealing identity, using zero-knowledge proofs and selective disclosure, benchmarked against the UK Online Safety Act and EU practice.',
-    streams: ['RS4', 'RS5'],
+    streams: ['RS2', 'RS6'],
     agencies: ['NDPC', 'NITDA', 'National Orientation Agency'],
     note: 'Joint supervision with A-P5 and A-D4.',
   },
@@ -295,7 +295,7 @@ export const POSITIONS: Position[] = [
     title: 'Digital identity trust frameworks for financial inclusion',
     focus:
       'Examine how NIN, BVN and verifiable credentials can work together to widen financial inclusion without weakening privacy, and propose an assurance-level model for KYC rules.',
-    streams: ['RS3', 'RS4'],
+    streams: ['RS3', 'RS6'],
     agencies: ['CBN', 'NIMC', 'NITDA'],
   },
   {
@@ -305,7 +305,7 @@ export const POSITIONS: Position[] = [
     title: 'Consumer protection in digital lending and buy-now-pay-later markets',
     focus:
       'Study predatory pricing, hidden fees, data misuse and debt harassment, and draft a conduct code with complaint and redress mechanisms.',
-    streams: ['RS2'],
+    streams: ['RS5'],
     agencies: ['CBN', 'FCCPC', 'NDPC'],
   },
   {
@@ -315,7 +315,7 @@ export const POSITIONS: Position[] = [
     title: 'Data protection compliance costs for Nigerian SMEs and start-ups',
     focus:
       'Measure what NDPA compliance costs small firms, find where guidance is unclear, and design simplified toolkits and a tiered obligations model.',
-    streams: ['RS4'],
+    streams: ['RS6'],
     agencies: ['NDPC', 'NITDA'],
   },
   {
@@ -325,7 +325,7 @@ export const POSITIONS: Position[] = [
     title: 'Fraud detection and consumer redress in mobile money and agency banking',
     focus:
       'Analyse fraud patterns in agent networks, including social engineering aimed at low-literacy users, and develop detection models and a standard refund and redress protocol.',
-    streams: ['RS2'],
+    streams: ['RS5'],
     agencies: ['CBN', 'NCC'],
   },
   {
@@ -335,7 +335,7 @@ export const POSITIONS: Position[] = [
     title: 'Cross-border data flows and data localisation: a Nigerian policy model',
     focus:
       'Weigh the economic and security trade-offs of localisation against governed transfers, and propose an adequacy and certification model.',
-    streams: ['RS4'],
+    streams: ['RS6'],
     agencies: ['NDPC', 'NITDA'],
   },
   {
@@ -345,7 +345,7 @@ export const POSITIONS: Position[] = [
     title: 'Trust in and adoption of digital payment channels',
     focus:
       'Use surveys and behavioural experiments in Kano, Jigawa and wider northern Nigeria to explain trust and distrust in digital payments, including central bank digital currency, and recommend inclusive design.',
-    streams: ['RS2'],
+    streams: ['RS5'],
     agencies: ['CBN', 'NITDA'],
   },
   {
@@ -355,7 +355,7 @@ export const POSITIONS: Position[] = [
     title: 'Cybercrime intelligence sharing between regulators, banks and law enforcement',
     focus:
       'Design a lawful, privacy-respecting framework for sharing fraud indicators that reconciles data protection duties with security needs.',
-    streams: ['RS4'],
+    streams: ['RS6'],
     agencies: ['CBN', 'NDPC', 'NITDA', 'ONSA'],
   },
   {
@@ -365,7 +365,7 @@ export const POSITIONS: Position[] = [
     title: 'NDPC enforcement analytics: complaints, breaches and deterrence',
     focus:
       'Analyse complaint and breach data with NDPC to measure enforcement effectiveness and recommend risk-based inspection priorities and penalty calibration.',
-    streams: ['RS4'],
+    streams: ['RS6'],
     agencies: ['NDPC'],
   },
   {
@@ -375,7 +375,7 @@ export const POSITIONS: Position[] = [
     title: 'A consumer harm index for Nigerian digital markets',
     focus:
       'Build a repeatable index of consumer harm across digital lending, e-commerce and telecoms that regulators can share as an early-warning tool.',
-    streams: ['RS2'],
+    streams: ['RS5'],
     agencies: ['CBN', 'FCCPC', 'NDPC', 'NCC'],
   },
   {
@@ -385,7 +385,7 @@ export const POSITIONS: Position[] = [
     title: 'Digital identity assurance for government services',
     focus:
       'Evaluate assurance levels across NIN, BVN and sectoral identities, and design a federated trust framework with redress when identity systems fail citizens.',
-    streams: ['RS3', 'RS4'],
+    streams: ['RS3', 'RS6'],
     agencies: ['NITDA', 'NIMC'],
   },
   {
@@ -395,7 +395,7 @@ export const POSITIONS: Position[] = [
     title: 'Privacy-preserving analytics for financial intelligence',
     focus:
       'Develop federated learning, secure enclave and differential privacy methods that detect money laundering across institutions without centralising personal data.',
-    streams: ['RS4'],
+    streams: ['RS6'],
     agencies: ['NFIU', 'CBN', 'NDPC'],
   },
   {
@@ -410,10 +410,10 @@ export const POSITIONS: Position[] = [
   },
 ]
 
-/** Leicester hosts RS2, RS3, RS4 and RS6 visits; York St John hosts RS1, RS3, RS4 and RS5. */
+/** Leicester hosts RS3, RS4, RS5 and RS6 visits; York St John hosts RS1, RS2, RS3 and RS6. */
 export function ukHost(streams: StreamId[]): string {
-  const LEI: StreamId[] = ['RS2', 'RS3', 'RS4', 'RS6']
-  const YSJ: StreamId[] = ['RS1', 'RS3', 'RS4', 'RS5']
+  const LEI: StreamId[] = ['RS3', 'RS4', 'RS5', 'RS6']
+  const YSJ: StreamId[] = ['RS1', 'RS2', 'RS3', 'RS6']
   const l = streams.some((s) => LEI.includes(s))
   const y = streams.some((s) => YSJ.includes(s))
   if (l && y) return 'University of Leicester or York St John University'
@@ -477,12 +477,12 @@ export const RECRUITMENT_POOL = [
 ]
 
 export const COHORT_ALLOCATION = [
-  { institution: 'Bayero University, Kano', role: 'Registers PhD candidates; employs postdocs; primary supervision', postdocs: '8', phds: '8', streams: 'RS1, RS2, RS4, RS6' },
-  { institution: 'Aliko Dangote University of Science and Technology, Wudil', role: 'Registers PhD candidates; employs postdocs; primary supervision', postdocs: '3', phds: '3', streams: 'RS2, RS3' },
-  { institution: 'Federal University of Technology, Babura', role: 'Registers PhD candidates; employs postdocs; primary supervision', postdocs: '2', phds: '2', streams: 'RS3, RS5' },
-  { institution: 'Northwest University, Kano', role: 'Registers PhD candidates; employs postdocs; primary supervision', postdocs: '2', phds: '2', streams: 'RS5, RS6' },
-  { institution: 'University of Leicester', role: 'Hosts three-month research stays for PhD candidates', postdocs: '', phds: '7', streams: 'RS2, RS3, RS4, RS6' },
-  { institution: 'York St John University', role: 'Hosts three-month research stays for PhD candidates', postdocs: '', phds: '8', streams: 'RS1, RS3, RS4, RS5' },
+  { institution: 'Bayero University, Kano', role: 'Registers PhD candidates; employs postdocs; primary supervision', postdocs: '8', phds: '8', streams: 'RS1, RS4, RS5, RS6' },
+  { institution: 'Aliko Dangote University of Science and Technology, Wudil', role: 'Registers PhD candidates; employs postdocs; primary supervision', postdocs: '3', phds: '3', streams: 'RS3, RS5' },
+  { institution: 'Federal University of Technology, Babura', role: 'Registers PhD candidates; employs postdocs; primary supervision', postdocs: '2', phds: '2', streams: 'RS2, RS3' },
+  { institution: 'Northwest University, Kano', role: 'Registers PhD candidates; employs postdocs; primary supervision', postdocs: '2', phds: '2', streams: 'RS2, RS4' },
+  { institution: 'University of Leicester', role: 'Hosts three-month research stays for PhD candidates', postdocs: '', phds: '7', streams: 'RS3, RS4, RS5, RS6' },
+  { institution: 'York St John University', role: 'Hosts three-month research stays for PhD candidates', postdocs: '', phds: '8', streams: 'RS1, RS2, RS3, RS6' },
 ]
 
 export const TRAINING = [

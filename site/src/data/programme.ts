@@ -37,7 +37,7 @@ export const PILLARS = [
   {
     id: 'A',
     name: 'Online Harms and Online Safety',
-    streams: ['RS1', 'RS5'],
+    streams: ['RS1', 'RS2'],
     lead: 'Dr. Shamsuddeen Hassan Muhammad',
     leadCode: 'K-1',
     mdas: ['NITDA', 'NCC', 'INEC', 'ONSA', 'FMCIDE', 'Federal Ministry of Education', 'UBEC'],
@@ -45,7 +45,7 @@ export const PILLARS = [
   {
     id: 'B',
     name: 'Trust',
-    streams: ['RS3', 'RS6'],
+    streams: ['RS3', 'RS4'],
     lead: 'Prof. Aminu Bello Usman',
     leadCode: 'K-2',
     mdas: ['CBN', 'NIMC', 'NITDA', 'NDPC', 'FMCIDE'],
@@ -53,7 +53,7 @@ export const PILLARS = [
   {
     id: 'C',
     name: 'Consumer and Data Protection',
-    streams: ['RS2', 'RS4'],
+    streams: ['RS5', 'RS6'],
     lead: 'Dr. Muhammad Shehu Abubakar-Sadiq',
     leadCode: 'K-3',
     mdas: ['FCCPC', 'CBN', 'NDPC', 'NIMC', 'Federal Ministry of Health'],
@@ -95,7 +95,7 @@ export const STREAMS: {
     mdas: ['NITDA', 'NCC', 'INEC', 'ONSA'],
   },
   {
-    id: 'RS5',
+    id: 'RS2',
     pillar: 'A',
     title: 'Youth online safety and digital literacy',
     summary:
@@ -133,7 +133,7 @@ export const STREAMS: {
     mdas: ['CBN', 'NIMC', 'NDPC'],
   },
   {
-    id: 'RS6',
+    id: 'RS4',
     pillar: 'B',
     title: 'Regulatory innovation and adaptive governance',
     summary:
@@ -152,7 +152,7 @@ export const STREAMS: {
     mdas: ['NITDA', 'NDPC', 'CBN', 'FMCIDE'],
   },
   {
-    id: 'RS2',
+    id: 'RS5',
     pillar: 'C',
     title: 'Consumer protection in digital markets',
     summary:
@@ -171,7 +171,7 @@ export const STREAMS: {
     mdas: ['FCCPC', 'CBN'],
   },
   {
-    id: 'RS4',
+    id: 'RS6',
     pillar: 'C',
     title: 'Trust, privacy and data protection frameworks',
     summary:

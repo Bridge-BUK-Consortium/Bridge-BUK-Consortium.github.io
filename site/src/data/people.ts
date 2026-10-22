@@ -23,7 +23,7 @@ export const PEOPLE: Person[] = [
     title: 'Team Lead, and leads Pillar A',
     summary:
       'Leads the cluster and Pillar A, and is accountable for every deliverable.',
-    role: 'Accountable for all deliverables; leads Pillar A (Online Harms and Online Safety): RS1 and RS5; chairs the pillar leads’ meeting; principal interface with the Client.',
+    role: 'Accountable for all deliverables; leads Pillar A (Online Harms and Online Safety): RS1 and RS2; chairs the pillar leads’ meeting; principal interface with the Client.',
     months: 15,
     bio: 'Senior Lecturer in the Department of Software Engineering and the authorised representative of the joint venture. Principal investigator on AfriHate and NaijaSenti, and on the NaijaHate award from the National AI Research Scheme.',
   },
@@ -36,7 +36,7 @@ export const PEOPLE: Person[] = [
     title: 'Senior Research Specialist, and leads Pillar B',
     summary:
       'Leads Pillar B and owns information security, ethics and the MDA training programme.',
-    role: 'Leads Pillar B (Trust): RS3 and RS6; information security and ethics owner; leads the MDA training programme; contributes Cyber360 and deepfake awareness materials to the RS5 digital literacy evaluation.',
+    role: 'Leads Pillar B (Trust): RS3 and RS4; information security and ethics owner; leads the MDA training programme; contributes Cyber360 and deepfake awareness materials to the RS2 digital literacy evaluation.',
     months: 6.25,
     bio: 'Director of the Cybersecurity Research Group at York St John, working on trust-based systems, data privacy and biometric security.',
   },
@@ -49,7 +49,7 @@ export const PEOPLE: Person[] = [
     title: 'Senior Research Specialist, and leads Pillar C',
     summary:
       'Leads Pillar C and co-leads the self-sovereign identity work in RS3.',
-    role: 'Leads Pillar C (Consumer and Data Protection): RS2 and RS4; co-leads RS3 with K-2 on the self-sovereign identity module; Leicester visit coordinator with Prof. Anjum.',
+    role: 'Leads Pillar C (Consumer and Data Protection): RS5 and RS6; co-leads RS3 with K-2 on the self-sovereign identity module; Leicester visit coordinator with Prof. Anjum.',
     months: 7.25,
     bio: 'Teaching Fellow in Cyber Security in the School of Computing and Mathematical Sciences at Leicester. Works on self-sovereign identity, GDPR-compliant privacy systems and fraud prevention, with links to the Surrey Centre for Cyber Security (DECaDE) and INESC TEC Porto.',
   },
@@ -98,10 +98,10 @@ export const PEOPLE: Person[] = [
     photo: 'team/bashir.jpg',
     institution: 'Bayero University, Kano',
     group: 'Non-Key Expert',
-    title: 'Policy and governance lead, and co-leads RS6',
+    title: 'Policy and governance lead, and co-leads RS4',
     summary:
       'Leads the cluster’s policy work and edits all eighteen policy briefs.',
-    role: 'Drafts the Policy Engagement Plan; edits all 18 policy briefs; co-leads RS6; co-leads the annual training for MDA officials; chairs the policy programme of the annual national conference.',
+    role: 'Drafts the Policy Engagement Plan; edits all 18 policy briefs; co-leads RS4; co-leads the annual training for MDA officials; chairs the policy programme of the annual national conference.',
     months: 5.75,
     bio: 'Professor of Software Engineering at BUK and first Dean of its Faculty of Computer Science and Information Technology. Former Kano State Commissioner for Science and Technology and Special Adviser to the Governor on Education and ICT. Sat on the federal Telecommunications Sector Reform Steering and Implementation Committee and served TETFund on the National Research Fund.',
   },
@@ -114,17 +114,17 @@ export const PEOPLE: Person[] = [
     title: 'Dataset and annotation lead',
     summary:
       'Leads datasets and annotation across every stream.',
-    role: 'Dataset and annotation lead for all streams (AfriHate, NaijaSenti, BRIGHTER); RS2 phishing corpus co-lead; deputises K-4 for datasets.',
+    role: 'Dataset and annotation lead for all streams (AfriHate, NaijaSenti, BRIGHTER); RS5 phishing corpus co-lead; deputises K-4 for datasets.',
   },
   {
     code: 'N-4',
     name: 'Assoc. Prof. Abdulrauf Garba Sharifai',
     institution: 'Northwest University, Kano',
     group: 'Non-Key Expert',
-    title: 'RS2 co-lead',
+    title: 'RS5 co-lead',
     summary:
-      'Deep learning for phishing and intrusion detection; co-leads RS2.',
-    role: 'Deep learning for phishing and intrusion detection; RS2 co-lead; Northwest cohort supervisor.',
+      'Deep learning for phishing and intrusion detection; co-leads RS5.',
+    role: 'Deep learning for phishing and intrusion detection; RS5 co-lead; Northwest cohort supervisor.',
   },
   {
     code: 'N-5',
@@ -132,10 +132,10 @@ export const PEOPLE: Person[] = [
     photo: 'team/salisu.jpg',
     institution: 'Aliko Dangote University of Science and Technology, Wudil',
     group: 'Non-Key Expert',
-    title: 'ADUSTECH’s named professor, and co-leads RS6',
+    title: 'ADUSTECH’s named professor, and co-leads RS4',
     summary:
-      'ADUSTECH’s named professor; co-leads RS6 and leads the Wudil cohort.',
-    role: 'Machine learning for RS2 and RS3; co-leads RS6; leads the Wudil cohort of three postdocs and three PhD candidates and mentors its postdocs; reviews Wudil outputs before the Quality Panel.',
+      'ADUSTECH’s named professor; co-leads RS4 and leads the Wudil cohort.',
+    role: 'Machine learning for RS3 and RS5; co-leads RS4; leads the Wudil cohort of three postdocs and three PhD candidates and mentors its postdocs; reviews Wudil outputs before the Quality Panel.',
     months: 8,
   },
   {
@@ -144,10 +144,10 @@ export const PEOPLE: Person[] = [
     photo: 'team/hadiza.jpg',
     institution: 'Bayero University, Kano',
     group: 'Non-Key Expert',
-    title: 'RS4 survey co-lead',
+    title: 'RS6 survey co-lead',
     summary:
-      'Data analytics and AI policy; co-leads the RS4 survey.',
-    role: 'Data analytics and AI policy; RS4 survey co-lead; deputises K-4 for surveys.',
+      'Data analytics and AI policy; co-leads the RS6 survey.',
+    role: 'Data analytics and AI policy; RS6 survey co-lead; deputises K-4 for surveys.',
   },
   {
     code: 'N-7',
@@ -210,10 +210,10 @@ export const PEOPLE: Person[] = [
     name: 'Dr. Baffa Kabiru Gwadabe',
     institution: 'Bayero University, Kano',
     group: 'Non-Key Expert',
-    title: 'Social scientist, and co-leads RS5',
+    title: 'Social scientist, and co-leads RS2',
     summary:
       'The cluster’s economist. Designs and runs all three large national surveys.',
-    role: 'Designs and pilots the three large surveys with K-4; designs the discrete choice experiment and usability protocol for the RS3 agent study; runs the focus group and interview programmes in RS1, RS2, RS5 and RS6; trains the enumerators.',
+    role: 'Designs and pilots the three large surveys with K-4; designs the discrete choice experiment and usability protocol for the RS3 agent study; runs the focus group and interview programmes in RS1, RS2, RS4 and RS5; trains the enumerators.',
     months: 5,
     bio: 'Senior Lecturer in Economics with a PhD from Ahmadu Bello University, Zaria. Fieldwork in northern Nigeria for the Sasakawa Africa Association, USAID Markets II, an ILO study of Nigeria’s micro pension scheme, and research on learning poverty in Kaduna State.',
   },
@@ -222,10 +222,10 @@ export const PEOPLE: Person[] = [
     name: 'Prof. Ishola Dada Muraina',
     institution: 'Northwest University, Kano, Faculty of Computing',
     group: 'Non-Key Expert',
-    title: 'Northwest’s named professor, and co-leads RS2',
+    title: 'Northwest’s named professor, and co-leads RS5',
     summary:
-      'Northwest’s named professor; co-leads RS2 and links it to the NCC.',
-    role: 'Co-leads RS2 with K-3 and Assoc. Prof. Sharifai; leads the Northwest cohort of two postdocs and two PhD candidates; reviews Northwest’s RS2, RS5 and RS6 outputs; links RS2 to the Nigerian Communications Commission.',
+      'Northwest’s named professor; co-leads RS5 and links it to the NCC.',
+    role: 'Co-leads RS5 with K-3 and Assoc. Prof. Sharifai; leads the Northwest cohort of two postdocs and two PhD candidates; reviews Northwest’s RS2, RS4 and RS5 outputs; links RS5 to the Nigerian Communications Commission.',
     months: 10,
     bio: 'Professor in the Department of Information and Communication Technology and Director of ICT since 2022. PhD in Information Technology, Universiti Utara Malaysia. Leads an NCC grant on real-time analytics for telecommunications quality of service and a TETFund institution-based research grant.',
   },
@@ -237,7 +237,7 @@ export const PEOPLE: Person[] = [
     title: 'Leicester’s professorial lead',
     summary:
       'Leicester’s professorial lead and academic host for seven visiting PhD candidates.',
-    role: 'Academic host and co-supervisor for the seven PhD candidates visiting Leicester; advises Pillar C on scaling the RS2 fraud detection API and on federated learning where data cannot leave a regulator or bank; reviews visit outputs; represents Leicester on the Consortium Steering Committee.',
+    role: 'Academic host and co-supervisor for the seven PhD candidates visiting Leicester; advises Pillar C on scaling the RS5 fraud detection API and on federated learning where data cannot leave a regulator or bank; reviews visit outputs; represents Leicester on the Consortium Steering Committee.',
     months: 2,
     bio: 'Professor of Distributed Systems and Director of Enterprise and Impact in the School of Computing and Mathematical Sciences. Leads two EPSRC projects on AI-driven digital twins, is AI lead for METEOR at Space Park Leicester, and has worked for twenty years with CERN on distributed analytics for the Large Hadron Collider.',
   },
@@ -249,7 +249,7 @@ export const PEOPLE: Person[] = [
     title: 'York St John’s professorial lead',
     summary:
       'York St John’s professorial lead and academic host for eight visiting PhD candidates.',
-    role: 'Academic host and co-supervisor for the eight PhD candidates visiting York St John; advises RS1 on explainable detection models and RS5 on the digital literacy curriculum recommendations; reviews visit outputs.',
+    role: 'Academic host and co-supervisor for the eight PhD candidates visiting York St John; advises RS1 on explainable detection models and RS2 on the digital literacy curriculum recommendations; reviews visit outputs.',
     months: 3,
     bio: 'Professor of Artificial Intelligence since 2026, after joining York St John in 2025. Previously eighteen years at Keele University, rising to Reader, with posts as Interim Head of School and Director of Education. Senior Fellow of the Higher Education Academy. Principal Investigator of GivEducation projects on AI tools for curriculum design in schools and of a Knowledge Transfer Partnership with Bentley Motors; has taken four doctoral candidates to completion as primary supervisor.',
   },
@@ -261,7 +261,7 @@ export const PEOPLE: Person[] = [
     title: 'Research Engineer',
     summary:
       'Builds and runs the data, training and evaluation pipelines behind the cluster’s language models and datasets.',
-    role: 'Research Engineer for Pillar A and the Data and Analytics function: builds and maintains the annotation, model training and evaluation pipelines for RS1 and RS5; prepares datasets and models for release with K-4; supports the postdoctoral researchers and PhD candidates on reproducible code.',
+    role: 'Research Engineer for Pillar A and the Data and Analytics function: builds and maintains the annotation, model training and evaluation pipelines for RS1 and RS2; prepares datasets and models for release with K-4; supports the postdoctoral researchers and PhD candidates on reproducible code.',
     bio: 'Natural language processing researcher and member of HausaNLP. Co-author of AfriHate (NAACL 2025) and AfriSenti (EMNLP 2023), two of the datasets the cluster builds on.',
   },
 ]
@@ -277,7 +277,7 @@ export const INSTITUTIONS = [
       'Federal university, 1977. Hosts the National Cybersecurity Centre (NITDA, 2025) and the NCC Centre of Excellence. Home of HausaNLP and the Arewa Data Science Academy. Grants from the Lacuna Fund, Google Research, Oracle, Wellcome Trust and the National AI Research Scheme.',
     postdocs: 8,
     phds: '8 registered',
-    streams: 'RS1, RS2, RS4, RS6',
+    streams: 'RS1, RS4, RS5, RS6',
     url: 'https://www.buk.edu.ng',
   },
   {
@@ -290,7 +290,7 @@ export const INSTITUTIONS = [
       'Kano State university 40 km from BUK, shortlisted as Kano University of Science and Technology. Doctoral and MSc programmes in AI and data science; 200 workstations across four laboratories, plus embedded network and hardware labs.',
     postdocs: 3,
     phds: '3 registered',
-    streams: 'RS2, RS3',
+    streams: 'RS3, RS5',
     url: 'https://www.adustech.edu.ng',
   },
   {
@@ -303,7 +303,7 @@ export const INSTITUTIONS = [
       'New federal university of technology in Jigawa State. Five School of Computing laboratories (computer science, networking, cyber security, software engineering, hardware) and fibre to every building. Reaches underserved communities in Jigawa.',
     postdocs: 2,
     phds: '2 registered',
-    streams: 'RS3, RS5',
+    streams: 'RS2, RS3',
   },
   {
     name: 'Northwest University, Kano',
@@ -315,7 +315,7 @@ export const INSTITUTIONS = [
       'Kano State university with a Faculty of Computing. Holds NCC and TETFund research grants (2022). Publishes on blockchain trust, public-sector fraud, and intrusion and phishing detection.',
     postdocs: 2,
     phds: '2 registered',
-    streams: 'RS5, RS6',
+    streams: 'RS2, RS4',
   },
   {
     name: 'University of Leicester',
@@ -327,7 +327,7 @@ export const INSTITUTIONS = [
       'School of Computing and Mathematical Sciences: cybersecurity, information security, digital forensics. Hosts seven PhD research stays. Contributes K-3 and Prof. Ashiq Anjum.',
     postdocs: 0,
     phds: '7 research stays',
-    streams: 'RS2, RS3, RS4, RS6',
+    streams: 'RS3, RS4, RS5, RS6',
     url: 'https://le.ac.uk',
   },
   {
@@ -340,7 +340,7 @@ export const INSTITUTIONS = [
       'Hosts the Cybersecurity Research Group and the Cyber360 platform: trust-based systems, data privacy, biometric security. Hosts eight PhD research stays. Contributes K-2 and Prof. Theocharis Kyriacou.',
     postdocs: 0,
     phds: '8 research stays',
-    streams: 'RS1, RS3, RS4, RS5',
+    streams: 'RS1, RS2, RS3, RS6',
     url: 'https://www.yorksj.ac.uk',
   },
 ]

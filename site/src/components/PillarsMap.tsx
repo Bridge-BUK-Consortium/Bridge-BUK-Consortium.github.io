@@ -19,7 +19,7 @@ const ICONS: Record<StreamId, JSX.Element> = {
       <path d="M9 13l6-6" />
     </>
   ),
-  RS5: ( // shield with a child
+  RS2: ( // shield with a child
     <>
       <path d="M12 3l8 3v6c0 4.5-3.5 8-8 9-4.5-1-8-4.5-8-9V6l8-3z" />
       <circle cx="12" cy="10" r="2" />
@@ -34,21 +34,21 @@ const ICONS: Record<StreamId, JSX.Element> = {
       <path d="M12 12v8" />
     </>
   ),
-  RS6: ( // scales
+  RS4: ( // scales
     <>
       <path d="M12 4v16M8 20h8M5 7h14" />
       <path d="M5 7l-3 7a3 3 0 0 0 6 0L5 7z" />
       <path d="M19 7l-3 7a3 3 0 0 0 6 0l-3-7z" />
     </>
   ),
-  RS2: ( // shopping bag with a warning mark
+  RS5: ( // shopping bag with a warning mark
     <>
       <path d="M5 8h14l-1 12H6L5 8z" />
       <path d="M9 8V6a3 3 0 0 1 6 0v2" />
       <path d="M12 11v4M12 17.5v.5" />
     </>
   ),
-  RS4: ( // padlock over a document
+  RS6: ( // padlock over a document
     <>
       <path d="M7 3h7l4 4v14H7V3z" />
       <path d="M14 3v4h4" />
