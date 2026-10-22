@@ -37,7 +37,7 @@ export const PEOPLE: Person[] = [
     summary:
       'Leads Pillar B and owns information security, ethics and the MDA training programme.',
     role: 'Leads Pillar B (Trust): RS3 and RS6; information security and ethics owner; leads the MDA training programme; contributes Cyber360 and deepfake awareness materials to the RS5 digital literacy evaluation.',
-    months: 5,
+    months: 6.25,
     bio: 'Director of the Cybersecurity Research Group at York St John, working on trust-based systems, data privacy and biometric security.',
   },
   {
