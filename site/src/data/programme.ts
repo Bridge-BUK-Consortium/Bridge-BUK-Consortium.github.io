@@ -108,7 +108,7 @@ export const STREAMS: {
     outputs: [
       { month: 'M14', name: 'Youth online harms baseline' },
       { month: 'M24', name: 'Literacy programme evaluation' },
-      { month: 'M30', name: 'Safety toolkit in Hausa and Nigerian Pidgin' },
+      { month: 'M30', name: 'Safety toolkit in Hausa, Yoruba, Igbo and Nigerian Pidgin' },
       { month: 'M36', name: 'Curriculum recommendations' },
     ],
     mdas: ['Federal Ministry of Education', 'UBEC'],

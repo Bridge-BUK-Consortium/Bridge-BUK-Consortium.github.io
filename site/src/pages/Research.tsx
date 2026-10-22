@@ -124,7 +124,7 @@ export default function Research() {
               Five core languages, which are Hausa, Yoruba, Igbo, Nigerian Pidgin and English, for
               questionnaires, consent forms, the phishing corpus, the deepfake benchmark and the youth
               safety materials. The RS1 detection models cover nine Nigerian languages. The Month 30
-              safety toolkit is released in Hausa and Nigerian Pidgin, with an English version.
+              safety toolkit is released in Hausa, Yoruba, Igbo and Nigerian Pidgin, with an English version.
             </p>
           </Card>
           <Card>

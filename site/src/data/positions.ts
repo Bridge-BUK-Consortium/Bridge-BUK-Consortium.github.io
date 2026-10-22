@@ -113,9 +113,9 @@ export const POSITIONS: Position[] = [
     pillar: 'A',
     title: 'Does digital literacy work? Evaluating school programmes and co-designing a multilingual safety toolkit',
     focus:
-      'Run the matched comparison of exposed and unexposed schools and build the Month 30 toolkit with students and teachers in Hausa, Nigerian Pidgin and English.',
+      'Run the matched comparison of exposed and unexposed schools and build the Month 30 toolkit with students and teachers in Hausa, Yoruba, Igbo, Nigerian Pidgin and English.',
     abstract:
-      'Nigeria funds digital literacy programmes in schools, but there is little evidence on whether they make students safer online. This fellowship evaluates them. Using the cluster’s youth survey, the fellow will compare schools that have received UBEC and NITDA programmes with similar schools that have not, and measure differences in risky behaviour, harm and reporting. The fellow will then co-design a safety toolkit with students and teachers in Hausa, Nigerian Pidgin and English, test it in classrooms, and turn the results into curriculum recommendations for the Federal Ministry of Education.',
+      'Nigeria funds digital literacy programmes in schools, but there is little evidence on whether they make students safer online. This fellowship evaluates them. Using the cluster’s youth survey, the fellow will compare schools that have received UBEC and NITDA programmes with similar schools that have not, and measure differences in risky behaviour, harm and reporting. The fellow will then co-design a safety toolkit with students and teachers in Hausa, Yoruba, Igbo, Nigerian Pidgin and English, test it in classrooms, and turn the results into curriculum recommendations for the Federal Ministry of Education.',
     streams: ['RS5'],
     agencies: ['UBEC', 'Federal Ministry of Education', 'NITDA'],
   },
