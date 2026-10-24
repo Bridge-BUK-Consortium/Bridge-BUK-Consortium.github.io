@@ -90,7 +90,7 @@ export const PEOPLE: Person[] = [
       'Former Vice Chancellor of BUK. Chairs the Quality Panel and the annual cohort review.',
     role: 'Academic leadership and quality assurance; chairs the Quality Panel that reviews every deliverable; chairs the annual review of cohort progress for all thirty researchers; leads the Mid-Term Review and Final Report with the Team Lead.',
     months: 4.5,
-    bio: 'Tenth Vice Chancellor of Bayero University, Kano (2015 to 2020), after serving as Head of Mathematical Sciences, Dean of Science, Director of Information Technology, Dean of Postgraduate Studies and Deputy Vice Chancellor (Academics). PhD in Mathematics, University of Arkansas. Founded the study of Computer Science at BUK in 1990, now a Faculty with more than 1,500 graduates. Research in algebra and cryptography.',
+    bio: 'Tenth Vice Chancellor of Bayero University, Kano (2015 to 2020), after serving as Head of Mathematical Sciences, Dean of Science, Director of Information Technology, Dean of Postgraduate Studies and Deputy Vice Chancellor (Academics). PhD in Mathematics, University of Arkansas. Founded the study of Computer Science at BUK in 1990, now a Faculty with more than 1,500 graduates. Research in artificial intelligence.',
   },
   {
     code: 'N-2',

@@ -27,7 +27,7 @@ export const POSITIONS: Position[] = [
     pillar: 'A',
     title: 'Beyond keywords: culturally grounded hate speech detection for nine Nigerian languages',
     focus:
-      'Build detection models that handle code-switching, dialect variation and implicit, coded hate, with per-language error analysis at a fixed operating threshold. Extends AfriHate and HausaHate.',
+      'Build detection models that handle code-switching, dialect variation and implicit, coded hate, with per-language error analysis at a fixed operating threshold. Builds on NaijaHate v2.0, starting from AfriHate and HausaHate.',
     abstract:
       'Hate speech in Nigerian online spaces is rarely written as a list of slurs. It is code-switched between Hausa, Pidgin and English, carried by proverbs, nicknames and coded references to ethnicity and religion, and it changes around elections and local conflicts. Keyword filters and models trained on English miss most of it and wrongly flag ordinary speech. This project builds hate and abusive language detection for nine Nigerian languages that reads such content in context. It extends the AfriHate and HausaHate datasets with new annotation for implicit and coded hate, studies how cultural knowledge and dialect affect model errors, and compares multilingual and Africa-centred language models under realistic conditions. Every model is reported with per-language error analysis at a fixed operating threshold, so that NITDA and INEC can see where it can be trusted and where human review is still needed. The candidate will publish the datasets, models and evaluation protocol openly.',
     streams: ['RS1'],
@@ -429,7 +429,7 @@ export const TERMS = {
     topics: 20,
     registration: 'Registered at one of the four Nigerian universities in the joint venture, where the primary supervisor works; co-supervisor at another member or a UK host.',
     supervision: 'A thesis committee twice a year. No supervisor carries more than three funded candidates.',
-    duration: 'Month 9 to Month 36. BUK continues supervision to completion afterwards, same supervisors.',
+    duration: 'Month 9 to Month 36. Thesis submitted by Month 33 and examined by Month 36.',
     funding: 'Stipend and research costs, a funded three-month UK stay, one international conference presentation, a place at the annual Research School.',
     ukStay: 'Three months at Leicester or York St John in Months 13 to 15, before the proposal defence.',
     outputs: 'A thesis, a conference paper by M24, a journal paper submitted by M33, one policy brief a year.',

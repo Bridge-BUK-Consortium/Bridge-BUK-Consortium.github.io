@@ -84,8 +84,8 @@ export const STREAMS: {
       'How do synthetic media and coordinated inauthentic behaviour spread in Nigerian-language spaces, and can they be detected?',
     ],
     outputs: [
-      { month: 'M6', name: 'AfriHate v2.0, the 2027 election corpus in four core languages' },
-      { month: 'M12', name: 'AfriHate v2.1, five further Nigerian languages' },
+      { month: 'M6', name: 'NaijaHate v2.0, the newly collected 2027 election corpus in four core languages' },
+      { month: 'M12', name: 'NaijaHate v2.1, new data in five further Nigerian languages' },
       { month: 'M24', name: 'Detection models for nine Nigerian languages' },
       { month: 'M24', name: 'Platform moderation audit' },
       { month: 'M30', name: 'Deepfake benchmark' },
@@ -256,7 +256,7 @@ export const DELIVERABLES = [
 export const PRINCIPLES = [
   { name: 'Evidence for named decisions', detail: 'Every question names the agency, the instrument and the decision it serves.' },
   { name: 'Nigerian languages first', detail: 'Hausa, Yoruba, Igbo, Nigerian Pidgin and English, with native-speaker annotation and fieldwork in all six zones.' },
-  { name: 'Start from existing assets', detail: 'AfriHate, NaijaHate, NaijaSenti and AfriSenti supply the data. VigilSentinel, Wazobia Invoice, SPIDVerify and NaijaSafe supply the testbeds.' },
+  { name: 'Start from existing assets', detail: 'AfriHate, NaijaSenti and AfriSenti supply guidelines, seed labels and baselines; every dataset is collected new in Nigeria, and the hate speech data form NaijaHate v2.0. VigilSentinel, Wazobia Invoice, SPIDVerify and NaijaSafe supply the testbeds.' },
   { name: 'Inclusion by design', detail: 'Samples oversample underserved groups. Findings are disaggregated. Every brief carries actions for them.' },
   { name: 'Open and replicable', detail: 'Pre-registered protocols, versioned code and codebooks, datasets released with each study.' },
   { name: 'Safeguards with owners', detail: 'Ethics, data protection, child protection, annotator welfare, SEA/SH and cybersecurity each have a named owner and a document.' },
