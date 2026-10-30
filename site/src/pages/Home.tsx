@@ -125,6 +125,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ---------------- The explainer film ---------------- */}
+      <Section>
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:items-center lg:gap-14">
+          <div className="min-w-0">
+            <SectionHead
+              eyebrow="Watch"
+              title="CREDENCE in under three minutes"
+              lead="Three short stories show what goes wrong online: a mobile money scam, abuse in Hausa that filters miss, and a loan app that takes too much data. The film then shows how the research responds."
+            />
+          </div>
+          <video
+            className="aspect-video w-full min-w-0 border-t-2 border-primary bg-black"
+            controls
+            playsInline
+            preload="none"
+            poster={`${import.meta.env.BASE_URL}video/credence-explainer.jpg`}
+            aria-label="Explainer film about CREDENCE"
+          >
+            <source src={`${import.meta.env.BASE_URL}video/credence-explainer.mp4`} type="video/mp4" />
+          </video>
+        </div>
+      </Section>
+
       {/* ---------------- Pillars ---------------- */}
       <Section id="pillars" bordered={false}>
         <SectionHead
