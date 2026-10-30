@@ -3,7 +3,6 @@ import { POSITIONS, TERMS, SELECTION, ukHost } from '../data/positions'
 import { PILLARS, STREAMS } from '../data/programme'
 import { PEOPLE } from '../data/people'
 import { Eyebrow, Section, Card, Tag, BrandLink, GhostLink } from '../components/ui'
-import Placeholder from '../components/Placeholder'
 
 export default function PositionDetail() {
   const { code } = useParams()
@@ -35,12 +34,12 @@ export default function PositionDetail() {
     ['Pillar', `${pillar.id}. ${pillar.name}`],
     ['Research stream', streams.map((s) => `${s.id} ${s.title}`).join('; ')],
     ['Host institution', t.registration],
-    ['UK research stay', `${ukHost(p.streams)}. ${t.ukStay} The host shown follows the stream allocation and is fixed per researcher at offer stage.`],
+    ['UK research stay', p.type === 'PhD' ? `${ukHost(p.streams)}. ${t.ukStay} The host shown follows the stream allocation and is fixed per researcher at offer stage.` : t.ukStay],
     ['Duration', t.duration],
     ['Supervision', t.supervision],
     ['Funding and support', t.funding],
     ['Expected outputs', t.outputs],
-    ['Closing', t.recruitment],
+    ['Recruitment timing', t.recruitment],
   ]
 
   return (
@@ -125,7 +124,6 @@ export default function PositionDetail() {
             <div>
               <Eyebrow tone="primary">Eligibility</Eyebrow>
               <h2 className="ui-card-title mt-3 text-xl">Who we are looking for</h2>
-              <Placeholder id={p.type === 'PhD' ? 'eligibility-phd' : 'eligibility-postdoc'} block>
               <ul className="space-y-3">
                 {t.eligibility.map((e) => (
                   <li key={e} className="flex gap-3 text-[15px] leading-7">
@@ -134,7 +132,7 @@ export default function PositionDetail() {
                   </li>
                 ))}
               </ul>
-              </Placeholder>
+              <p className="mt-4 text-sm leading-7 text-muted-foreground">Indicative. The open call will set the final requirements.</p>
             </div>
 
             <div>

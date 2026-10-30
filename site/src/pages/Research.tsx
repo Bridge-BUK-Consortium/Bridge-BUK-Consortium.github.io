@@ -24,7 +24,7 @@ export default function Research() {
               {streams.map((s) => {
                 const topics = POSITIONS.filter((pos) => pos.streams.includes(s.id))
                 return (
-                  <Card key={s.id} hover className="flex flex-col">
+                  <Card key={s.id} id={s.id.toLowerCase()} hover className="flex scroll-mt-24 flex-col">
                     <div className="flex items-start justify-between gap-3">
                       <Eyebrow tone="primary">{s.id}</Eyebrow>
                       <span className="shrink-0 font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
@@ -95,16 +95,16 @@ export default function Research() {
         />
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2">
           <Card hover>
-            <Eyebrow tone="primary">K-4 Assoc. Prof. Khalid Haruna</Eyebrow>
+            <Eyebrow tone="primary">Assoc. Prof. Khalid Haruna</Eyebrow>
             <h3 className="ui-card-title mt-3 text-xl">Data and Analytics</h3>
             <p className="ui-body-sm mt-3">
               A shared survey core module, the data management plan, dataset curation and analytics
               support for every stream. Checks every dataset before release and reports the achieved
-              design effect in each survey report. Leads the annual Research School.
+              design effect in each survey report.
             </p>
           </Card>
           <Card hover>
-            <Eyebrow tone="primary">K-5 Maryam Ibrahim Mukhtar</Eyebrow>
+            <Eyebrow tone="primary">Maryam Ibrahim Mukhtar</Eyebrow>
             <h3 className="ui-card-title mt-3 text-xl">Programme management</h3>
             <p className="ui-body-sm mt-3">
               Reporting, finance, cohort administration across six institutions, and cross-cluster
@@ -131,14 +131,14 @@ export default function Research() {
             <h3 className="ui-card-title">Statistics</h3>
             <p className="ui-body-sm mt-3">
               Every precision statement uses a 95 percent confidence level, an expected proportion of
-              0.5 and an explicit design effect. The youth survey reaches ±4.1 points, the consumer
-              survey ±2.6, and the national trust survey ±2.2.
+              0.5 and an explicit design effect. The youth survey reaches ±4.1 points and the national
+              trust and digital consumer survey ±2.2.
             </p>
           </Card>
           <Card>
             <h3 className="ui-card-title">Timing</h3>
             <p className="ui-body-sm mt-3">
-              Month 1 is December 2026. RS1 starts election work in Month 1, before the presidential
+              Month 1 is planned as December 2026. RS1 starts election work in Month 1, before the presidential
               and National Assembly elections of 16 January 2027 and the governorship elections of 6
               February 2027. Collection starts only after ethics approval.
             </p>

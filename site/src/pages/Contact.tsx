@@ -1,7 +1,6 @@
 import { PROGRAMME } from '../data/programme'
 import { PEOPLE } from '../data/people'
 import { Eyebrow, Section, SectionHead, Card, PageHero } from '../components/ui'
-import Placeholder from '../components/Placeholder'
 
 export default function Contact() {
   const leads = PEOPLE.filter((p) => p.group === 'Key Expert')
@@ -23,15 +22,11 @@ export default function Contact() {
               If you are writing about a funded position, put the topic reference, such as A-P1 or
               C-D4, in the subject line.
             </p>
-            <div className="mt-6">
-              <Placeholder id="contact-email" block>
-                <span className="ui-card-title block">{PROGRAMME.email}</span>
-                <span className="ui-body-sm mt-1 block">
-                  This address was not supplied by the cluster. Do not write to it until it is
-                  replaced.
-                </span>
-              </Placeholder>
-            </div>
+            <p className="mt-6">
+              <a className="ui-card-title block break-all hover:text-primary" href={`mailto:${PROGRAMME.email}`}>
+                {PROGRAMME.email}
+              </a>
+            </p>
             <dl className="mt-8 space-y-4 border-t border-border pt-6">
               <div>
                 <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
@@ -45,10 +40,10 @@ export default function Contact() {
               </div>
               <div>
                 <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-                  Client
+                  Federal Ministry
                 </dt>
                 <dd className="mt-1 text-sm leading-6">
-                  Project Implementation Unit, Project BRIDGE
+                  Project BRIDGE implementation unit
                   <br />
                   {PROGRAMME.client}
                   <br />
@@ -104,6 +99,7 @@ export default function Contact() {
             'NITDA', 'NCC', 'NDPC', 'CBN', 'FCCPC', 'NIMC', 'INEC', 'ONSA', 'UBEC', 'NFIU',
             'Federal Ministry of Education', 'Federal Ministry of Health',
             'Federal Ministry of Women Affairs', 'National Orientation Agency', 'FMCIDE',
+            'EFCC', 'Nigeria Police Force', 'NAPTIP',
           ].map((m) => (
             <span
               key={m}

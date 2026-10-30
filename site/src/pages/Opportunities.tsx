@@ -97,7 +97,7 @@ export default function Opportunities() {
       <PageHero
         eyebrow="Opportunities"
         title="Thirty funded positions"
-        lead="The cluster will fund fifteen postdoctoral researchers and fifteen PhD candidates. The positions are shared among the four Nigerian universities in the joint venture: Bayero University, Kano takes eight of each, ADUSTECH three, and FUT Babura and Northwest University two each. Every PhD candidate registers at the university of the primary supervisor, and every postdoctoral researcher is employed by one of the four. Each of the thirty spends three months at a university in the United Kingdom."
+        lead="The cluster will fund fifteen postdoctoral researchers and fifteen PhD candidates. The positions are shared among the four Nigerian universities in the joint venture: Bayero University, Kano takes eight of each, ADUSTECH three, and FUT Babura and Northwest University two each. Every PhD candidate registers at the university of the primary supervisor, and every postdoctoral researcher is employed by one of the four. Each of the fifteen PhD candidates spends three months at a university in the United Kingdom."
       >
         <div className="mt-7 grid gap-3 sm:grid-cols-2 lg:max-w-3xl">
           <div className="border-t-2 border-primary pt-3">
@@ -106,7 +106,7 @@ export default function Opportunities() {
               15 <span className="ui-body-sm font-normal">positions</span>
             </p>
             <p className="mt-1 text-xs leading-5 text-muted-foreground">
-              {nPostdoc} topics advertised, each at least 24 months from Month 6
+              {nPostdoc} topics advertised, nine for 30 months from Month 7, six for 24 months from Month 13
             </p>
           </div>
           <div className="border-t-2 border-primary pt-3">
@@ -127,8 +127,8 @@ export default function Opportunities() {
           <div className="flex flex-col gap-2 border-l-2 border-primary/60 pl-4 sm:pl-5">
             <Eyebrow tone="primary">Not yet open</Eyebrow>
             <p className="max-w-3xl text-sm leading-7 text-muted-foreground">
-              These positions depend on the award of the Cluster E contract. We will publish the open
-              call within one month of signing it. If you tell us you are interested, we will let you
+              These positions are subject to the award of the Cluster E contract. We will publish the
+              open call within one month of signing it. If you tell us you are interested, we will let you
               know when applications open.
             </p>
           </div>
@@ -266,8 +266,7 @@ export default function Opportunities() {
                 ))}
               </div>
               <p className="ui-body-sm mt-4">
-                The cluster also engages research associates and annotators. We encourage the strongest
-                of them to apply for PhD places in later years.
+                The cluster also engages research associates and annotators.
               </p>
             </Card>
             <Card>

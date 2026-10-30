@@ -14,10 +14,10 @@ export type Position = {
 }
 
 /* The open call advertises a topic pool wider than the number of funded
-   places, so that the strongest applicants and the MDAs' priorities decide
-   the final fifteen of each kind: 20 PhD topics for 15 PhD places and
-   16 postdoctoral topics for 15 postdoctoral places. Each pillar takes five
-   PhD candidates and five postdoctoral researchers. */
+   places, so that the strongest applicants and the agencies' priorities decide
+   the final thirty: 21 PhD topics for 15 PhD places and 15 postdoctoral
+   topics for 15 postdoctoral places, 36 in all. Each pillar takes five PhD
+   candidates and five postdoctoral researchers. */
 
 export const POSITIONS: Position[] = [
   // ---------------- Pillar A ----------------
@@ -29,7 +29,7 @@ export const POSITIONS: Position[] = [
     focus:
       'Build detection models that handle code-switching, dialect variation and implicit, coded hate, with per-language error analysis at a fixed operating threshold. Builds on NaijaHate v2.0, starting from AfriHate and HausaHate.',
     abstract:
-      'Hate speech in Nigerian online spaces is rarely written as a list of slurs. It is code-switched between Hausa, Pidgin and English, carried by proverbs, nicknames and coded references to ethnicity and religion, and it changes around elections and local conflicts. Keyword filters and models trained on English miss most of it and wrongly flag ordinary speech. This project builds hate and abusive language detection for nine Nigerian languages that reads such content in context. It extends the AfriHate and HausaHate datasets with new annotation for implicit and coded hate, studies how cultural knowledge and dialect affect model errors, and compares multilingual and Africa-centred language models under realistic conditions. Every model is reported with per-language error analysis at a fixed operating threshold, so that NITDA and INEC can see where it can be trusted and where human review is still needed. The candidate will publish the datasets, models and evaluation protocol openly.',
+      'Hate speech in Nigerian online spaces is rarely written as a list of slurs. It is code-switched between Hausa, Pidgin and English, carried by proverbs, nicknames and coded references to ethnicity and religion, and it changes around elections and local conflicts. Keyword filters and models trained on English miss most of it and wrongly flag ordinary speech. This project builds hate and abusive language detection for nine Nigerian languages that reads such content in context. It builds on NaijaHate v2.0, the newly collected Nigerian corpus, with new annotation for implicit and coded hate, using AfriHate and HausaHate for guidelines, seed labels and baselines, studies how cultural knowledge and dialect affect model errors, and compares multilingual and Africa-centred language models under realistic conditions. Every model is reported with per-language error analysis at a fixed operating threshold, so that NITDA and INEC can see where it can be trusted and where human review is still needed. The candidate will publish the datasets, models and evaluation protocol openly.',
     streams: ['RS1'],
     agencies: ['NITDA', 'INEC'],
   },
@@ -149,9 +149,9 @@ export const POSITIONS: Position[] = [
     code: 'B-P1',
     type: 'PhD',
     pillar: 'B',
-    title: 'Multimodal continuous authentication for trustworthy Nigerian FinTech',
+    title: 'Continuous behavioural authentication for rural mobile-money agents',
     focus:
-      'Combine biometric, behavioural and device signals into continuous authentication, and evaluate its security, usability and accessibility for agent banking and digital financial services.',
+      'Develop and evaluate authentication combining touch dynamics, transaction-entry rhythms and app-navigation patterns, with device-handling signals as an optional modality. Compare security, usability and resource consumption with static authentication across devices and connectivity conditions.',
     streams: ['RS3'],
     agencies: ['CBN'],
   },
@@ -159,19 +159,19 @@ export const POSITIONS: Position[] = [
     code: 'B-P2',
     type: 'PhD',
     pillar: 'B',
-    title: 'Behavioural biometrics for continuous and risk-based authentication',
+    title: 'Offline self-sovereign identity for informal workers',
     focus:
-      'Use swipe patterns, typing rhythm and device context to tell legitimate users from suspicious sessions, through a behavioural biometric prototype that stays usable.',
+      'Extend SPIDVerify to support offline credential verification on smartphones with 2 GB RAM or less. Evaluate valid and invalid credential presentations, verification time and resource consumption, and investigate adoption barriers through interviews with informal workers.',
     streams: ['RS3'],
-    agencies: ['CBN'],
+    agencies: ['CBN', 'NDPC', 'NIMC'],
   },
   {
     code: 'B-P3',
     type: 'PhD',
     pillar: 'B',
-    title: 'Privacy-preserving behavioural and biometric authentication',
+    title: 'Security, privacy and convenience in inclusive authentication',
     focus:
-      'Apply privacy by design and data minimisation to sensitive authentication data while keeping fraud-prevention capability.',
+      'Investigate rural mobile-money agents’ authentication preferences through a discrete choice experiment and practical tasks. Examine how literacy, disability and digital experience affect usability, completion and abandonment, and develop evidence-based design recommendations.',
     streams: ['RS3'],
     agencies: ['CBN', 'NDPC'],
   },
@@ -179,21 +179,21 @@ export const POSITIONS: Position[] = [
     code: 'B-P4',
     type: 'PhD',
     pillar: 'B',
-    title: 'Offline-first authentication and self-sovereign identity for agent banking',
+    title: 'International regulatory approaches and their transferability to Nigeria',
     focus:
-      'Design and test secure offline credentials and identity verification on low-end Android phones in areas with intermittent connectivity.',
-    streams: ['RS3'],
-    agencies: ['CBN', 'NIMC'],
+      'Compare selected approaches from the EU, UK, Kenya, India and South Africa. Assess their potential adaptation to Nigeria against legal compatibility, institutional feasibility, implementation requirements and consumer protection implications.',
+    streams: ['RS4'],
+    agencies: ['NITDA', 'NDPC', 'FCCPC'],
   },
   {
     code: 'B-P5',
     type: 'PhD',
     pillar: 'B',
-    title: 'Inclusive and usable authentication for rural agents and underserved users',
+    title: 'Institutional mandates and coordination for digital trust in Nigeria',
     focus:
-      'Run field studies on how literacy, connectivity and disability affect authentication, and turn the results into design recommendations for agent banking.',
-    streams: ['RS3'],
-    agencies: ['CBN'],
+      'Map responsibilities across NDPC, NITDA, NCC, CBN, FCCPC and FMCIDE. Combine document analysis and stakeholder interviews to identify mandate gaps, overlaps, coordination challenges and enforcement capacity constraints, using loan-app complaints as a worked case.',
+    streams: ['RS4'],
+    agencies: ['NDPC', 'NITDA', 'NCC', 'CBN', 'FCCPC', 'FMCIDE'],
   },
   {
     code: 'B-P6',
@@ -211,7 +211,7 @@ export const POSITIONS: Position[] = [
     pillar: 'B',
     title: 'Who enforces digital safety?',
     focus:
-      'Map the mandates of NDPC, NITDA, NCC, CBN and FCCPC, find gaps and overlaps, and propose a coordination protocol.',
+      'Map the mandates of NDPC, NITDA, NCC, CBN and FCCPC, find gaps and overlaps, including who acts when a loan app misuses borrowers’ data or recovers debts aggressively, and propose a coordination protocol.',
     streams: ['RS4'],
     agencies: ['FMCIDE', 'NDPC', 'NITDA', 'NCC', 'CBN', 'FCCPC'],
   },
@@ -219,51 +219,51 @@ export const POSITIONS: Position[] = [
     code: 'B-D1',
     type: 'Postdoc',
     pillar: 'B',
-    title: 'Trustworthy FinTech authentication integration',
+    title: 'Privacy-preserving authentication integration and evaluation',
     focus:
-      'Integrate the findings of B-P1 to B-P5 into one secure, privacy-preserving authentication framework and validate it as a demonstrator.',
+      'Integrate and benchmark RS3 authentication components using consented behavioural data from Wazobia Invoice and SPIDVerify. Evaluate privacy-preserving feature extraction and aggregation without retaining PINs, account numbers or transaction-entry content, and coordinate reproducible security and usability testing.',
     streams: ['RS3'],
-    agencies: ['CBN'],
+    agencies: ['CBN', 'NDPC'],
   },
   {
     code: 'B-D2',
     type: 'Postdoc',
     pillar: 'B',
-    title: 'Privacy engineering and secure digital identity',
+    title: 'Offline identity assurance and adoption',
     focus:
-      'Build privacy-preserving aggregation, secure biometric processing and self-sovereign identity into the RS3 prototypes.',
+      'Coordinate technical evaluation of offline identity verification and synthesise interview evidence on adoption, privacy and accessibility. Develop assurance criteria addressing credential validity, replay resistance, revocation limitations and recovery under intermittent connectivity.',
     streams: ['RS3'],
-    agencies: ['NDPC', 'NIMC'],
+    agencies: ['CBN', 'NDPC', 'NIMC'],
   },
   {
     code: 'B-D3',
     type: 'Postdoc',
     pillar: 'B',
-    title: 'Offline zero-trust FinTech security',
+    title: 'Consumer safeguards in regulatory sandboxes',
     focus:
-      'Develop and test secure offline transactions, cryptographic protection, device trust and account recovery for low-connectivity agent banking.',
-    streams: ['RS3'],
-    agencies: ['CBN'],
+      'Examine three purposively selected sandbox cases, subject to confirmed access, using programme documents and stakeholder interviews. Assess consent, transparency, privacy, complaints, redress, risk monitoring and exit arrangements, and synthesise transferable practices across cases.',
+    streams: ['RS4'],
+    agencies: ['CBN', 'NITDA', 'NDPC', 'FCCPC'],
   },
   {
     code: 'B-D4',
     type: 'Postdoc',
     pillar: 'B',
-    title: 'Cybersecurity prototyping and research testbed',
+    title: 'Regulatory transferability and institutional coordination frameworks',
     focus:
-      'Build reproducible testbeds, drawing on the Cyber360 environments, to evaluate the cluster’s authentication, privacy and FinTech security prototypes.',
-    streams: ['RS3'],
-    agencies: ['All pillars'],
+      'Synthesise comparative regulatory and institutional evidence into a transferability framework and responsibility matrix. Work with stakeholders to assess feasible adaptations, referral procedures and coordination arrangements, documenting disagreements and evidence gaps.',
+    streams: ['RS4'],
+    agencies: ['FMCIDE', 'NDPC', 'NITDA', 'NCC', 'CBN', 'FCCPC'],
   },
   {
     code: 'B-D5',
     type: 'Postdoc',
     pillar: 'B',
-    title: 'Digital trust, regulatory innovation and authentication policy',
+    title: 'Evidence-based governance of inclusive FinTech authentication',
     focus:
-      'Translate RS3 evidence into authentication standards and agent banking guidance, and examine how regulatory sandboxes can build in security, privacy and consumer safeguards.',
+      'Integrate RS3 findings on authentication performance, privacy and user preferences with RS4 findings on regulation and consumer safeguards. Produce policy options, evaluation guidance and demonstrator-based evidence to inform regulatory consultations and sandbox design.',
     streams: ['RS3', 'RS4'],
-    agencies: ['CBN', 'NITDA'],
+    agencies: ['CBN', 'NDPC', 'NITDA', 'FCCPC'],
   },
   {
     code: 'B-D6',
@@ -271,7 +271,7 @@ export const POSITIONS: Position[] = [
     pillar: 'B',
     title: 'Regulatory interoperability: one consumer, many regulators',
     focus:
-      'Map overlapping mandates across one digital consumer journey and propose a joint enforcement playbook.',
+      'Map overlapping mandates across one digital consumer journey, such as a borrower using a loan app, and propose a joint enforcement playbook.',
     streams: ['RS4'],
     agencies: ['CBN', 'NDPC', 'NITDA', 'NCC', 'FCCPC'],
   },
@@ -281,10 +281,10 @@ export const POSITIONS: Position[] = [
     code: 'C-P1',
     type: 'PhD',
     pillar: 'C',
-    title: 'Privacy-preserving age verification for online platforms',
+    title: 'Age checks without surveillance',
     focus:
       'Design age assurance that proves a user is an adult without revealing identity, using zero-knowledge proofs and selective disclosure, benchmarked against the UK Online Safety Act and EU practice.',
-    streams: ['RS2', 'RS6'],
+    streams: ['RS6'],
     agencies: ['NDPC', 'NITDA', 'National Orientation Agency'],
     note: 'Joint supervision with A-P5 and A-D4.',
   },
@@ -292,17 +292,17 @@ export const POSITIONS: Position[] = [
     code: 'C-P3',
     type: 'PhD',
     pillar: 'C',
-    title: 'Digital identity trust frameworks for financial inclusion',
+    title: 'One identity, many services: who carries the risk?',
     focus:
       'Examine how NIN, BVN and verifiable credentials can work together to widen financial inclusion without weakening privacy, and propose an assurance-level model for KYC rules.',
-    streams: ['RS3', 'RS6'],
+    streams: ['RS6'],
     agencies: ['CBN', 'NIMC', 'NITDA'],
   },
   {
     code: 'C-P4',
     type: 'PhD',
     pillar: 'C',
-    title: 'Consumer protection in digital lending and buy-now-pay-later markets',
+    title: 'Buy now, owe later: protecting the borrower the algorithm scores',
     focus:
       'Study predatory pricing, hidden fees, data misuse and debt harassment, and draft a conduct code with complaint and redress mechanisms.',
     streams: ['RS5'],
@@ -312,7 +312,7 @@ export const POSITIONS: Position[] = [
     code: 'C-P5',
     type: 'PhD',
     pillar: 'C',
-    title: 'Data protection compliance costs for Nigerian SMEs and start-ups',
+    title: 'What does compliance really cost a small firm?',
     focus:
       'Measure what NDPA compliance costs small firms, find where guidance is unclear, and design simplified toolkits and a tiered obligations model.',
     streams: ['RS6'],
@@ -322,7 +322,7 @@ export const POSITIONS: Position[] = [
     code: 'C-P8',
     type: 'PhD',
     pillar: 'C',
-    title: 'Fraud detection and consumer redress in mobile money and agency banking',
+    title: 'When the victim authorises the fraud',
     focus:
       'Analyse fraud patterns in agent networks, including social engineering aimed at low-literacy users, and develop detection models and a standard refund and redress protocol.',
     streams: ['RS5'],
@@ -332,7 +332,7 @@ export const POSITIONS: Position[] = [
     code: 'C-P9',
     type: 'PhD',
     pillar: 'C',
-    title: 'Cross-border data flows and data localisation: a Nigerian policy model',
+    title: 'Data that crosses borders: who protects it on the way?',
     focus:
       'Weigh the economic and security trade-offs of localisation against governed transfers, and propose an adequacy and certification model.',
     streams: ['RS6'],
@@ -342,7 +342,7 @@ export const POSITIONS: Position[] = [
     code: 'C-P10',
     type: 'PhD',
     pillar: 'C',
-    title: 'Trust in and adoption of digital payment channels',
+    title: 'Will people trust digital money they cannot see?',
     focus:
       'Use surveys and behavioural experiments in Kano, Jigawa and wider northern Nigeria to explain trust and distrust in digital payments, including central bank digital currency, and recommend inclusive design.',
     streams: ['RS5'],
@@ -352,27 +352,27 @@ export const POSITIONS: Position[] = [
     code: 'C-P12',
     type: 'PhD',
     pillar: 'C',
-    title: 'Cybercrime intelligence sharing between regulators, banks and law enforcement',
+    title: 'Sharing threat intelligence without sharing personal data',
     focus:
       'Design a lawful, privacy-respecting framework for sharing fraud indicators that reconciles data protection duties with security needs.',
     streams: ['RS6'],
     agencies: ['CBN', 'NDPC', 'NITDA', 'ONSA'],
   },
   {
-    code: 'C-D3',
-    type: 'Postdoc',
+    code: 'C-P13',
+    type: 'PhD',
     pillar: 'C',
-    title: 'NDPC enforcement analytics: complaints, breaches and deterrence',
+    title: 'Sextortion: from Lagos scripts to teenage victims, and who answers',
     focus:
-      'Analyse complaint and breach data with NDPC to measure enforcement effectiveness and recommend risk-based inspection priorities and penalty calibration.',
-    streams: ['RS6'],
-    agencies: ['NDPC'],
+      'Map how sextortion scripts spread and are adapted on platforms, build a classifier for extortion messages in English and Nigerian Pidgin from text and metadata only, and design and test a reporting, triage and takedown route with child-protection and enforcement partners. It never collects or views intimate images.',
+    streams: ['RS5', 'RS2'],
+    agencies: ['EFCC', 'Nigeria Police Force', 'NAPTIP', 'NCC', 'NITDA'],
   },
   {
     code: 'C-D4',
     type: 'Postdoc',
     pillar: 'C',
-    title: 'A consumer harm index for Nigerian digital markets',
+    title: 'A consumer harm index for Nigeria',
     focus:
       'Build a repeatable index of consumer harm across digital lending, e-commerce and telecoms that regulators can share as an early-warning tool.',
     streams: ['RS5'],
@@ -382,7 +382,7 @@ export const POSITIONS: Position[] = [
     code: 'C-D5',
     type: 'Postdoc',
     pillar: 'C',
-    title: 'Digital identity assurance for government services',
+    title: 'How sure is ‘sure’ in digital identity?',
     focus:
       'Evaluate assurance levels across NIN, BVN and sectoral identities, and design a federated trust framework with redress when identity systems fail citizens.',
     streams: ['RS3', 'RS6'],
@@ -392,7 +392,7 @@ export const POSITIONS: Position[] = [
     code: 'C-D6',
     type: 'Postdoc',
     pillar: 'C',
-    title: 'Privacy-preserving analytics for financial intelligence',
+    title: 'Finding illicit money without exposing everyone’s data',
     focus:
       'Develop federated learning, secure enclave and differential privacy methods that detect money laundering across institutions without centralising personal data.',
     streams: ['RS6'],
@@ -402,10 +402,10 @@ export const POSITIONS: Position[] = [
     code: 'C-D7',
     type: 'Postdoc',
     pillar: 'C',
-    title: 'Behavioural insights for online safety in low-literacy populations',
+    title: 'Safety messages that work for people who cannot read them',
     focus:
       'Design and field-test warnings, defaults and local-language education that reduce exposure of children and vulnerable adults to scams and harmful content, with schools and community institutions.',
-    streams: ['RS2', 'RS5'],
+    streams: ['RS5', 'RS6'],
     agencies: ['NDPC', 'NITDA', 'UBEC'],
   },
 ]
@@ -426,16 +426,16 @@ export const TERMS = {
   PhD: {
     label: 'PhD studentship',
     places: 15,
-    topics: 20,
+    topics: 21,
     registration: 'Registered at one of the four Nigerian universities in the joint venture, where the primary supervisor works; co-supervisor at another member or a UK host.',
     supervision: 'A thesis committee twice a year. No supervisor carries more than three funded candidates.',
     duration: 'Month 9 to Month 36. Thesis submitted by Month 33 and examined by Month 36.',
-    funding: 'Stipend and research costs, a funded three-month UK stay, one international conference presentation, a place at the annual Research School.',
+    funding: 'Stipend and research costs, a funded three-month UK stay, one international conference presentation, the researcher development programme.',
     ukStay: 'Three months at Leicester or York St John in Months 13 to 15, before the proposal defence.',
-    outputs: 'A thesis, a conference paper by M24, a journal paper submitted by M33, one policy brief a year.',
-    recruitment: 'Opens at inception, closes Month 9.',
+    outputs: 'A thesis, a conference paper by M24, a journal paper submitted by M33, a contribution to one policy brief a year.',
+    recruitment: 'Opens within a month of contract signature; interviews in Month 7; registered by Month 9.',
     eligibility: [
-      'A good Master’s degree in a relevant discipline, meeting BUK postgraduate admission requirements.',
+      'A good Master’s degree in a relevant discipline, meeting the host university’s postgraduate admission requirements.',
       'Resident in Nigeria for fieldwork and analysis. Nigerian and international applicants both considered.',
       'A Nigerian core language (Hausa, Yoruba, Igbo or Nigerian Pidgin) is an advantage, and essential for language technology and fieldwork topics.',
       'At least 40 percent of places go to women.',
@@ -444,18 +444,18 @@ export const TERMS = {
   Postdoc: {
     label: 'Postdoctoral fellowship',
     places: 15,
-    topics: 16,
+    topics: 15,
     registration: 'Employed full time by one of the four Nigerian universities in the joint venture.',
     supervision: 'A named mentor among the experts and a development plan reviewed each quarter.',
     duration: 'Nine posts from Month 7 (30 months); six from Month 13 (24 months).',
-    funding: 'A salaried fellowship, a fellowship embedded in an MDA policy unit, a presentation at a Nigerian conference, a place at the Research School.',
-    ukStay: 'None. Postdocs work with their UK co-supervisors online and during the professors\u2019 visits to Nigeria.',
-    outputs: 'Two working papers or datasets (the first within twelve months of starting, the second by M30), one policy brief a year.',
-    recruitment: 'Opens at inception, closes Month 6.',
+    funding: 'A salaried fellowship, a presentation at a Nigerian conference, the researcher development programme, and for three postdocs, one a year, three months in an agency policy unit.',
+    ukStay: 'None. Postdocs work with their UK mentors online and during visits to Nigeria.',
+    outputs: 'Two working papers or datasets (the first by M18, the second by M30), one policy brief a year.',
+    recruitment: 'Opens within a month of contract signature; interviews in Month 3; first nine appointed in Month 6 to start in Month 7; six start in Month 13.',
     eligibility: [
       'A PhD awarded, or submitted and awaiting examination, in a relevant discipline.',
       'A publication record appropriate to career stage, and the methods the topic needs.',
-      'Willing to spend a period inside an MDA policy unit.',
+      'Willing to spend a period inside an agency policy unit.',
       'At least 40 percent of places go to women.',
     ],
   },
@@ -464,8 +464,8 @@ export const TERMS = {
 export const SELECTION = [
   'We publish the open call within a month of signing the contract. It appears here, on the Project BRIDGE programme site, and through each institution.',
   'Apply to a named topic, or propose a closely aligned one.',
-  'The pillar’s supervisors shortlist, interview and select, keeping a ranked reserve list per topic.',
-  'BUK School of Postgraduate Studies handles PhD admission; each university makes its own postdoctoral appointments.',
+  'The stream’s supervisors shortlist. A panel of the Key Expert who leads the stream, two other Key Experts and the Project Administrator interviews online, ranks candidates and keeps a reserve list for each topic.',
+  'The host university admits its own PhD candidates and appoints its own postdoctoral researchers.',
   'If a researcher leaves, the reserve list fills the place within two months.',
 ]
 
@@ -486,10 +486,10 @@ export const COHORT_ALLOCATION = [
 ]
 
 export const TRAINING = [
-  { name: 'Cluster E research seminar', when: 'Monthly, Months 7 to 36 (30 seminars)', detail: 'Online, 60 minutes. Two cohort members present work in progress; a professor is discussant; open to the other clusters. Written feedback is recorded in each development plan.' },
-  { name: 'Professorial public lectures', when: 'One per professor each year (27 in total)', detail: 'Held at the professor’s own institution, streamed and recorded. Audience of academics, students, MDA officials and the public.' },
-  { name: 'Cluster E Research School', when: 'Annually, two weeks', detail: 'Residential, for the whole cohort plus 20 external places. Methods, data protection and policy writing.' },
+  { name: 'CREDENCE research seminar', when: 'Monthly, Months 7 to 36 (30 seminars)', detail: 'Online, 60 minutes. Two cohort members present work in progress; a professor is discussant; open to the other clusters. Written feedback is recorded in each development plan.' },
+  { name: 'Professorial public lectures', when: 'One per professor each year (30 in total)', detail: 'Held at the professor’s own institution, streamed and recorded. Audience of academics, students, MDA officials and the public.' },
+  { name: 'Researcher development programme', when: 'Years 1 to 3', detail: 'Twenty-eight modules in six areas, run as half-day online workshops and seminar sessions. Core modules are compulsory, with at least ten training days a year.' },
   { name: 'National conference', when: 'Months 12, 24 and 34', detail: 'Abuja. Cohort posters and demonstrations, with findings presented to the MDAs that will use them.' },
   { name: 'Policy labs', when: 'Quarterly', detail: 'Closed sessions of about 25 people. Postdocs draft the brief. One brief and one decision each.' },
-  { name: 'External conferences', when: 'Years 2 and 3', detail: 'Each cohort member presents at least one paper at a regional or international conference.' },
+  { name: 'External conferences', when: 'Years 2 and 3', detail: 'Each PhD candidate presents at one international conference; each postdoc presents at one Nigerian conference.' },
 ]

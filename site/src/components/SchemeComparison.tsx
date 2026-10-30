@@ -1,5 +1,4 @@
 import { TERMS } from '../data/positions'
-import Placeholder from '../components/Placeholder'
 
 /**
  * The two schemes share every attribute, so they are shown against each
@@ -16,7 +15,7 @@ const ROWS: { label: string; key: keyof typeof TERMS.PhD }[] = [
   { label: 'UK research stay', key: 'ukStay' },
   { label: 'Supervision', key: 'supervision' },
   { label: 'What you produce', key: 'outputs' },
-  { label: 'Recruitment closes', key: 'recruitment' },
+  { label: 'Recruitment timing', key: 'recruitment' },
 ]
 
 function SchemeHead({ which }: { which: 'Postdoc' | 'PhD' }) {
@@ -90,7 +89,6 @@ export default function SchemeComparison() {
               <Chip which={which} />
               <h3 className="ui-card-title">Who can apply</h3>
             </div>
-            <Placeholder id={which === 'PhD' ? 'eligibility-phd' : 'eligibility-postdoc'} block>
             <ul className="space-y-3">
               {TERMS[which].eligibility.map((e) => (
                 <li key={e} className="grid grid-cols-[1rem_minmax(0,1fr)] gap-2">
@@ -110,7 +108,7 @@ export default function SchemeComparison() {
                 </li>
               ))}
             </ul>
-            </Placeholder>
+            <p className="ui-body-sm mt-4">Indicative. The open call will set the final requirements.</p>
           </div>
         ))}
       </div>

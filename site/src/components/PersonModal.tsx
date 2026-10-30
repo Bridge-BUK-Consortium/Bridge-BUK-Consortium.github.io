@@ -87,18 +87,6 @@ export default function PersonModal({
               <p className="ui-prose mt-2 text-sm text-muted-foreground">{person.bio}</p>
             </>
           )}
-
-          {person.months != null && (
-            <>
-              <p className="ui-eyebrow mt-6">Time on the assignment</p>
-              <p className="mt-2 text-sm">
-                <span className="text-2xl font-bold text-primary">{person.months}</span>{' '}
-                <span className="text-muted-foreground">
-                  of 36 person-months, about {Math.round((person.months / 36) * 100)} percent
-                </span>
-              </p>
-            </>
-          )}
         </div>
       </div>
     </div>

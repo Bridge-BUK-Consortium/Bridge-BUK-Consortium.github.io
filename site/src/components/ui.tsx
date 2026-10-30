@@ -70,14 +70,17 @@ export function Card({
   className = '',
   hover = false,
   style,
+  id,
 }: {
   children: ReactNode
   className?: string
   hover?: boolean
   style?: CSSProperties
+  id?: string
 }) {
   return (
     <div
+      id={id}
       className={`ui-card p-5 sm:p-6 ${hover ? 'group ui-card-hover' : ''} ${className}`}
       style={style}
     >

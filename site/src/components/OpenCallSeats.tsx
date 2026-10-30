@@ -36,6 +36,7 @@ export default function OpenCallSeats() {
       <h2 className="ui-display max-w-4xl font-bold text-balance">
         Thirty funded places for the next generation of researchers.
       </h2>
+      <p className="ui-lead mt-4 sm:mt-5">Subject to the award of the Cluster E contract.</p>
 
       <div
         role="img"

@@ -35,7 +35,7 @@ export const INDEX: Hit[] = [
     id: p.code,
     kind: 'Person' as const,
     title: p.name,
-    subtitle: `${p.code}, ${p.title}`,
+    subtitle: p.title,
     haystack: norm([p.code, p.name, p.institution, p.title, p.summary, p.role, p.bio ?? ''].join(' ')),
     to: `/people?q=${encodeURIComponent(p.name)}`,
   })),

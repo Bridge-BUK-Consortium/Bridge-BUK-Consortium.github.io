@@ -2,7 +2,7 @@ import type { Person } from '../data/people'
 
 const initials = (name: string) =>
   name
-    .replace(/^(Dr\.|Prof\.|Assoc\. Prof\.|Mrs\.|Mr\.|Ms\.)\s+/, '')
+    .replace(/^(Dr\.|Prof\.|Assoc\. Prof\.|Mrs\.|Mr\.|Ms\.?)\s+/, '')
     .split(/\s+/)
     .slice(0, 2)
     .map((w) => w[0])

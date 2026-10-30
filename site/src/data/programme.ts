@@ -1,7 +1,7 @@
 export const PROGRAMME = {
   cluster: 'Cluster E',
   name: 'CREDENCE',
-  centre: 'The Nigerian Centre for Online Trust and Safety (NCOTS)',
+  centre: 'The Nigerian Centre for Trust and Safety Online',
   clusterTitle: 'Trust, Safety, Consumer Protection and Online Harms',
   programme: 'National Digital Economy University Led Research Programme',
   project: 'Project BRIDGE',
@@ -9,28 +9,10 @@ export const PROGRAMME = {
   lead: 'Bayero University, Kano',
   rfp: 'NG-FMCIDE-544880-CS-QCBS',
   projectNo: 'P508383',
-  duration: '36 months, from December 2026 to November 2029',
+  duration: '36 months, planned from December 2026 to November 2029',
   cohort: '15 postdoctoral researchers and 15 PhD candidates',
   fibre: '90,000 km',
-  email: 'clustere@buk.edu.ng',
-} as const
-
-/* The sponsor's endorsement, carried over from the first site. */
-export const MINISTER = {
-  name: "Dr. 'Bosun Tijani",
-  title: 'Honourable Minister of Communications, Innovation and Digital Economy',
-  quote:
-    'Nigeria is not waiting for the world to connect us. We are building our own infrastructure, and the world is choosing to invest alongside us.',
-  photo: 'minister.jpg',
-} as const
-
-/* The Team Lead's short film about the project. Set `url` to a YouTube
-   embed address (https://www.youtube.com/embed/<id>) once it is recorded;
-   until then the page shows his photograph and a note. */
-export const LEAD_VIDEO = {
-  url: '',
-  title: 'Dr. Shamsuddeen Hassan Muhammad explains CREDENCE',
-  still: 'team/shamsuddeen.jpg',
+  email: 'shmuhammad.csc@buk.edu.ng',
 } as const
 
 export const PILLARS = [
@@ -116,7 +98,7 @@ export const STREAMS: {
   {
     id: 'RS3',
     pillar: 'B',
-    title: 'Secure and privacy-preserving authentication for FinTech',
+    title: 'Secure and privacy-preserving authentication for Nigeria’s FinTech ecosystem',
     summary:
       'Continuous, multimodal authentication for Nigerian FinTech, so rural users, informal workers and persons with disabilities depend less on static credentials.',
     questions: [
@@ -154,13 +136,14 @@ export const STREAMS: {
   {
     id: 'RS5',
     pillar: 'C',
-    title: 'Consumer protection in digital markets',
+    title: 'Consumer protection and online fraud in digital markets and financial ecosystems',
     summary:
       'Online fraud and consumer harm in digital markets, phishing detection in Nigerian languages, and whether redress reaches women, youth and rural traders.',
     questions: [
-      'How do phishing and deceptive lending target low-literacy users, and can they be detected automatically in Nigerian languages?',
-      'Which consumer harms are most common in WhatsApp trade and social commerce?',
-      'Do existing dispute mechanisms resolve complaints from rural women traders?',
+      'Which fraud and phishing tactics reach Nigerian consumers, by channel and language, and can they be detected accurately enough for regulators to rely on?',
+      'Which harms are most common in digital lending and social-media trade, who bears them, and do lenders comply with the 2025 regulations?',
+      'When rural women traders, persons with disabilities and micro enterprises are harmed online, do they complain, where, and are cases resolved?',
+      'Do verifiable sender and seller credentials and local-language warnings help consumers spot scams, without exposing personal data or burdening legitimate trade?',
     ],
     outputs: [
       { month: 'M9', name: 'Nigerian Phishing Corpus' },
@@ -197,11 +180,11 @@ export const PHASES = [
     name: 'Inception',
     months: 'Month 1',
     points: [
-      'Kick-off with the PIU and alignment with the Quality Assurance Firm',
-      'MDA introductions and policy focal points',
+      'Kick-off with the Project BRIDGE implementation unit and alignment with the Quality Assurance Firm',
+      'Introductions to ministries, departments and agencies (MDAs) and policy focal points',
       'Ethics applications, data management plan, information security policy',
       'Cohort recruitment opens',
-      'Inception Report (D-1)',
+      'Inception Report',
     ],
   },
   {
@@ -221,7 +204,7 @@ export const PHASES = [
     name: 'Evidence and prototypes',
     months: 'Months 13 to 24',
     points: [
-      'Main fieldwork, whole cohort in Nigeria',
+      'PhD research stays in the UK (Months 13 to 15), proposal defences (Months 16 to 18) and main fieldwork',
       'Detection models and fraud tools released',
       'Platform audit and institutional capacity assessment',
       'Mid-Term Review at Month 18, with course corrections',
@@ -237,14 +220,14 @@ export const PHASES = [
       'National trust survey, analysis and theses',
       'Governance frameworks, model codes, safety toolkit',
       'Third national conference at Month 34',
-      'Datasets curated and delivered, Final Report (D-8)',
+      'Datasets curated and delivered, Final Report',
     ],
   },
 ]
 
 export const DELIVERABLES = [
   { id: 'D-1', name: 'Inception Report', timing: 'Month 1', content: 'Design, theory of change, workplan, risk and results frameworks, policy engagement, data management, ethics, recruitment.' },
-  { id: 'D-2', name: 'Quarterly Reports', timing: 'Twelve, each within 30 days of the quarter end', content: 'Status, outputs, expenditure, risks.' },
+  { id: 'D-2', name: 'Quarterly Reports', timing: 'Thirteen, each within 30 days of the end of a calendar quarter', content: 'Status, outputs, expenditure, risks.' },
   { id: 'D-3', name: 'Mid-Term Review', timing: 'Month 18', content: 'Progress, output quality, governance, course corrections.' },
   { id: 'D-4', name: 'Interim Outputs', timing: 'Ongoing', content: 'Working papers, datasets, analytical notes, prototypes.' },
   { id: 'D-5', name: 'Policy Briefs', timing: 'Eighteen, six by M12, M24 and M36', content: 'Actionable notes written for a named agency.' },

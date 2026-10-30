@@ -8,7 +8,7 @@ export default function Programme() {
       <PageHero
         eyebrow="Programme"
         title="Thirty-six months"
-        lead={`${PROGRAMME.duration}. Month 1 is December 2026; Month 12 is November 2027; Month 24 is November 2028; Month 36 is November 2029.`}
+        lead={`${PROGRAMME.duration}. Month 1 is planned as December 2026; Month 12 is November 2027; Month 24 is November 2028; Month 36 is November 2029.`}
       />
 
       <Section bordered={false}>
@@ -44,7 +44,7 @@ export default function Programme() {
         <SectionHead
           eyebrow="Outputs"
           title="Deliverables"
-          lead="Every deliverable passes through the internal Quality Panel before it reaches the Client."
+          lead="Every deliverable passes through the internal Quality Panel before it reaches the Federal Ministry."
         />
         <div className="mt-7 sm:mt-10">
           <DataTable
@@ -118,7 +118,7 @@ export default function Programme() {
             },
             {
               h: 'Data ownership',
-              b: 'All outputs and data vest in the Federal Government of Nigeria. The consortium proposes open release of anonymised datasets and code under a Client-approved licence, so other Nigerian researchers can reuse the national body of knowledge.',
+              b: 'All outputs and data vest in the Federal Government of Nigeria. The consortium proposes open release of anonymised datasets and code under a licence approved by the Federal Ministry, so other Nigerian researchers can reuse the national body of knowledge.',
             },
             {
               h: 'Mid-Term Review',

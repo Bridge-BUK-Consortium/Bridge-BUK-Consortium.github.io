@@ -18,14 +18,14 @@ export default function Consortium() {
       {/* Logo strip */}
       <section className="border-b border-border bg-card/30">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-5 sm:py-10">
-          <Eyebrow>Partner and funding consortium</Eyebrow>
+          <Eyebrow>Consortium members</Eyebrow>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-6 sm:gap-10">
             {INSTITUTIONS.map((i) => (
               <Logo key={i.short} short={i.short} name={i.name} />
             ))}
           </div>
           <p className="mt-6 text-center font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-            Client: {PROGRAMME.client}
+            For the {PROGRAMME.client}
           </p>
         </div>
       </section>
@@ -34,7 +34,7 @@ export default function Consortium() {
         <SectionHead
           eyebrow="Joint venture"
           title="The joint venture"
-          lead="Bayero University, Kano holds the contract. It registers eight of the fifteen PhD candidates and hosts the Research School and the annotation teams; the other three universities register the rest."
+          lead="Bayero University, Kano leads the joint venture and would hold the contract, subject to the award of the Cluster E contract. It would register eight of the fifteen PhD candidates and host the annotation teams; the other three universities register the rest."
         />
         <div className="mt-7 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-2">
           {ng.map((i) => (
@@ -75,7 +75,7 @@ export default function Consortium() {
 
       <Section>
         <SectionHead
-          eyebrow="Sub-consultants"
+          eyebrow="UK partners"
           title="The UK hosts"
           lead="Every PhD candidate spends three months at one of the two universities in the United Kingdom in Months 13 to 15, so that the UK co-supervisors shape each thesis before the proposal defence."
         />
@@ -93,9 +93,9 @@ export default function Consortium() {
               <dl className="mt-5 grid grid-cols-3 gap-3 border-t border-border pt-4">
                 <div>
                   <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
-                    Months
+                    Contributes
                   </dt>
-                  <dd className="mt-1 font-bold text-primary">{i.short === 'Leicester' ? 'K-3 7.25; N-14 2' : 'K-2 5; N-15 2'}</dd>
+                  <dd className="mt-1 text-sm font-bold text-primary">{i.short === 'Leicester' ? 'Dr. Abubakar-Sadiq; Prof. Anjum' : 'Assoc. Prof. Usman; Prof. Kyriacou'}</dd>
                 </div>
                 <div>
                   <dt className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
@@ -153,11 +153,11 @@ export default function Consortium() {
             },
             {
               h: 'Team Lead and pillar leads',
-              b: 'The Team Lead reports to the Steering Committee and to the Client through the Project BRIDGE PIU and the TA Management Consultancy firm. The Team Lead and pillar leads meet fortnightly.',
+              b: 'The Team Lead reports to the Steering Committee and to the Federal Ministry through the Project BRIDGE implementation unit. The Team Lead and pillar leads meet fortnightly.',
             },
             {
               h: 'Quality Panel',
-              b: 'Chaired by the Professorial Lead. Every deliverable passes through the panel before it reaches the Client. Each institution reviews its own outputs first.',
+              b: 'Chaired by the Professorial Lead. Every deliverable passes through the panel before it reaches the Federal Ministry. Each institution reviews its own outputs first.',
             },
             {
               h: 'Weekly stream meetings',

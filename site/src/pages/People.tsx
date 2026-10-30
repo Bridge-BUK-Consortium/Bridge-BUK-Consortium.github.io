@@ -27,8 +27,7 @@ function PersonCard({ p, onOpen }: { p: Person; onOpen: () => void }) {
       <p className="ui-eyebrow mt-4 text-[10px]">{p.title}</p>
       <p className="ui-body-sm mt-2 flex-1">{p.summary}</p>
 
-      <span className="mt-4 flex w-full items-center justify-between border-t border-border pt-3">
-        <span className="ui-meta">{p.code}</span>
+      <span className="mt-4 flex w-full items-center justify-end border-t border-border pt-3">
         {/* Visible by default on touch, where there is no hover to reveal it. */}
         <span className="flex items-center gap-1.5 text-xs font-semibold text-primary transition-opacity lg:opacity-0 lg:group-hover:opacity-100 lg:group-focus-visible:opacity-100">
           Full profile
@@ -80,7 +79,7 @@ export default function People() {
       <PageHero
         eyebrow="People"
         title="The team"
-        lead="Five Key Experts, a Professorial Lead and fifteen Non-Key Experts, drawn from six universities in Nigeria and the United Kingdom. The cluster will also recruit thirty researchers."
+        lead="Five Key Experts and eighteen named Non-Key Experts, including the Professorial Lead, drawn from six universities in Nigeria and the United Kingdom. The cluster will also recruit thirty researchers."
       />
 
       <Section bordered={false}>
@@ -137,7 +136,7 @@ export default function People() {
         <div className="mt-7 grid gap-4 sm:gap-5 md:grid-cols-3">
           {[
             ['15 + 15', 'Fifteen postdoctoral researchers and fifteen PhD candidates. Each one works on a numbered topic and contributes to a policy output.'],
-            ['9 professors', 'Nine professors act as primary supervisor for nine of the PhD candidates, co-supervise thirteen, and mentor twelve of the postdoctoral researchers.'],
+            ['10 senior academics', 'Ten senior academics act as primary supervisor for nine of the PhD candidates, co-supervise fifteen, and mentor ten of the postdoctoral researchers.'],
             ['Support staff', 'Annotators and field enumerators recruited through HausaNLP and the Arewa Data Science Academy, trained under the child protection and SEA/SH protocols.'],
           ].map(([h, b]) => (
             <Card key={h} hover>
