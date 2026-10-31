@@ -80,14 +80,11 @@ export default function Home() {
             </div>
           </div>
 
-          <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-white/15 pt-6 text-sm sm:grid-cols-3 lg:mt-10 lg:grid-cols-6">
+          <dl className="mt-8 grid gap-x-6 gap-y-5 border-t border-white/15 pt-6 text-sm sm:grid-cols-3 lg:mt-10">
           {[
             ['Lead institution', PROGRAMME.lead],
             ['Consortium', 'Six universities: four in Nigeria, two in the UK'],
             ['Federal Ministry', 'FMCIDE, through Project BRIDGE'],
-            ['Duration', PROGRAMME.duration],
-            ['Reference', PROGRAMME.rfp],
-            ['Researchers trained', PROGRAMME.cohort],
           ].map(([k, v]) => (
             <div key={k}>
               <dt className="ui-eyebrow">{k}</dt>
