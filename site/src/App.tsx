@@ -13,8 +13,11 @@ import Programme from './pages/Programme'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
 
+declare global { interface Window { goatcounter?: { count: (o: { path: string }) => void } } }
+
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
+  useEffect(() => { window.goatcounter?.count({ path: pathname }) }, [pathname])
   useEffect(() => {
     if (hash) { requestAnimationFrame(() => document.querySelector(hash)?.scrollIntoView()); return }
     window.scrollTo(0, 0)
