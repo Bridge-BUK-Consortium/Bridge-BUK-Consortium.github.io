@@ -154,8 +154,12 @@ export default function Home() {
             />
             <div className="min-w-0">
               <h3 className="ui-eyebrow">The Team Lead</h3>
-              <p className="mt-3 text-2xl font-semibold leading-snug">Dr. Shamsuddeen Hassan Muhammad</p>
-              <p className="mt-3 max-w-[62ch] leading-relaxed text-pretty">
+              <blockquote className="mt-3 text-2xl font-semibold leading-snug text-balance">
+                &ldquo;Millions of Nigerians are coming online for the first time. CREDENCE will give
+                the regulators who protect them evidence built in Nigeria, in Nigerian languages.&rdquo;
+              </blockquote>
+              <p className="mt-4 font-semibold">Dr. Shamsuddeen Hassan Muhammad</p>
+              <p className="ui-body-sm">
                 Team Lead of CREDENCE and lead of Pillar A, Online Harms and Online Safety. Senior
                 Lecturer in the Department of Software Engineering at Bayero University, Kano.
               </p>
