@@ -32,7 +32,7 @@ export default function HeroFilm() {
             <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" aria-hidden="true">
               <path d="M8 5.5v13l11-6.5z" />
             </svg>
-            Play film, 2:35
+            Play film, 2:36
           </button>
         )}
         <span>Watch: CREDENCE in under three minutes</span>
