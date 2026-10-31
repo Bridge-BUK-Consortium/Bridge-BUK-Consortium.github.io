@@ -1,7 +1,7 @@
 /* The cluster's mark: three bars in the cover's green ramp, one for each
-   pillar. On the home page the same three bars gain a stem and labels and
-   become the pillar key. Inside an inverted band the ramp re-points to
-   white and mints, so the mark works on the forest ground too. */
+   pillar. On the home page each pillar keeps its bar as a key. Inside an
+   inverted band the ramp re-points to white and mints, so the mark works
+   on the forest ground too. */
 export default function ClusterMark({
   className = '',
   title = 'CREDENCE, Project BRIDGE Cluster E',

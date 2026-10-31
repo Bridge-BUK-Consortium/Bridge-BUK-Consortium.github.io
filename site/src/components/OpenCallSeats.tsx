@@ -1,62 +1,25 @@
-import { BrandLink, GhostLink } from './ui'
+import { Link } from 'react-router-dom'
+import { BrandLink } from './ui'
 
-/**
- * Thirty seats. Two rows of fifteen seated figures, postdocs in ramp-4
- * above PhD candidates in ramp-3, each row headed by its number. The
- * count is the picture; the words only name the rows.
- */
-
-const ROWS = [
-  { label: 'Postdoctoral fellowships', colour: 'var(--ui-ramp-4)' },
-  { label: 'PhD studentships', colour: 'var(--ui-ramp-3)' },
-]
-
-function Seats({ colour }: { colour: string }) {
-  return (
-    <svg
-      viewBox="0 0 330 26"
-      preserveAspectRatio="xMinYMid meet"
-      className="h-8 w-full max-w-[720px] sm:h-12 md:h-14"
-      fill={colour}
-      aria-hidden="true"
-    >
-      {Array.from({ length: 15 }, (_, i) => (
-        <g key={i} transform={`translate(${i * 22} 0)`}>
-          <circle cx="8" cy="5" r="4" />
-          <path d="M1 26v-9a7 7 0 0 1 14 0v9z" />
-        </g>
-      ))}
-    </svg>
-  )
-}
+const PLACES = ['Postdoctoral fellowships', 'PhD studentships']
 
 export default function OpenCallSeats() {
   return (
     <>
-      <h2 className="ui-display max-w-4xl font-bold text-balance">
-        Thirty funded places for the next generation of researchers.
-      </h2>
-      <p className="ui-lead mt-4 sm:mt-5">Subject to the award of the Cluster E contract.</p>
-
-      <div
-        role="img"
-        aria-label="Fifteen postdoctoral fellowships and fifteen PhD studentships"
-        className="mt-10 grid gap-y-8 sm:mt-14"
-      >
-        {ROWS.map((r) => (
-          <div key={r.label} className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-x-6 sm:gap-x-10">
-            <div className="w-28 sm:w-auto">
-              <p className="ui-figure" style={{ color: r.colour }}>15</p>
-              <p className="ui-meta mt-2 uppercase">{r.label}</p>
-            </div>
-            <Seats colour={r.colour} />
+      <dl className="grid grid-cols-2 gap-6">
+        {PLACES.map((label) => (
+          <div key={label} className="flex flex-col-reverse justify-end border-t border-border pt-4">
+            <dt className="mt-2 font-semibold">{label}</dt>
+            <dd className="text-6xl font-bold leading-none">15</dd>
           </div>
         ))}
-      </div>
+      </dl>
 
-      <div className="mt-10 flex flex-wrap gap-3 sm:mt-14">
+      <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
         <BrandLink to="/opportunities">See the positions</BrandLink>
-        <GhostLink to="/opportunities#how-to-apply">How to apply</GhostLink>
+        <Link to="/opportunities#how-to-apply" className="text-sm font-semibold underline underline-offset-4">
+          How to apply
+        </Link>
       </div>
     </>
   )

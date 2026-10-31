@@ -234,18 +234,6 @@
     }
   }
 
-  /* The hero runs on a wider measure than body copy elsewhere: it has to
-     fit above the fold alongside the figures, and a narrow column there
-     costs lines, not clarity. Declared after .ui-body so it wins on
-     source order rather than specificity. */
-  .ui-lead-wide {
-    max-width: 62ch;
-  }
-
-  .ui-body-wide {
-    max-width: 94ch;
-  }
-
   /* Card and list headings: solid foreground, tight, never muted. */
   .ui-card-title {
     font-size: 1.0625rem;
@@ -342,6 +330,7 @@
     --color-secondary: #ffffff1a;
     --color-primary: #9fd6bd;
     --color-signal: #9fd6bd;
+    --color-ring: #ffffff;
     --ui-eyebrow-color: #9fd6bd;
   }
 
@@ -349,10 +338,4 @@
   .ui-tint {
     background-color: var(--color-secondary);
   }
-
-  /* The big figures step up the ramp, so a row of four reads as one motif. */
-  .ui-figure-row > :nth-child(1) .ui-figure { color: var(--ui-ramp-1); }
-  .ui-figure-row > :nth-child(2) .ui-figure { color: var(--ui-ramp-2); }
-  .ui-figure-row > :nth-child(3) .ui-figure { color: var(--ui-ramp-2); }
-  .ui-figure-row > :nth-child(4) .ui-figure { color: var(--ui-ramp-3); }
 }
