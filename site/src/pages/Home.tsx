@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PROGRAMME, PILLARS } from '../data/programme'
+import HeroFilm from '../components/HeroFilm'
 import PillarsMap from '../components/PillarsMap'
 import OpenCallSeats from '../components/OpenCallSeats'
 import {
@@ -21,8 +22,12 @@ export default function Home() {
             {PROGRAMME.name} · {PROGRAMME.project} {PROGRAMME.cluster}
           </p>
 
-          <div className="mt-4 grid gap-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-14">
-            <div className="min-w-0">
+          <div className="mt-4 grid gap-8 lg:grid-cols-2 lg:gap-x-14">
+            <div className="min-w-0 lg:col-start-2 lg:row-start-1">
+              <HeroFilm />
+            </div>
+
+            <div className="min-w-0 lg:col-start-1 lg:row-span-2 lg:row-start-1">
               <h1 className="ui-display font-bold text-balance">{PROGRAMME.clusterTitle}</h1>
 
               <ul className="mt-5 grid gap-3 sm:mt-6">
@@ -51,7 +56,7 @@ export default function Home() {
 
             {/* The mark as a key: the stem is the cluster, the three arms are
                 its pillars, each in the tone its cards use further down. */}
-            <div className="flex min-w-0 flex-col gap-8">
+            <div className="min-w-0 lg:col-start-2 lg:row-start-2">
               <nav aria-label="The three pillars" className="grid grid-cols-[1.5rem_5.5rem_minmax(0,1fr)] gap-y-3 sm:grid-cols-[1.75rem_8rem_minmax(0,1fr)]">
                 <span aria-hidden="true" className="row-span-3" style={{ backgroundColor: 'var(--ui-ramp-1)' }} />
                 {PILLARS.map((p, i) => {
@@ -72,24 +77,24 @@ export default function Home() {
                   )
                 })}
               </nav>
-
-              <dl className="grid grid-cols-2 gap-x-5 gap-y-5 border-t border-border pt-5 text-sm">
-              {[
-                ['Lead institution', PROGRAMME.lead],
-                ['Consortium', 'Six universities: four in Nigeria, two in the UK'],
-                ['Federal Ministry', 'FMCIDE, through Project BRIDGE'],
-                ['Duration', PROGRAMME.duration],
-                ['Reference', PROGRAMME.rfp],
-                ['Researchers trained', PROGRAMME.cohort],
-              ].map(([k, v]) => (
-                <div key={k}>
-                  <dt className="ui-eyebrow">{k}</dt>
-                  <dd className="mt-1 leading-6">{v}</dd>
-                </div>
-              ))}
-              </dl>
             </div>
           </div>
+
+          <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-white/15 pt-6 text-sm sm:grid-cols-3 lg:mt-10 lg:grid-cols-6">
+          {[
+            ['Lead institution', PROGRAMME.lead],
+            ['Consortium', 'Six universities: four in Nigeria, two in the UK'],
+            ['Federal Ministry', 'FMCIDE, through Project BRIDGE'],
+            ['Duration', PROGRAMME.duration],
+            ['Reference', PROGRAMME.rfp],
+            ['Researchers trained', PROGRAMME.cohort],
+          ].map(([k, v]) => (
+            <div key={k}>
+              <dt className="ui-eyebrow">{k}</dt>
+              <dd className="mt-1 leading-6">{v}</dd>
+            </div>
+          ))}
+          </dl>
         </div>
       </section>
 
@@ -124,29 +129,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ---------------- The explainer film ---------------- */}
-      <Section>
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:items-center lg:gap-14">
-          <div className="min-w-0">
-            <SectionHead
-              eyebrow="Watch"
-              title="CREDENCE in under three minutes"
-              lead="Three short stories show what goes wrong online: a mobile money scam, abuse in Hausa that filters miss, and a loan app that takes too much data. The film then shows how the research responds."
-            />
-          </div>
-          <video
-            className="aspect-video w-full min-w-0 border-t-2 border-primary bg-black"
-            controls
-            playsInline
-            preload="none"
-            poster={`${import.meta.env.BASE_URL}video/credence-explainer.jpg`}
-            aria-label="Explainer film about CREDENCE"
-          >
-            <source src={`${import.meta.env.BASE_URL}video/credence-explainer.mp4`} type="video/mp4" />
-          </video>
-        </div>
-      </Section>
 
       {/* ---------------- Pillars ---------------- */}
       <Section id="pillars" bordered={false}>
