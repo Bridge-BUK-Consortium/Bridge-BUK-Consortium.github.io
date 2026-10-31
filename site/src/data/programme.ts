@@ -15,6 +15,15 @@ export const PROGRAMME = {
   email: 'shmuhammad.csc@buk.edu.ng',
 } as const
 
+/* The sponsor's endorsement, carried over from the first site. */
+export const MINISTER = {
+  name: "Dr. 'Bosun Tijani",
+  title: 'Honourable Minister of Communications, Innovation and Digital Economy',
+  quote:
+    'Nigeria is not waiting for the world to connect us. We are building our own infrastructure, and the world is choosing to invest alongside us.',
+  photo: 'minister.jpg',
+} as const
+
 export const PILLARS = [
   {
     id: 'A',
