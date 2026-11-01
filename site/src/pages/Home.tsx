@@ -64,10 +64,11 @@ export default function Home() {
   return (
     <>
       {/* The site's status comes first: it is pre-award. */}
-      <div className="ui-invert">
-        <p className={`${WRAP} flex flex-wrap gap-x-6 py-2 text-sm`}>
-          <span className="font-semibold">
-            {PROGRAMME.project} {PROGRAMME.cluster}
+      {/* Amber, not the site green, so the pre-award status stands apart from everything else on the page. */}
+      <div role="status" className="border-y-2 border-amber-500 bg-amber-100 text-amber-950">
+        <p className={`${WRAP} flex flex-wrap items-center gap-x-4 gap-y-1 py-3 text-base font-semibold sm:text-lg`}>
+          <span className="rounded bg-amber-500 px-2 py-0.5 text-xs font-bold uppercase tracking-wider text-amber-950">
+            Proposed
           </span>
           <span>The centre and its positions are proposed, subject to the award of the Cluster E contract.</span>
         </p>
